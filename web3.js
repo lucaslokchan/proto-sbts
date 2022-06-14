@@ -1,3 +1,4 @@
+const { SSL_OP_TLS_D5_BUG } = require('constants');
 var Web3 = require('web3');
 var web3 = new Web3(Web3.givenProvider || 'https://ropsten.infura.io/v3/2612abfb42ce416ab76eea0ff87890a9');
 
@@ -49,15 +50,30 @@ sbt_abi = [ { "inputs": [], "stateMutability": "nonpayable", "type": "constructo
 
 const sbt = new web3.eth.Contract(sbt_abi, sbt_address)
 
-sbt.methods.balanceOf(address).call((err, result) => { console.log("SBT Held: " + result) })
-sbt.methods.ownerOf(0).call((err, result) => { console.log("Owner of Degree 0: " + result) })
-//sbt.methods.tokenURI(0).call((err, result) => { console.log("Degree 0 URI: " + result) })
+
+//sbt.methods.tokenURI(0).call((err, result) => { console.log("Degree 0 URI: " + ipfs_address + result) })
 
 
 const ipfs_address = "https://ipfs.io/ipfs/"
 
-sbt.methods.tokenURI(0).call((err, result) => { console.log("Degree 0 URI: " + ipfs_address + result) })
+//sbt.methods.tokenURI(0).call(result => {console.log(result)})
 
+
+//console.log(result)
 //console.log("https://ipfs.io/ipfs/" + uri)
 
-fetch("https://ipfs.io/ipfs/QmcqvyCNH4i7k43N3qeaZZH2rtSPCeprfUXrtFSrTQHpbx")
+//fetch("https://ipfs.io/ipfs/QmcqvyCNH4i7k43N3qeaZZH2rtSPCeprfUXrtFSrTQHpbx")
+
+
+//works
+//sbt.methods.balanceOf(address).call((err, result) => { console.log("SBT Held: " + result) })
+//sbt.methods.ownerOf(0).call((err, result) => { console.log("Owner of Degree 0: " + result) })
+
+//async function getURI(){
+//let ss = await sbt.methods.tokenURI(0);
+//console.log(ss);
+//}
+//
+//getURI()
+
+let xx = sbt.methods.tokenURI(0).call((err, result) => { console.log(result) });
