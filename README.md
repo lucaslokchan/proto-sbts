@@ -21,6 +21,8 @@ npm i web3
 
 npm run dev
 
+http://localhost:3000
+
 # Diagram
 ![Diagram](image/diagram.png)
 
@@ -29,3 +31,4 @@ Solidity
 Remix IDE
 web3.js
 next.js
+MetaMask
