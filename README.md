@@ -9,6 +9,8 @@ https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4105763
 # Setup
 npx create-next-app soulbound-token
 
+cd soulbound-token
+
 git clone https://github.com/lucaslokchan/proto-sbts
 
 npm i bulma
