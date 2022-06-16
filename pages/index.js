@@ -5,17 +5,26 @@ import Web3 from 'web3'
 import { useState, useEffect } from 'react'
 import sbtContract from '../sbt'
 
-
 const sbt = () => {
     //state hook for storing error message in error variable
     const [error, setError] = useState('')
     const [address, setAddress] = useState('')
     const [uri, setURI] = useState('')
+    const [desc, setDesc] = useState('')
+
+    let url = 'https://ipfs.io/ipfs/' + uri
+
+    const fetchURI = async () => {
+        const response = await fetch(url);
+        return response.json();
+    }
 
     let web3
 
     useEffect(() => {
         getSBTHandler()
+        //fetchURI().then(response => setDesc(response['description']))
+        fetchURI().then(response => setDesc(JSON.stringify(response)))
     })
 
     const getSBTHandler = async () => {
@@ -43,7 +52,7 @@ const sbt = () => {
     return (
         <div className={styles.main}>
          <Head>
-         d   <title>Soulbound Token</title>
+            <title>Soulbound Token</title>
             <meta name="description" content="Claim you Soulbound Token" />
         </Head>
         <navbar className="navbar mt-4 mb-4">
@@ -76,6 +85,8 @@ const sbt = () => {
         <section>
             <div className="container">
                 <p>SBT URI: {uri}</p>
+                <p>{url}</p>
+                <p>Description: {desc}</p>
             </div>
         </section>
       </div>
