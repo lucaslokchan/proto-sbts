@@ -70,8 +70,7 @@ const sbt = () => {
         </navbar>
         <section>
             <div className="container">
-                <p>Contract Address: 0x7CfDF10b930fd61E65243e62515B24dA28792ae7</p>
-                <p>placeholder text</p>
+                <p>Contract Address: <a href="https://ropsten.etherscan.io/address/0x7CfDF10b930fd61E65243e62515B24dA28792ae7">0x7CfDF10b930fd61E65243e62515B24dA28792ae7</a></p>
             </div>
         </section>
         <section>
@@ -83,6 +82,22 @@ const sbt = () => {
             <div className="container">
                 <p>Wallet Address: {address}</p>
                 <img src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/image/diagram.png"></img>
+                <button onClick={connectwalletHandler} className="button is-primary">Request Degree</button>
+                <button onClick={connectwalletHandler} className="button is-primary">Request Award</button>
+                <button onClick={connectwalletHandler} className="button is-primary">Request Property Access Right</button>
+                <button onClick={connectwalletHandler} className="button is-primary">Request Certificate of Attendance</button>
+                <button onClick={connectwalletHandler} className="button is-primary">Request Data Cooperatives Right</button>
+                <button onClick={connectwalletHandler} className="button is-primary">Request Membership</button>
+            </div>
+        </section>
+        <section>
+            <div className="container">
+                <img src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/image/sbt/university_degree.png" width="200"></img>
+                <img src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/image/sbt/award.png" width="200"></img>
+                <img src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/image/sbt/property_right_access.png" width="200"></img>
+                <img src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/image/sbt/certificate_of_attendence.png" width="200"></img>
+                <img src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/image/sbt/property_right_data_cooperatives.png" width="200"></img>
+                <img src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/image/sbt/membership.png" width="200"></img>
             </div>
         </section>
         <section>
@@ -98,7 +113,16 @@ const sbt = () => {
                 
             </div>
         </section>
+        <footer class="footer">
+            <div className="content has-text-centered">
+                <p><strong>© 2022 Lucas Chan</strong> </p>
+                <p><a href="https://github.com/lucaslokchan/proto-sbts">Github</a> |  
+                   <a href="https://www.linkedin.com/in/lucaslokchan/"> Linkedln</a> 
+                </p>
+            </div>
+        </footer>
       </div>
+      
         )
 }
 
