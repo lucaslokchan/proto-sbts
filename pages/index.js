@@ -11,6 +11,7 @@ const sbt = () => {
     const [address, setAddress] = useState('')
     const [uri, setURI] = useState('')
     const [desc, setDesc] = useState('')
+    const [image, setImage] = useState('')
 
     let url = 'https://ipfs.io/ipfs/' + uri
 
@@ -24,7 +25,9 @@ const sbt = () => {
     useEffect(() => {
         getSBTHandler()
         //fetchURI().then(response => setDesc(response['description']))
+        connectwalletHandler()
         fetchURI().then(response => setDesc(JSON.stringify(response)))
+        fetchURI().then(response => setImage(response['image']))
     })
 
     const getSBTHandler = async () => {
@@ -87,6 +90,12 @@ const sbt = () => {
                 <p>SBT URI: {uri}</p>
                 <p>{url}</p>
                 <p>Description: {desc}</p>
+                <img src={image}/>
+            </div>
+        </section>
+        <section>
+            <div className="container">
+                
             </div>
         </section>
       </div>
