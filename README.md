@@ -35,12 +35,16 @@ Remix IDE
 web3.js
 next.js
 MetaMask
+Figma
 
-# Example SBTs
-
-![University Degree](image/sbt/university_degree.png =100x100)
-![Award](image/sbt/award.png =200x200)
-![Property Right - Access](image/sbt/property_right_access.png =300x300)
-![Certificate of Attendence](image/sbt/certificate_of_attendence.png =400x400)
-![Property Right - Data Cooperatives](image/sbt/property_right_data_cooperatives.png)
-![Membership](image/sbt/membership.png)
+# SBT Examples
+<p float="left">
+  <img src="image/sbt/university_degree.png" width="200"/>
+  <img src="image/sbt/award.png" width="200"/>
+  <img src="image/sbt/property_right_access.png" width="200"/>
+</p>
+<p float="left">
+  <img src="image/sbt/certificate_of_attendence.png" width="200"/>
+  <img src="image/sbt/property_right_data_cooperatives.png" width="200"/>
+  <img src="image/sbt/membership.png" width="200"/>
+</p>
