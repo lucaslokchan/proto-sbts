@@ -1,0 +1,13 @@
+{
+	"type": "membership",
+	"issuer": "membership club",
+	"title": "membership club membership token",
+    "image": "",
+    "description": "membership club membership",
+    "attributes": [
+        {
+            "trait_type": "tier",
+            "value": "gold",
+        },
+    ]
+}

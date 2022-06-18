@@ -1,0 +1,13 @@
+{
+	"type": "access right",
+	"issuer": "science lab",
+	"title": "science lab access token",
+    "image": "",
+    "description": "science lab property access rights",
+    "attributes": [
+        {
+            "trait_type": "level",
+            "value": 3,
+        },
+    ]
+}

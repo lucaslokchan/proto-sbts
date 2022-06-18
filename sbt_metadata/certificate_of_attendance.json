@@ -1,0 +1,13 @@
+{
+	"type": "certificate of attendance",
+	"issuer": "blockchain workshop",
+	"title": "blockchain workshop certificate of attendance token",
+    "image": "",
+    "description": "this is to certify that the recipient attended the blockchain workshop seminar",
+    "attributes": [
+        {
+            "trait_type": "date",
+            "value": "2022-07-13",
+        },
+    ]
+}
