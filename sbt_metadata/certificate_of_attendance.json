@@ -2,7 +2,7 @@
 	"type": "certificate of attendance",
 	"issuer": "blockchain workshop",
 	"title": "blockchain workshop certificate of attendance token",
-    "image": "",
+    "image": "https://ipfs.io/ipfs/Qmegm71SQhYk9tjVJH3BfefNFGVpozW76gQmhfWqh5urSd",
     "description": "this is to certify that the recipient attended the blockchain workshop seminar",
     "attributes": [
         {

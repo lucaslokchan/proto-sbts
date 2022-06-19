@@ -2,7 +2,7 @@
 	"type": "university degree",
 	"issuer": "lumbbrugh university",
 	"title": "lumbburgh university graduate token",
-    "image": "",
+    "image": "https://ipfs.io/ipfs/QmVctnn93hVETEP2fcBxgGdwr36vuaV2jQF3pro3CLBxm3",
     "description": "an award conferred by lumbburgh university signifying that the recipent has satisfactorily completed a course of study",
     "attributes": [
         {

@@ -2,7 +2,7 @@
 	"type": "access right",
 	"issuer": "science lab",
 	"title": "science lab access token",
-    "image": "",
+    "image": "https://ipfs.io/ipfs/QmUe6G7x4D8wSfqkNMnNNcVPrTwSPYo8X7ygVeSpx8xeuM",
     "description": "science lab property access rights",
     "attributes": [
         {

@@ -31,20 +31,25 @@ http://localhost:3000
 # Tech Stack
 
 Solidity
+
 Remix IDE
+
 web3.js
+
 next.js
+
 MetaMask
+
 Figma
 
 # SBT Examples
 <p float="left">
-  <img src="sbt_metadata/university_degree.png" width="200"/>
-  <img src="sbt_metadata/award.png" width="200"/>
-  <img src="sbt_metadata/property_right_access.png" width="200"/>
+  <img src="sbt_metadata/image/university_degree.png" width="200"/>
+  <img src="sbt_metadata/image/award.png" width="200"/>
+  <img src="sbt_metadata/image/property_right_access.png" width="200"/>
 </p>
 <p float="left">
-  <img src="sbt_metadata/certificate_of_attendance.png" width="200"/>
-  <img src="sbt_metadata/property_right_data_cooperatives.png" width="200"/>
-  <img src="sbt_metadata/membership.png" width="200"/>
+  <img src="sbt_metadata/image/certificate_of_attendance.png" width="200"/>
+  <img src="sbt_metadata/image/property_right_data_cooperatives.png" width="200"/>
+  <img src="sbt_metadata/image/membership.png" width="200"/>
 </p>

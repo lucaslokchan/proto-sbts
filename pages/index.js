@@ -92,12 +92,12 @@ const sbt = () => {
         </section>
         <section>
             <div className="container">
-                <img src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/image/sbt/university_degree.png" width="200"></img>
-                <img src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/image/sbt/award.png" width="200"></img>
-                <img src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/image/sbt/property_right_access.png" width="200"></img>
-                <img src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/image/sbt/certificate_of_attendence.png" width="200"></img>
-                <img src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/image/sbt/property_right_data_cooperatives.png" width="200"></img>
-                <img src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/image/sbt/membership.png" width="200"></img>
+                <img src="https://ipfs.io/ipfs/QmV2xtiLjjWAafJNh3UbcQk17tQYD4eczmLKbfVeEvk9fm" width="200"></img>
+                <img src="https://ipfs.io/ipfs/Qmegm71SQhYk9tjVJH3BfefNFGVpozW76gQmhfWqh5urSd" width="200"></img>
+                <img src="https://ipfs.io/ipfs/QmSZzstHUUsze5LNFd76q9L8KGqtNaBy9HR83jC6V8amSV" width="200"></img>
+                <img src="https://ipfs.io/ipfs/QmUe6G7x4D8wSfqkNMnNNcVPrTwSPYo8X7ygVeSpx8xeuM" width="200"></img>
+                <img src="https://ipfs.io/ipfs/QmQzbtZV6VCU2to86f68v21LcmLxsU2m7bFEd5uLWKkeS9" width="200"></img>
+                <img src="https://ipfs.io/ipfs/QmQzbtZV6VCU2to86f68v21LcmLxsU2m7bFEd5uLWKkeS9" width="200"></img>
             </div>
         </section>
         <section>
@@ -113,7 +113,7 @@ const sbt = () => {
                 
             </div>
         </section>
-        <footer class="footer">
+        <footer className="footer">
             <div className="content has-text-centered">
                 <p><strong>© 2022 Lucas Chan</strong> </p>
                 <p><a href="https://github.com/lucaslokchan/proto-sbts">Github</a> |  
