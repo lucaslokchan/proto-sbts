@@ -8,7 +8,7 @@
         {
             "trait_type": "level",
             "value": "category a",
-			"rights": "permission access to data in a way where certain computations can be made",
-        },
+			"rights": "permission access to data in a way where certain computations can be made"
+        }
     ]
 }

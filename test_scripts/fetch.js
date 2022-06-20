@@ -7,7 +7,7 @@ fetch(url)
 
 
 async function fetchAPI() {
-    const response = await fetch('https://ipfs.io/ipfs/QmcqvyCNH4i7k43N3qeaZZH2rtSPCeprfUXrtFSrTQHpbx');
+    const response = await fetch('https://ipfs.io/ipfs/QmUKYnrC1SRdijKpP1hEx4Q3Eon8qF1GQVZ3cktydTM7rW');
     return response.json()
 }
 

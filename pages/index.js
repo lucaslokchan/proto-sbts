@@ -71,6 +71,7 @@ const sbt = () => {
         <section>
             <div className="container">
                 <p>Contract Address: <a href="https://ropsten.etherscan.io/address/0x7CfDF10b930fd61E65243e62515B24dA28792ae7">0x7CfDF10b930fd61E65243e62515B24dA28792ae7</a></p>
+                <p>New Contract Address: <a href="https://ropsten.etherscan.io/address/0xAab2d8b6F6D3eE17510c87111e1563a4611FfFb2">0xAab2d8b6F6D3eE17510c87111e1563a4611FfFb2</a></p>
             </div>
         </section>
         <section>
@@ -96,8 +97,8 @@ const sbt = () => {
                 <img src="https://ipfs.io/ipfs/Qmegm71SQhYk9tjVJH3BfefNFGVpozW76gQmhfWqh5urSd" width="200"></img>
                 <img src="https://ipfs.io/ipfs/QmSZzstHUUsze5LNFd76q9L8KGqtNaBy9HR83jC6V8amSV" width="200"></img>
                 <img src="https://ipfs.io/ipfs/QmUe6G7x4D8wSfqkNMnNNcVPrTwSPYo8X7ygVeSpx8xeuM" width="200"></img>
-                <img src="https://ipfs.io/ipfs/QmQzbtZV6VCU2to86f68v21LcmLxsU2m7bFEd5uLWKkeS9" width="200"></img>
-                <img src="https://ipfs.io/ipfs/QmQzbtZV6VCU2to86f68v21LcmLxsU2m7bFEd5uLWKkeS9" width="200"></img>
+                <img src="https://ipfs.io/ipfs/QmVctnn93hVETEP2fcBxgGdwr36vuaV2jQF3pro3CLBxm3" width="200"></img>
+                <img src="https://ipfs.io/ipfs/QmYpAkxHPyW5tS66uhZRCymu4fsPQJwb1quzm2Rkf5tWZy" width="200"></img>
             </div>
         </section>
         <section>

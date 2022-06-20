@@ -7,11 +7,11 @@
     "attributes": [
         {
             "trait_type": "category",
-            "value": "investigative reporting",
+            "value": "investigative reporting"
         },
 		{
             "trait_type": "year",
-            "value": 2022,
-        },
+            "value": 2022
+        }
     ]
 }
