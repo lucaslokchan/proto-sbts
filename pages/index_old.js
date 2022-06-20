@@ -12,7 +12,6 @@ const sbt = () => {
     const [uri, setURI] = useState('')
     const [desc, setDesc] = useState('')
     const [image, setImage] = useState('')
-    const [tokenowned, setTokenOwned] = useState('')
 
     let url = 'https://ipfs.io/ipfs/' + uri
 
@@ -29,38 +28,11 @@ const sbt = () => {
         connectwalletHandler()
         fetchURI().then(response => setDesc(JSON.stringify(response)))
         fetchURI().then(response => setImage(response['image']))
-        setAddress(ethereum.selectedAddress)
     })
-
-    useEffect(() => {
-        getTokenOwnedHandler().then(response => setTokenOwned(response))       
-    }, [])
-
-    //refresh page when wallet address changes
-    useEffect(() => {
-        if (window.ethereum) {
-          window.ethereum.on("chainChanged", () => {
-            window.location.reload();
-          });
-          window.ethereum.on("accountsChanged", () => {
-            window.location.reload();
-          });
-        }
-      });
 
     const getSBTHandler = async () => {
         const uri = await sbtContract.methods.tokenURI(0).call()
         setURI(uri)
-    }
-
-    const getTokenOwnedHandler = async () => {
-        var tokenid = new Array();
-        const balance = await sbtContract.methods.balanceOf(ethereum.selectedAddress).call((err, result) => { return result });
-        for (let i = 0; i < balance; i++) {
-            let id = await sbtContract.methods.tokenOfOwnerByIndex(ethereum.selectedAddress, i).call()
-            tokenid[i] = id
-        }
-        return tokenid
     }
 
     //window.ethereum
@@ -110,6 +82,7 @@ const sbt = () => {
         <section>
             <div className="container">
                 <p>Wallet Address: {address}</p>
+                <img src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/image/diagram.png"></img>
                 <button onClick={connectwalletHandler} className="button is-primary">Request Degree</button>
                 <button onClick={connectwalletHandler} className="button is-primary">Request Award</button>
                 <button onClick={connectwalletHandler} className="button is-primary">Request Property Access Right</button>
@@ -134,7 +107,6 @@ const sbt = () => {
                 <p>{url}</p>
                 <p>Description: {desc}</p>
                 <img src={image}/>
-                <p>Token Owned: {tokenowned}</p>
             </div>
         </section>
         <section>

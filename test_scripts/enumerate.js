@@ -12,16 +12,16 @@ var sbt = new web3.eth.Contract(sbt_abi, sbt_address)
 
 //get balance of a particular address and loop tokenOfOwnerByIndex with blanace; store tokenids in an array
 //index[0] = token id of 0th token owned by a partifular address 
-async function ownedtoken() {
+async function ownedTokens() {
   var tokenid = new Array();
   const balance = await sbt.methods.balanceOf(address).call((err, result) => { return result });
   //const a = await balance;
   for (let i = 0; i < balance; i++) {
       let id = await sbt.methods.tokenOfOwnerByIndex(address, i).call()
       tokenid[i] = id
-      
   }
+  //return tokenid
   console.log(tokenid)
 }
 
-ownedtoken()
+ownedTokens()
