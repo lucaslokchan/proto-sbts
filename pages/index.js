@@ -13,6 +13,7 @@ const sbt = () => {
     const [desc, setDesc] = useState('')
     const [image, setImage] = useState('')
     const [tokenowned, setTokenOwned] = useState('')
+    const [buttontext, setButtonText] = useState('Connect Wallet')
 
     let url = 'https://ipfs.io/ipfs/' + uri
 
@@ -30,10 +31,13 @@ const sbt = () => {
         fetchURI().then(response => setDesc(JSON.stringify(response)))
         fetchURI().then(response => setImage(response['image']))
         setAddress(ethereum.selectedAddress)
+        setButtonText(ethereum.selectedAddress)
     })
 
     useEffect(() => {
-        getTokenOwnedHandler().then(response => setTokenOwned(response))       
+        if (ethereum.selectedAddress != null) {
+            getTokenOwnedHandler().then(response => setTokenOwned(response)) 
+        }   
     }, [])
 
     //refresh page when wallet address changes
@@ -43,8 +47,14 @@ const sbt = () => {
             window.location.reload();
           });
           window.ethereum.on("accountsChanged", () => {
-            window.location.reload();
+            //window.location.reload();
+            setAddress(ethereum.selectedAddress)
+            getTokenOwnedHandler().then(response => setTokenOwned(response))
+            setButtonText(ethereum.selectedAddress)
           });
+        }
+        if (ethereum.selectedAddress == null) {
+            setButtonText("Connect Wallet")
         }
       });
 
@@ -86,16 +96,50 @@ const sbt = () => {
             <title>Soulbound Token</title>
             <meta name="description" content="Claim you Soulbound Token" />
         </Head>
+
         <navbar className="navbar mt-4 mb-4">
             <div className="container">
                 <div className="navbar-brand">
                     <h1>Soulbound Token</h1>
                 </div>
                 <div className="navbar-end">
-                    <button onClick={connectwalletHandler} className="button is-primary">Connect Wallet</button>
+                    <button onClick={connectwalletHandler} className="button is-primary">{buttontext}</button>
                 </div>
             </div>
         </navbar>
+        
+        <div class="hero-body">
+            <div class="container has-text-left">
+                <div class="columns">
+                    <div class="column is-5">
+                        <h1 class="title is-2">
+                            Soulbound Token
+                        </h1>
+                        <h2 class="subtitle is-4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad.
+                        </h2>
+                    </div>
+
+                    <div class="column is-6 is-offset-1">
+                        <h1 class="title is-2">
+                            Stats
+                        </h1>
+                        <h2 class="subtitle is-4">
+                            Wallet Address: {address}
+                        </h2>
+                        <h2 class="subtitle is-4">
+                            SBTs Owned: {tokenowned}
+                        </h2>
+                        <p class="has-text-centered">
+                            <a class="button is-medium is-info is-outlined">
+                                Learn more
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <section>
             <div className="container">
                 <p>Contract Address: <a href="https://ropsten.etherscan.io/address/0x7CfDF10b930fd61E65243e62515B24dA28792ae7">0x7CfDF10b930fd61E65243e62515B24dA28792ae7</a></p>
