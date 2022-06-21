@@ -20,8 +20,8 @@ async function ownedTokens() {
       let id = await sbt.methods.tokenOfOwnerByIndex(address, i).call()
       tokenid[i] = id
   }
-  //return tokenid
-  console.log(tokenid)
+  return tokenid
+  //console.log(tokenid)
 }
 
-ownedTokens()
+token = ownedTokens().then(response => {console.log(response)})
