@@ -4,7 +4,6 @@ import styles from '../styles/SBT.module.css'
 import Web3 from 'web3'
 import { useState, useEffect } from 'react'
 import sbtContract from '../sbt'
-import cards from '../styles/CARDS.module.css'
 
 const sbt = () => {
     //state hook for storing error message in error variable
@@ -119,7 +118,7 @@ const sbt = () => {
             </div>
         </navbar>
         
-        <div class="hero-body" style={{ height:"70vh" }}>
+        <div class="hero-body">
             <div class="container has-text-left">
                 <div class="columns">
                     <div class="column is-5">
@@ -149,18 +148,20 @@ const sbt = () => {
             </div>
         </div>
 
-        <div className={cards.div_container}>
+        <div className="container">
             {tokenowned.map(token => {
                 return (
-                    <div className={cards.div_style}>
+                    <div>
                         {[token].map(tokeninfo => {
                             return(
                                 <div>
+                                    <p>--------------------------------------------</p>
                                     <img src={tokeninfo.image} width="150"/>
                                     <p>{tokeninfo.type}</p>
                                     <p>{tokeninfo.issuer}</p>
                                     <p>{tokeninfo.title}</p>
                                     <p>{tokeninfo.description}</p>
+                                    <p>{JSON.stringify(tokeninfo)}</p>
                                 </div>
                             )
                         })}
@@ -198,7 +199,30 @@ const sbt = () => {
                 <button onClick={connectwalletHandler} className="button is-primary">Request Membership</button>
             </div>
         </section>
-
+        <section>
+            <div className="container">
+                <img src="https://ipfs.io/ipfs/QmV2xtiLjjWAafJNh3UbcQk17tQYD4eczmLKbfVeEvk9fm" width="200"></img>
+                <img src="https://ipfs.io/ipfs/Qmegm71SQhYk9tjVJH3BfefNFGVpozW76gQmhfWqh5urSd" width="200"></img>
+                <img src="https://ipfs.io/ipfs/QmSZzstHUUsze5LNFd76q9L8KGqtNaBy9HR83jC6V8amSV" width="200"></img>
+                <img src="https://ipfs.io/ipfs/QmUe6G7x4D8wSfqkNMnNNcVPrTwSPYo8X7ygVeSpx8xeuM" width="200"></img>
+                <img src="https://ipfs.io/ipfs/QmVctnn93hVETEP2fcBxgGdwr36vuaV2jQF3pro3CLBxm3" width="200"></img>
+                <img src="https://ipfs.io/ipfs/QmYpAkxHPyW5tS66uhZRCymu4fsPQJwb1quzm2Rkf5tWZy" width="200"></img>
+            </div>
+        </section>
+        <section>
+            <div className="container">
+                <p>SBT URI: {uri}</p>
+                <p>{url}</p>
+                <p>Description: {desc}</p>
+                <img src={image}/>
+                <p>Token Owned: {tokenowned.length}</p>
+            </div>
+        </section>
+        <section>
+            <div className="container">
+                
+            </div>
+        </section>
         <footer className="footer">
             <div className="content has-text-centered">
                 <p><strong>© 2022 Lucas Chan</strong> </p>

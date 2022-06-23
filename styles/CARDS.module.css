@@ -1,0 +1,20 @@
+.div_container {
+    display: grid;
+    justify-content: left;
+    flex-wrap: wrap;
+    margin-right: 280px;
+    margin-left: 280px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .div_container>.div_style {
+    margin-bottom: 50px;
+    width: 400px;
+    height: 500px;
+  }
+  
+  .div_style {
+    background-color: #E4E4E4;
+    border: 1px solid #000;
+  }
+

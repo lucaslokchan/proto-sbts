@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import 'bulma/css/bulma.css'
 import styles from '../styles/SBT.module.css'
+import cards from '../styles/CARDS.module.css'
 import Web3 from 'web3'
 import { useState, useEffect } from 'react'
 import sbtContract from '../sbt'
@@ -107,7 +108,45 @@ const sbt = () => {
                     </div>
                 )
             })}
-        </div></>
+        </div>
+
+        <div className={cards.div_container}>
+            {tokenowned.map(token => {
+                return (
+                    <div className={cards.div_style}>
+                        {[token].map(tokeninfo => {
+                            return(
+                                <div>
+                                    <img src={tokeninfo.image} width="150"/>
+                                    <p>{tokeninfo.type}</p>
+                                    <p>{tokeninfo.issuer}</p>
+                                    <p>{tokeninfo.title}</p>
+                                    <p>{tokeninfo.description}</p>
+                                </div>
+                            )
+                        })}
+                    </div>
+                )
+            })}
+        </div>
+        
+        <div className={cards.div_container}>
+            <div className={cards.div_style}>12321311111111111111</div>
+            <div className={cards.div_style}>2</div>
+            <div className={cards.div_style}>3</div>
+            <div className={cards.div_style}>4</div>
+            <div className={cards.div_style}>5</div>
+            <div className={cards.div_style}>6</div>
+            <div className={cards.div_style}>7</div>
+            <div className={cards.div_style}>8</div>
+            <div className={cards.div_style}>9</div>
+            <div className={cards.div_style}>10</div>
+            <div className={cards.div_style}>11</div>
+            <div className={cards.div_style}>12</div>
+        </div>
+        
+        
+        </>
 
         )
 }
