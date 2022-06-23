@@ -3,7 +3,7 @@ import 'bulma/css/bulma.css'
 import styles from '../styles/SBT.module.css'
 import Web3 from 'web3'
 import { useState, useEffect } from 'react'
-import sbtContract from '../sbt'
+import sbtContract from '../../sbt'
 
 const sbt = () => {
     //state hook for storing error message in error variable
@@ -12,8 +12,6 @@ const sbt = () => {
     const [uri, setURI] = useState('')
     const [desc, setDesc] = useState('')
     const [image, setImage] = useState('')
-    const [tokenowned, setTokenOwned] = useState([])
-    const [buttontext, setButtonText] = useState('Connect Wallet')
 
     let url = 'https://ipfs.io/ipfs/' + uri
 
@@ -30,57 +28,11 @@ const sbt = () => {
         connectwalletHandler()
         fetchURI().then(response => setDesc(JSON.stringify(response)))
         fetchURI().then(response => setImage(response['image']))
-        setAddress(ethereum.selectedAddress)
-        setButtonText(ethereum.selectedAddress)
     })
-
-    useEffect(() => {
-        if (ethereum.selectedAddress != null) {
-            getTokenOwnedHandler().then(response => setTokenOwned(response)) 
-        }   
-    }, [])
-
-    //refresh page when wallet address changes
-    useEffect(() => {
-        if (window.ethereum) {
-          window.ethereum.on("chainChanged", () => {
-            window.location.reload();
-          });
-          window.ethereum.on("accountsChanged", () => {
-            //window.location.reload();
-            setAddress(ethereum.selectedAddress)
-            getTokenOwnedHandler().then(response => setTokenOwned(response))
-            setButtonText(ethereum.selectedAddress)
-          });
-        }
-        if (ethereum.selectedAddress == null) {
-            setButtonText("Connect Wallet")
-        }
-      });
 
     const getSBTHandler = async () => {
         const uri = await sbtContract.methods.tokenURI(0).call()
         setURI(uri)
-    }
-
-    const getTokenOwnedHandler = async () => {
-        var tokenid = new Array();
-        var urilist = new Array();
-        var responselist = new Array();
-        const balance = await sbtContract.methods.balanceOf(ethereum.selectedAddress).call((err, result) => { return result });
-        for (let i = 0; i < balance; i++) {
-            let id = await sbtContract.methods.tokenOfOwnerByIndex(ethereum.selectedAddress, i).call()
-            tokenid[i] = id
-        }
-        for (let i = 0; i < tokenid.length; i++) {
-            let uri = await sbtContract.methods.tokenURI(tokenid[i]).call()
-            urilist[i] = uri
-        }
-        for (let i = 0; i < urilist.length; i++) {
-            let response = await fetch(url + urilist[i]).then(data => data.json());
-            responselist.push(response)
-        }
-        return responselist
     }
 
     //window.ethereum
@@ -106,79 +58,16 @@ const sbt = () => {
             <title>Soulbound Token</title>
             <meta name="description" content="Claim you Soulbound Token" />
         </Head>
-
         <navbar className="navbar mt-4 mb-4">
             <div className="container">
                 <div className="navbar-brand">
                     <h1>Soulbound Token</h1>
                 </div>
                 <div className="navbar-end">
-                    <button onClick={connectwalletHandler} className="button is-primary">{buttontext}</button>
+                    <button onClick={connectwalletHandler} className="button is-primary">Connect Wallet</button>
                 </div>
             </div>
         </navbar>
-        
-        <div class="hero-body">
-            <div class="container has-text-left">
-                <div class="columns">
-                    <div class="column is-5">
-                        <h1 class="title is-2">
-                            Soulbound Token
-                        </h1>
-                        <h2 class="subtitle is-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad.
-                        </h2>
-                    </div>
-
-                    <div class="column is-6 is-offset-1">
-                        <h1 class="title is-2">
-                            Stats
-                        </h1>
-                        <h2 class="subtitle is-4">
-                            Wallet Address: {address}
-                        </h2>
-                        <h2 class="subtitle is-4">
-                            SBTs Owned: {tokenowned.length}
-                        </h2>
-                        <p class="has-text-centered">
-                            <a class="button is-medium is-info is-outlined">
-                                Learn more
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div className="container">
-            {tokenowned.map(token => {
-                return (
-                    <div>
-                        {[token].map(tokeninfo => {
-                            return(
-                                <div>
-                                    <p>--------------------------------------------</p>
-                                    <img src={tokeninfo.image} width="150"/>
-                                    <p>{tokeninfo.type}</p>
-                                    <p>{tokeninfo.issuer}</p>
-                                    <p>{tokeninfo.title}</p>
-                                    <p>{tokeninfo.description}</p>
-                                    <p>{JSON.stringify(tokeninfo)}</p>
-                                </div>
-                            )
-                        })}
-                    </div>
-                )
-            })}
-        </div>
-
-
-
-
-
-
-
-
         <section>
             <div className="container">
                 <p>Contract Address: <a href="https://ropsten.etherscan.io/address/0x7CfDF10b930fd61E65243e62515B24dA28792ae7">0x7CfDF10b930fd61E65243e62515B24dA28792ae7</a></p>
@@ -193,6 +82,7 @@ const sbt = () => {
         <section>
             <div className="container">
                 <p>Wallet Address: {address}</p>
+                <img src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/image/diagram.png"></img>
                 <button onClick={connectwalletHandler} className="button is-primary">Request Degree</button>
                 <button onClick={connectwalletHandler} className="button is-primary">Request Award</button>
                 <button onClick={connectwalletHandler} className="button is-primary">Request Property Access Right</button>
@@ -217,7 +107,6 @@ const sbt = () => {
                 <p>{url}</p>
                 <p>Description: {desc}</p>
                 <img src={image}/>
-                <p>Token Owned: {tokenowned.length}</p>
             </div>
         </section>
         <section>

@@ -3,7 +3,7 @@ import 'bulma/css/bulma.css'
 import styles from '../styles/SBT.module.css'
 import Web3 from 'web3'
 import { useState, useEffect } from 'react'
-import sbtContract from '../sbt'
+import sbtContract from '../../sbt'
 
 const sbt = () => {
     //state hook for storing error message in error variable
@@ -42,23 +42,6 @@ const sbt = () => {
         //console.log(responselist[1])
         //console.log(typeof(responselist))
     }
-
-    //Simplified Code
-    //const getTokenOwnedHandler = async () => {
-    //    var tokenid = new Array();
-    //    var urilist = new Array();
-    //    var responselist = new Array();
-    //    const balance = await sbtContract.methods.balanceOf(address).call((err, result) => { return result });
-    //    for (let i = 0; i < balance; i++) {
-    //        let id = await sbtContract.methods.tokenOfOwnerByIndex(address, i).call()
-    //        tokenid[i] = id
-    //        let uri = await sbtContract.methods.tokenURI(tokenid[i]).call()
-    //        urilist[i] = uri
-    //        let response = await fetch(url + urilist[i]).then(data => data.json());
-    //        responselist.push(response)
-    //    }
-    //    return responselist
-    //}
 
     //How to navigate through the array to get e.g. description, title?
     //let aaa = tokenowned
