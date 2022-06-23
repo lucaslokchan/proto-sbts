@@ -91,10 +91,6 @@ const sbt = () => {
         return responselist
     }
 
-    function requestSBTHandler() {
-        sbtContract.methods.requestSBT(ethereum.selectedAddress, "QmTsyBd5b1963UvAoBH1vR15Q5Kdkq43g9VR4wWc2W2bvU").send({ from: ethereum.selectedAddress })
-    }
-
     //window.ethereum
     const connectwalletHandler = async () => {
         if (typeof window.ethereum !== 'undefined') {
@@ -111,6 +107,10 @@ const sbt = () => {
               //metamask not installed
               setError("Please install MetaMask")
           }
+    }
+
+    function requestSBTHandler() {
+        sbtContract.methods.requestSBT(ethereum.selectedAddress, "QmTsyBd5b1963UvAoBH1vR15Q5Kdkq43g9VR4wWc2W2bvU").send({ from: ethereum.selectedAddress })
     }
     return (
         <div className={styles.main}>
@@ -129,82 +129,12 @@ const sbt = () => {
                 </div>
             </div>
         </navbar>
-        
-        <div class="hero-body" style={{ height:"70vh" }}>
-            <div class="container has-text-left">
-                <div class="columns">
-                    <div class="column is-5">
-                        <h1 class="title is-2">
-                            Soulbound Token
-                        </h1>
-                        <h2 class="subtitle is-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad.
-                        </h2>
-                        <h2 class="subtitle is-6">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                        </h2>
-                        <div>
-                            <button onClick={requestSBTHandler} className="button">Request SBT</button>
-                        </div>
-                    </div>
 
-                    <div class="column is-6 is-offset-1">
-                        <h1 class="title is-2">
-                            Stats
-                        </h1>
-                        <h2 class="subtitle is-4">
-                            Contract Address: <a href = "https://ropsten.etherscan.io/address/0xAab2d8b6F6D3eE17510c87111e1563a4611FfFb2">0xAab2....fFb2</a>
-                        </h2>
-                        <h2 class="subtitle is-4">
-                            SBTs Owned: {tokenowned.length}
-                        </h2>
-                        <h2 class="subtitle is-4">
-                            Total Supply: {totalsupply}
-                        </h2>
-                        <select id="change_chart">
-                            <option value="1" selected>University Degree</option>
-                            <option value="2">Certificate of Attendance</option>
-                            <option value="3">sunspots</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
+        <div>
+            <button onClick={requestSBTHandler} className="button">Request SBT</button>
         </div>
 
-        <div className={cards.div_container}>
-            {tokenowned.map(token => {
-                return (
-                    <div className={cards.div_style}>
-                        {[token].map(tokeninfo => {
-                            return(
-                                <div>
-                                    <img src={tokeninfo.image} width="150"/>
-                                    <p>{tokeninfo.type}</p>
-                                    <p>{tokeninfo.issuer}</p>
-                                    <p>{tokeninfo.title}</p>
-                                    <p>{tokeninfo.description}</p>
-                                </div>
-                            )
-                        })}
-                    </div>
-                )
-            })}
-        </div>
 
-        <section>
-            <div className="container has-text-danger">
-                <p>{error}</p>
-            </div>
-        </section>
-
-        <footer className="footer">
-            <div className="content has-text-centered">
-                <p><strong>© 2022 Lucas Chan</strong> </p>
-                <p><a href="https://github.com/lucaslokchan/proto-sbts">Github</a> |  
-                   <a href="https://www.linkedin.com/in/lucaslokchan/"> Linkedln</a> 
-                </p>
-            </div>
-        </footer>
       </div>
       
         )
