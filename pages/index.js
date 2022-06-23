@@ -162,9 +162,13 @@ const sbt = () => {
                             Total Supply: {totalsupply}
                         </h2>
                         <select id="change_chart">
-                            <option value="1" selected>University Degree</option>
-                            <option value="2">Certificate of Attendance</option>
-                            <option value="3">sunspots</option>
+                            <option value="" disabled selected>Select Token Type</option>
+                            <option value="1" >University Degree</option>
+                            <option value="2">Award</option>
+                            <option value="3">Property Right - Access</option>
+                            <option value="4">Certificate of Attendence</option>
+                            <option value="5">Property Right - Data Cooperatives</option>
+                            <option value="6">Membership</option>
                         </select>
                     </div>
                 </div>
