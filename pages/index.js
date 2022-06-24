@@ -112,6 +112,10 @@ const sbt = () => {
               setError("Please install MetaMask")
           }
     }
+
+    function dropdownChangeHandler(e) {
+        
+    }
     return (
         <div className={styles.main}>
          <Head>
@@ -143,9 +147,6 @@ const sbt = () => {
                         <h2 class="subtitle is-6">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                         </h2>
-                        <div>
-                            <button onClick={requestSBTHandler} className="button">Request SBT</button>
-                        </div>
                     </div>
 
                     <div class="column is-6 is-offset-1">
@@ -161,11 +162,18 @@ const sbt = () => {
                         <h2 class="subtitle is-4">
                             Total Supply: {totalsupply}
                         </h2>
-                        <select id="change_chart">
-                            <option value="1" selected>University Degree</option>
+                        <select onChange={dropdownChangeHandler}>
+                            <option value="" disabled selected>Select Token</option>
+                            <option value="1">University Degree</option>
                             <option value="2">Certificate of Attendance</option>
-                            <option value="3">sunspots</option>
+                            <option value="3">Membership</option>
+                            <option value="4">Access Right - Property</option>
+                            <option value="5">Access Right - Data Cooperatives</option>
+                            <option value="6">Certificate of Attendance</option>
                         </select>
+                        <div>
+                            <button onClick={requestSBTHandler} className="button">Request SBT</button>
+                        </div>
                     </div>
                 </div>
             </div>
