@@ -92,7 +92,7 @@ const sbt = () => {
     }
 
     function requestSBTHandler() {
-        sbtContract.methods.requestSBT(ethereum.selectedAddress, "QmTsyBd5b1963UvAoBH1vR15Q5Kdkq43g9VR4wWc2W2bvU").send({ from: ethereum.selectedAddress })
+        sbtContract.methods.requestSBT(ethereum.selectedAddress, "Qmb83Yba9YvGtouAbBSgD7RQyXyuyp1Vv62Rd3dqKyoaHz").send({ from: ethereum.selectedAddress })
     }
 
     //window.ethereum
