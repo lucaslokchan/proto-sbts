@@ -3,7 +3,7 @@
 	"issuer": "membership club",
 	"title": "membership club membership token",
     "image": "https://ipfs.io/ipfs/QmSZzstHUUsze5LNFd76q9L8KGqtNaBy9HR83jC6V8amSV",
-    "description": "holder of this token is a membership of membership club",
+    "description": "holder of this token is a member of membership club",
     "attributes": [
         {
             "trait_type": "tier",
