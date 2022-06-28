@@ -134,32 +134,32 @@ const Sbt = () => {
             </div>
         </navbar>
         
-        <div class="hero-body" style={{ height:"70vh" }}>
-            <div class="container has-text-left">
-                <div class="columns">
-                    <div class="column is-5">
-                        <h1 class="title is-2">
+        <div className="hero-body" style={{ height:"70vh" }}>
+            <div className="container has-text-left">
+                <div className="columns">
+                    <div className="column is-5">
+                        <h1 className="title is-2">
                             Soulbound Token
                         </h1>
-                        <h2 class="subtitle is-4">
+                        <h2 className="subtitle is-4">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad.
                         </h2>
-                        <h2 class="subtitle is-6">
+                        <h2 className="subtitle is-6">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                         </h2>
                     </div>
 
-                    <div class="column is-6 is-offset-1">
-                        <h1 class="title is-2">
+                    <div className="column is-6 is-offset-1">
+                        <h1 className="title is-2">
                             Stats
                         </h1>
-                        <h2 class="subtitle is-4">
+                        <h2 className="subtitle is-4">
                             Contract Address: <a href = "https://ropsten.etherscan.io/address/0xAab2d8b6F6D3eE17510c87111e1563a4611FfFb2">0xAab2....fFb2</a>
                         </h2>
-                        <h2 class="subtitle is-4">
+                        <h2 className="subtitle is-4">
                             SBTs Owned: {tokenowned.length}
                         </h2>
-                        <h2 class="subtitle is-4">
+                        <h2 className="subtitle is-4">
                             Total Supply: {totalsupply}
                         </h2>
                         <select onChange={dropdownChangeHandler}>
