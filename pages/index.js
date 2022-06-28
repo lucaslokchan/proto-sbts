@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import sbtContract from '../sbt'
 import cards from '../styles/CARDS.module.css'
 
-const sbt = () => {
+const Sbt = () => {
     //state hook for storing error message in error variable
     const [error, setError] = useState('')
     const [address, setAddress] = useState('')
@@ -218,4 +218,4 @@ const sbt = () => {
         )
 }
 
-export default sbt
+export default Sbt
