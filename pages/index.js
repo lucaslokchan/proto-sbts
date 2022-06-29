@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import 'bulma/css/bulma.css'
+
 import styles from '../styles/SBT.module.css'
 import Web3 from 'web3'
 import { useState, useEffect } from 'react'
@@ -123,13 +123,13 @@ const Sbt = () => {
             <meta name="description" content="Claim you Soulbound Token" />
         </Head>
 
-        <navbar className="navbar mt-4 mb-4">
+        <navbar className="flex flex-wrap items-center justify-between p-6 bg-teal-500">
             <div className="container">
                 <div className="navbar-brand">
                     <h1>Soulbound Token</h1>
                 </div>
                 <div className="navbar-end">
-                    <button onClick={connectwalletHandler} className="button is-primary">{buttontext}</button>
+                    <button onClick={connectwalletHandler} className="flex items-center px-3 py-2 text-teal-200 border border-teal-400 rounded hover:text-white hover:border-white">{buttontext}</button>
                 </div>
             </div>
         </navbar>

@@ -16,7 +16,7 @@ Copy files from proto-sbts into soulbound-token folder
 
 cd soulbound-token
 
-npm i bulma
+npm install -D tailwindcss postcss autoprefixer
 
 npm i web3
 
