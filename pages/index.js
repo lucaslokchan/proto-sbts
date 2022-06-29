@@ -29,7 +29,7 @@ const Sbt = () => {
     useEffect(() => {
         getSBTHandler()
         //fetchURI().then(response => setDesc(response['description']))
-        connectwalletHandler()
+        //connectwalletHandler()
         //fetchURI().then(response => setDesc(JSON.stringify(response)))
         //fetchURI().then(response => setImage(response['image']))
         setAddress(ethereum.selectedAddress)
