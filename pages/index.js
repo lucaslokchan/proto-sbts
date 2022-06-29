@@ -162,8 +162,8 @@ const Sbt = () => {
                         <h2 className="subtitle is-4">
                             Total Supply: {totalsupply}
                         </h2>
-                        <select onChange={dropdownChangeHandler}>
-                            <option value="" disabled selected>Select Token</option>
+                        <select defaultValue={"DEFAULT"} onChange={dropdownChangeHandler}>
+                            <option value="DEFAULT" disabled>Select Token</option>
                             <option value="1">University Degree</option>
                             <option value="2">Certificate of Attendance</option>
                             <option value="3">Membership</option>
