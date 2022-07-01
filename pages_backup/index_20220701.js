@@ -97,7 +97,7 @@ const Sbt = () => {
     }
 
     function requestSBTHandler() {
-        sbtContract.methods.requestSBT(ethereum.selectedAddress, "QmUKYnrC1SRdijKpP1hEx4Q3Eon8qF1GQVZ3cktydTM7rW").send({ from: ethereum.selectedAddress })
+        sbtContract.methods.requestSBT(ethereum.selectedAddress, "Qmb83Yba9YvGtouAbBSgD7RQyXyuyp1Vv62Rd3dqKyoaHz").send({ from: ethereum.selectedAddress })
     }
 
     //window.ethereum
@@ -133,7 +133,7 @@ const Sbt = () => {
             </navbar>
 
             <div className="border-1">
-                <div className='grid grid-cols-1 md:grid-cols-2'>
+                <div className='flex-initial flex-row items-start space-x-2'>
                     <div>
                         <h1>
                             Request Token
@@ -148,21 +148,9 @@ const Sbt = () => {
                             <option value="6">Certificate of Attendance</option>
                         </select>
                         <button onClick={requestSBTHandler} className="button">Request SBT</button>
-                        <h1>
-                            Burn Token
-                        </h1>
-                        <select defaultValue={"DEFAULT"} onChange={dropdownChangeHandler}>
-                            <option value="DEFAULT" disabled>Select Token</option>
-                            <option value="1">University Degree</option>
-                            <option value="2">Certificate of Attendance</option>
-                            <option value="3">Membership</option>
-                            <option value="4">Access Right - Property</option>
-                            <option value="5">Access Right - Data Cooperatives</option>
-                            <option value="6">Certificate of Attendance</option>
-                        </select>
                     </div>
 
-                    <div className="h-fit">
+                    <div style={{ height: "70vh" }}>
                         <h1 className="title is-2">
                             Stats
                         </h1>
@@ -175,8 +163,38 @@ const Sbt = () => {
                         <h2 className="subtitle is-4">
                             Total Supply: {totalsupply}
                         </h2>
+                        <select defaultValue={"DEFAULT"} onChange={dropdownChangeHandler}>
+                            <option value="DEFAULT" disabled>Select Token</option>
+                            <option value="1">University Degree</option>
+                            <option value="2">Certificate of Attendance</option>
+                            <option value="3">Membership</option>
+                            <option value="4">Access Right - Property</option>
+                            <option value="5">Access Right - Data Cooperatives</option>
+                            <option value="6">Certificate of Attendance</option>
+                        </select>
+                        <button onClick={requestSBTHandler} className="button">Request SBT</button>
                     </div>
                 </div>
+            </div>
+
+            <div className={cards.div_container}>
+                {tokenowned.map(token => {
+                    return (
+                        <div className={cards.div_style}>
+                            {[token].map(tokeninfo => {
+                                return (
+                                    <div>
+                                        <img src={tokeninfo.image} width="150" />
+                                        <p>{tokeninfo.type}</p>
+                                        <p>{tokeninfo.issuer}</p>
+                                        <p>{tokeninfo.title}</p>
+                                        <p>{tokeninfo.description}</p>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    )
+                })}
             </div>
 
             <section>
@@ -187,27 +205,19 @@ const Sbt = () => {
 
 
             <div className="flex justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 md:gap-28">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-28">
                 {tokenowned.map(token => {
                     return (
                         <div>
                             {[token].map(tokeninfo => {
                                 return (
-                                    <>
-                                    <div className="max-w-xl rounded border-2 align-top">
-                                        <div className="grid place-items-center">
-                                            <img className="object-center w-2/5" src={tokeninfo.image} />
-                                        </div>
-                                        &nbsp;
-                                        <div>
-                                            <p></p>
-                                            <p className="place-content-center font-bold text-xl mb-2">{tokeninfo.title}</p>
-                                            <p>{tokeninfo.type}</p>
-                                            <p>{tokeninfo.issuer}</p>
-                                            <p>{tokeninfo.description}</p>
-                                        </div>
+                                    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+                                        <img className="w-2/4" src={tokeninfo.image}/>
+                                        <p>{tokeninfo.type}</p>
+                                        <p>{tokeninfo.issuer}</p>
+                                        <p>{tokeninfo.title}</p>
+                                        <p>{tokeninfo.description}</p>
                                     </div>
-                                    </>
                                 )
                             })}
                         </div>

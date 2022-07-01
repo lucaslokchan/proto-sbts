@@ -10,11 +10,11 @@
   .div_container>.div_style {
     margin-bottom: 50px;
     width: 400px;
-    height: 500px;
+    height: 450px;
   }
   
   .div_style {
-    background-color: #E4E4E4;
+    background-color: #FFF;
     border: 1px solid #000;
   }
 
