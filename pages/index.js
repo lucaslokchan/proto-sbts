@@ -32,32 +32,38 @@ const Sbt = () => {
         //connectwalletHandler()
         //fetchURI().then(response => setDesc(JSON.stringify(response)))
         //fetchURI().then(response => setImage(response['image']))
-        setAddress(ethereum.selectedAddress)
-        setButtonText(ethereum.selectedAddress)
-        getTotalSupplyHandler().then(response => setTotalSupply(response))
+        if (typeof window.ethereum !== 'undefined') {
+            setButtonText(ethereum.selectedAddress)
+        }  
+
+            getTotalSupplyHandler().then(response => setTotalSupply(response))
     })
 
     useEffect(() => {
-        if (ethereum.selectedAddress != null) {
-            getTokenOwnedHandler().then(response => setTokenOwned(response)) 
-        }   
+        if (typeof window.ethereum !== 'undefined') {
+            if (ethereum.selectedAddress != null) {
+                getTokenOwnedHandler().then(response => setTokenOwned(response)) 
+            }   
+        }
     }, [])
 
     //refresh page when wallet address changes
     useEffect(() => {
-        if (window.ethereum) {
-          window.ethereum.on("chainChanged", () => {
-            window.location.reload();
-          });
-          window.ethereum.on("accountsChanged", () => {
-            //window.location.reload();
-            setAddress(ethereum.selectedAddress)
-            getTokenOwnedHandler().then(response => setTokenOwned(response))
-            setButtonText(ethereum.selectedAddress)
-          });
-        }
-        if (ethereum.selectedAddress == null) {
-            setButtonText("Connect Wallet")
+        if (typeof window.ethereum !== 'undefined') {
+            if (window.ethereum) {
+              window.ethereum.on("chainChanged", () => {
+                window.location.reload();
+              });
+              window.ethereum.on("accountsChanged", () => {
+                //window.location.reload();
+                setAddress(ethereum.selectedAddress)
+                getTokenOwnedHandler().then(response => setTokenOwned(response))
+                setButtonText(ethereum.selectedAddress)
+              });
+            }
+            if (ethereum.selectedAddress == null) {
+                setButtonText("Connect Wallet")
+            }
         }
       });
     
@@ -123,58 +129,47 @@ const Sbt = () => {
             <meta name="description" content="Claim you Soulbound Token" />
         </Head>
 
-        <navbar className="flex flex-wrap justify-between p-6 bg-teal-500">
-            <div className="container">
-                <div className="navbar-brand">
-                    <h1>Soulbound Token</h1>
-                </div>
-                <div className="object-right">
-                    <button onClick={connectwalletHandler} className="flex items-center px-3 py-2 text-teal-200 border border-teal-400 rounded hover:text-white hover:border-white">{buttontext}</button>
-                </div>
-            </div>
+        <navbar className="flex justify-end border-2">
+            <button onClick={connectwalletHandler} className="">{buttontext}</button>
         </navbar>
-        
-        <div className="hero-body" style={{ height:"70vh" }}>
-            <div className="container has-text-left">
-                <div className="columns">
-                    <div className="column is-5">
-                        <h1 className="title is-2">
-                            Soulbound Token
-                        </h1>
-                        <h2 className="subtitle is-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad.
-                        </h2>
-                        <h2 className="subtitle is-6">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                        </h2>
-                    </div>
 
-                    <div className="column is-6 is-offset-1">
-                        <h1 className="title is-2">
-                            Stats
-                        </h1>
-                        <h2 className="subtitle is-4">
-                            Contract Address: <a href = "https://ropsten.etherscan.io/address/0xAab2d8b6F6D3eE17510c87111e1563a4611FfFb2">0xAab2....fFb2</a>
-                        </h2>
-                        <h2 className="subtitle is-4">
-                            SBTs Owned: {tokenowned.length}
-                        </h2>
-                        <h2 className="subtitle is-4">
-                            Total Supply: {totalsupply}
-                        </h2>
-                        <select defaultValue={"DEFAULT"} onChange={dropdownChangeHandler}>
-                            <option value="DEFAULT" disabled>Select Token</option>
-                            <option value="1">University Degree</option>
-                            <option value="2">Certificate of Attendance</option>
-                            <option value="3">Membership</option>
-                            <option value="4">Access Right - Property</option>
-                            <option value="5">Access Right - Data Cooperatives</option>
-                            <option value="6">Certificate of Attendance</option>
-                        </select>
-                        <div>
-                            <button onClick={requestSBTHandler} className="button">Request SBT</button>
-                        </div>
-                    </div>
+        <div className="border-2">
+            <div className='flex flex-row space-x-2'>
+                <div>
+                    <h1>
+                        Soulbound Token
+                    </h1>
+                    <h2>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad.
+                    </h2>
+                    <h2>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    </h2>
+                </div>
+
+                <div style={{ height:"70vh" }}>
+                    <h1 className="title is-2">
+                        Stats
+                    </h1>
+                    <h2 className="subtitle is-4">
+                        Contract Address: <a href = "https://ropsten.etherscan.io/address/0xAab2d8b6F6D3eE17510c87111e1563a4611FfFb2">0xAab2....fFb2</a>
+                    </h2>
+                    <h2 className="subtitle is-4">
+                        SBTs Owned: {tokenowned.length}
+                    </h2>
+                    <h2 className="subtitle is-4">
+                        Total Supply: {totalsupply}
+                    </h2>
+                    <select defaultValue={"DEFAULT"} onChange={dropdownChangeHandler}>
+                        <option value="DEFAULT" disabled>Select Token</option>
+                        <option value="1">University Degree</option>
+                        <option value="2">Certificate of Attendance</option>
+                        <option value="3">Membership</option>
+                        <option value="4">Access Right - Property</option>
+                        <option value="5">Access Right - Data Cooperatives</option>
+                        <option value="6">Certificate of Attendance</option>
+                    </select>
+                    <button onClick={requestSBTHandler} className="button">Request SBT</button>
                 </div>
             </div>
         </div>
@@ -205,8 +200,8 @@ const Sbt = () => {
             </div>
         </section>
 
-        <footer className="footer">
-            <div className="content has-text-centered">
+        <footer className="">
+            <div className="">
                 <p><strong>© 2022 Lucas Chan</strong> </p>
                 <p><a href="https://github.com/lucaslokchan/proto-sbts">Github</a> |  
                    <a href="https://www.linkedin.com/in/lucaslokchan/"> Linkedln</a> 
