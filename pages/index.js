@@ -194,14 +194,15 @@ const Sbt = () => {
                             {[token].map(tokeninfo => {
                                 return (
                                     <>
-                                    <div className="max-w-xl rounded border-2 align-top">
+                                    <div className="max-w-xl align-top border-2 rounded">
                                         <div className="grid place-items-center">
                                             <img className="object-center w-2/5" src={tokeninfo.image} />
                                         </div>
                                         &nbsp;
                                         <div>
-                                            <p></p>
-                                            <p className="place-content-center font-bold text-xl mb-2">{tokeninfo.title}</p>
+                                            <div className="grid place-items-center">
+                                                <p className="mb-2 text-xl font-bold place-content-center">{tokeninfo.title}</p>
+                                            </div>
                                             <p>{tokeninfo.type}</p>
                                             <p>{tokeninfo.issuer}</p>
                                             <p>{tokeninfo.description}</p>
