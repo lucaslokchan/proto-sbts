@@ -16,6 +16,7 @@ const Sbt = () => {
     const [buttontext, setButtonText] = useState('Connect Wallet')
     const [totalsupply, setTotalSupply] = useState('')
     const [loading, setLoading] = useState(false)
+    const [connecting, setConnecting] = useState(false)
 
     let url = 'https://ipfs.io/ipfs/' + uri
 
@@ -80,8 +81,7 @@ const Sbt = () => {
         var tokenid = new Array();
         var urilist = new Array();
         var responselist = new Array();
-        const balance = await sbtContract.methods.balanceOf(ethereum.selectedAddress).call((err, result) => { return result });
-        setLoading(true);
+        const balance = await sbtContract.methods.balanceOf(ethereum.selectedAddress).call((err, result) => { return result }).then(setLoading(true));
         for (let i = 0; i < balance; i++) {
             let id = await sbtContract.methods.tokenOfOwnerByIndex(ethereum.selectedAddress, i).call()
             tokenid[i] = id
@@ -94,6 +94,7 @@ const Sbt = () => {
             let response = await fetch(url + urilist[i]).then(data => data.json());
             responselist.push(response)
         }
+        setLoading(false)
         return responselist
     }
 
@@ -103,12 +104,14 @@ const Sbt = () => {
 
     //window.ethereum
     const connectwalletHandler = async () => {
+        setConnecting(true)
         if (typeof window.ethereum !== 'undefined') {
             try {
                 await window.ethereum.request({ method: 'eth_requestAccounts' });
                 //Instantiate web3 instance for calling smart contract methods
                 web3 = new Web3(window.ethereum)
                 setAddress(ethereum.selectedAddress)
+                setConnecting(false)
             } catch(err) {
                 setError(err.message)
             }
@@ -130,7 +133,12 @@ const Sbt = () => {
             </Head>
 
             <navbar className="flex justify-end border-2">
+
+                {loading ? 
+                'Connecting...' :
                 <button onClick={connectwalletHandler} className="">{buttontext}</button>
+                }
+
             </navbar>
 
             <div className="border-1">
@@ -172,7 +180,7 @@ const Sbt = () => {
                             Contract Address: <a href="https://ropsten.etherscan.io/address/0xAab2d8b6F6D3eE17510c87111e1563a4611FfFb2">0xAab2....fFb2</a>
                         </h2>
                         <h2 className="subtitle is-4">
-                            SBTs Owned: {tokenowned.length}
+                            SBTs Owned: {loading ? 'Loading...' : tokenowned.length}
                         </h2>
                         <h2 className="subtitle is-4">
                             Total Supply: {totalsupply}
@@ -188,6 +196,8 @@ const Sbt = () => {
             </section>
 
             <div className="flex justify-center">
+                {loading ? 
+                'Loading...' : 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-28 ">
                 {tokenowned.map(token => {
                     return (
@@ -216,9 +226,9 @@ const Sbt = () => {
                     )
                 })}
                 </div>
+                }
+
             </div>
-
-
 
             <footer className="">
                 <div className="">
