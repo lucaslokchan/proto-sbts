@@ -4,15 +4,15 @@ async function addNetwork() {
   window.ethereum.request({
     method: "wallet_addEthereumChain",
     params: [{
-      chainId: '0x89',
-      chainName: 'Matic Mainnet',
+      chainId: '0x13881',
+      chainName: 'Polygon Testnet',
       nativeCurrency: {
           name: 'MATIC',
           symbol: 'MATIC',
           decimals: 18
       },
-      rpcUrls: ['https://polygon-rpc.com/'],
-      blockExplorerUrls: ['https://polygonscan.com/']
+      rpcUrls: ['https://matic-mumbai.chainstacklabs.com'],
+      blockExplorerUrls: ['https://mumbai.polygonscan.com/']
   }]
   })
 }
