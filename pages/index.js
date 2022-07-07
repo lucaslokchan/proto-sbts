@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-async function addNetwork() {
+const addNetwork = async () => {
   window.ethereum.request({
     method: "wallet_addEthereumChain",
     params: [{
