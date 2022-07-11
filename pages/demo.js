@@ -33,7 +33,7 @@ export default function Home() {
             <div className="flex justify-center">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-28 ">
                 
-                <div className="w-[500px] h-[550px] max-w-xl overflow-hidden align-top border-2 rounded shadow-lg hover:bg-red-400">
+                <div className="w-[350px] h-[450px] max-w-xl overflow-hidden align-top border-2 rounded shadow-lg hover:bg-red-400">
                   <div className="grid place-items-center">
                       <img className="object-center w-2/5"/>
                   </div>
@@ -48,7 +48,7 @@ export default function Home() {
                   </div>
                 </div>     
 
-                <div className="w-[500px] h-[550px] overflow-hidden align-top border-2 rounded shadow-lg hover:bg-red-400">
+                <div className="w-[350px] h-[450px] overflow-hidden align-top border-2 rounded shadow-lg hover:bg-red-400">
                   <div className="grid place-items-center">
                       <img className="object-center w-2/5"/>
                   </div>
@@ -63,7 +63,7 @@ export default function Home() {
                   </div>
                 </div> 
 
-                <div className="w-[500px] h-[550px] overflow-hidden align-top border-2 rounded shadow-lg hover:bg-red-400">
+                <div className="w-[350px] h-[450px] overflow-hidden align-top border-2 rounded shadow-lg hover:bg-red-400">
                   <div className="grid place-items-center">
                       <img className="object-center w-2/5"/>
                   </div>
@@ -78,7 +78,7 @@ export default function Home() {
                   </div>
                 </div> 
 
-                <div className="w-[500px] h-[550px] overflow-hidden align-top border-2 rounded shadow-lg hover:bg-red-400">
+                <div className="w-[350px] h-[450px] overflow-hidden align-top border-2 rounded shadow-lg hover:bg-red-400">
                   <div className="grid place-items-center">
                       <img className="object-center w-2/5"/>
                   </div>
@@ -93,7 +93,7 @@ export default function Home() {
                   </div>
                 </div> 
 
-                <div className="w-[500px] h-[550px] overflow-hidden align-top border-2 rounded shadow-lg hover:bg-red-400">
+                <div className="w-[350px] h-[450px] overflow-hidden align-top border-2 rounded shadow-lg hover:bg-red-400">
                   <div className="grid place-items-center">
                       <img className="object-center w-2/5"/>
                   </div>
