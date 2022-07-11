@@ -21,11 +21,11 @@ export default function Home() {
   return (
   <>
   <div className="border-8 border-red-800">
-    <div className="text-center border-2 mx-auto max-w-screen-md">
+    <div className="max-w-screen-md mx-auto text-center border-2">
       <div className="mb-7">
-        <h1 className="text-9xl mb-7">SOULBOUND</h1>
+        <h1 className="text-7xl mb-7">SOULBOUND</h1>
       </div>
-      <div className="border-2 mb-16">
+      <div className="mb-16 border-2">
       <h1>Enter the future of decentralized society with Soulbound Wallet</h1>
       </div>
       <div>
@@ -35,10 +35,10 @@ export default function Home() {
       </div>
     </div>
     
-    <div className="mt-24 mx-auto max-w-screen-md border-2">
+    <div className="max-w-screen-md mx-auto mt-24 border-2">
       <div className="text-center border-2">
         
-        <div className="mb-7 border-2">
+        <div className="border-2 mb-7">
           <h1 className="text-[#9F32B2]">Soulbound Token</h1>
         </div>
 
@@ -46,23 +46,23 @@ export default function Home() {
           <h2>Identity for decentralized society</h2>
         </div>
 
-        <div className="mb-7 border-2">
+        <div className="border-2 mb-7">
           <p>A Soulbound Token (SBT) is similar to an NFT but non-transferable. It can represent the commitments, credentials and affilations of each individuals - Souls</p>
         </div>
       </div>
 
       <div className="border-2">  
-        <div className="space-x-2 items-center flex border-2">
+        <div className="flex items-center space-x-2 border-2">
           <div className="border-2">
             <svg className="" width="100" height="130" viewBox="0 0 123 161" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M25.7774 100.809L7 134.475L30.317 127.143L38.5708 152.654L61.1656 112.91L83.9667 151.419L90.9824 128.789L116.569 133.726L97.8438 100.809" stroke="#9F32B2" stroke-width="6.5" stroke-miterlimit="10"/>
-              <path d="M75.6514 5.11612C98.5326 11.4325 115.331 32.3444 115.331 57.168C115.331 86.9939 91.0802 111.173 61.1656 111.173C31.2505 111.173 7 86.9939 7 57.168C7 31.5667 24.867 10.1269 48.8468 4.56641" stroke="#9F32B2" stroke-width="6.5" stroke-miterlimit="10" stroke-linecap="round"/>
-              <path d="M105.014 56.5767C105.014 80.3239 85.7057 99.5747 61.8877 99.5747C38.0697 99.5747 18.7616 80.3239 18.7616 56.5767C18.7616 32.8294 38.0697 13.5786 61.8877 13.5786C85.7057 13.5786 105.014 32.8294 105.014 56.5767Z" stroke="#9F32B2" stroke-width="6.5" stroke-miterlimit="10"/>
-              <path d="M36.1909 48.8614L53.5816 46.9353C53.7426 46.9176 53.8821 46.8172 53.9506 46.6712L61.2721 30.9968C61.4368 30.6446 61.937 30.6401 62.1086 30.989L69.8243 46.6802C69.8936 46.8209 70.0298 46.9172 70.1862 46.9357L86.551 48.8635C86.9171 48.9067 87.0888 49.3375 86.8519 49.6189L75.441 63.1976C75.3519 63.3034 75.3151 63.4433 75.3403 63.5791L78.4107 80.0319C78.4842 80.4261 78.0538 80.7207 77.7112 80.51L62.1293 70.9196C61.9811 70.8287 61.7942 70.8278 61.6456 70.918L45.7591 80.5322C45.4195 80.7376 44.9948 80.4499 45.0617 80.059L48.024 62.7685C48.0487 62.6257 48.0046 62.4796 47.9051 62.3743L35.9041 49.637C35.6428 49.3597 35.8112 48.9034 36.1909 48.8614Z" stroke="#9F32B2" stroke-width="6.5" stroke-miterlimit="10"/>
+              <path d="M25.7774 100.809L7 134.475L30.317 127.143L38.5708 152.654L61.1656 112.91L83.9667 151.419L90.9824 128.789L116.569 133.726L97.8438 100.809" stroke="#9F32B2" stroke-width="6.5" strokeMiterlimit="10"/>
+              <path d="M75.6514 5.11612C98.5326 11.4325 115.331 32.3444 115.331 57.168C115.331 86.9939 91.0802 111.173 61.1656 111.173C31.2505 111.173 7 86.9939 7 57.168C7 31.5667 24.867 10.1269 48.8468 4.56641" stroke="#9F32B2" stroke-width="6.5" strokeMiterlimit="10" strokeLinecap="round"/>
+              <path d="M105.014 56.5767C105.014 80.3239 85.7057 99.5747 61.8877 99.5747C38.0697 99.5747 18.7616 80.3239 18.7616 56.5767C18.7616 32.8294 38.0697 13.5786 61.8877 13.5786C85.7057 13.5786 105.014 32.8294 105.014 56.5767Z" stroke="#9F32B2" stroke-width="6.5" strokeMiterlimit="10"/>
+              <path d="M36.1909 48.8614L53.5816 46.9353C53.7426 46.9176 53.8821 46.8172 53.9506 46.6712L61.2721 30.9968C61.4368 30.6446 61.937 30.6401 62.1086 30.989L69.8243 46.6802C69.8936 46.8209 70.0298 46.9172 70.1862 46.9357L86.551 48.8635C86.9171 48.9067 87.0888 49.3375 86.8519 49.6189L75.441 63.1976C75.3519 63.3034 75.3151 63.4433 75.3403 63.5791L78.4107 80.0319C78.4842 80.4261 78.0538 80.7207 77.7112 80.51L62.1293 70.9196C61.9811 70.8287 61.7942 70.8278 61.6456 70.918L45.7591 80.5322C45.4195 80.7376 44.9948 80.4499 45.0617 80.059L48.024 62.7685C48.0487 62.6257 48.0046 62.4796 47.9051 62.3743L35.9041 49.637C35.6428 49.3597 35.8112 48.9034 36.1909 48.8614Z" stroke="#9F32B2" stroke-width="6.5" strokeMiterlimit="10"/>
               <path d="M64.5703 2.88025C64.5703 4.47097 63.2769 5.7605 61.6814 5.7605C60.086 5.7605 58.7926 4.47097 58.7926 2.88025C58.7926 1.28953 60.086 0 61.6814 0C63.2769 0 64.5703 1.28953 64.5703 2.88025Z" fill="#9F32B2"/>
             </svg>
           </div>
-          <div className="mb-7 border-2">
+          <div className="border-2 mb-7">
           <div className="mb-5 border-2">
             <h2>Provenance</h2>
           </div>
@@ -72,21 +72,21 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="space-x-2 items-center flex border-2">
+        <div className="flex items-center space-x-2 border-2">
           <div className="border-2">
             <svg width="100" height="130" viewBox="0 0 154 149" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M74.8591 112.497C76.6082 115.083 77.6033 118.21 77.6033 121.547V127.11C77.6033 128.162 76.7288 129.034 75.6733 129.034H71.8133C70.7578 129.034 69.9134 128.162 69.9134 127.11V121.547C69.9134 119.864 69.4007 118.21 68.4659 116.827C67.1088 114.843 64.6661 113.64 61.8917 113.64C58.8761 113.64 56.8556 115.324 50.6131 115.324C44.3405 115.324 42.3201 113.64 39.3345 113.64C36.5601 113.64 34.1174 114.812 32.7604 116.827C31.8255 118.21 31.3129 119.864 31.3129 121.547V127.11C31.3129 128.162 30.4383 129.034 29.3828 129.034H25.5529C24.4673 129.034 23.6229 128.162 23.6229 127.11V121.547C23.6229 118.21 24.6181 115.083 26.3672 112.497C29.2622 108.168 34.2079 105.913 39.3044 105.913C44.0088 105.913 45.1849 107.596 50.583 107.596C55.981 107.596 57.1571 105.913 61.8616 105.913C66.9279 105.913 71.9037 108.168 74.8591 112.497Z" fill="#9F32B2"/>
-              <path d="M66.1619 82.7006C66.1619 91.2788 59.1867 98.2333 50.583 98.2333C41.9793 98.2333 35.004 91.2788 35.004 82.7006C35.004 74.1225 41.9793 67.168 50.583 67.168C59.1867 67.168 66.1619 74.1225 66.1619 82.7006Z" stroke="#9F32B2" stroke-width="6.5" stroke-miterlimit="10"/>
+              <path d="M66.1619 82.7006C66.1619 91.2788 59.1867 98.2333 50.583 98.2333C41.9793 98.2333 35.004 91.2788 35.004 82.7006C35.004 74.1225 41.9793 67.168 50.583 67.168C59.1867 67.168 66.1619 74.1225 66.1619 82.7006Z" stroke="#9F32B2" stroke-width="6.5" strokeMiterlimit="10"/>
               <path d="M116.083 103.988V107.837C116.083 108.889 115.239 109.761 114.153 109.761H87.1932C86.1377 109.761 85.2632 108.889 85.2632 107.837V103.988C85.2632 102.906 86.1377 102.064 87.1932 102.064H114.153C115.239 102.064 116.083 102.906 116.083 103.988Z" fill="#9F32B2"/>
               <path d="M116.083 88.5635V92.412C116.083 93.4644 115.239 94.3363 114.153 94.3363H87.1932C86.1377 94.3363 85.2632 93.4644 85.2632 92.412V88.5635C85.2632 87.5111 86.1377 86.6392 87.1932 86.6392H114.153C115.239 86.6392 116.083 87.5111 116.083 88.5635Z" fill="#9F32B2"/>
               <path d="M116.083 73.1391V76.9877C116.083 78.0401 115.239 78.912 114.153 78.912H87.1932C86.1377 78.912 85.2632 78.0401 85.2632 76.9877V73.1391C85.2632 72.0868 86.1377 71.2148 87.1932 71.2148H114.153C115.239 71.2148 116.083 72.0868 116.083 73.1391Z" fill="#9F32B2"/>
-              <path d="M123.131 145.577H16.5753C9.63025 145.577 4 139.963 4 133.039V55.6342C4 48.7097 9.63025 43.0962 16.5753 43.0962H123.131C130.076 43.0962 135.706 48.7097 135.706 55.6342V133.039C135.706 139.963 130.076 145.577 123.131 145.577Z" stroke="#9F32B2" stroke-width="6.5" stroke-miterlimit="10"/>
+              <path d="M123.131 145.577H16.5753C9.63025 145.577 4 139.963 4 133.039V55.6342C4 48.7097 9.63025 43.0962 16.5753 43.0962H123.131C130.076 43.0962 135.706 48.7097 135.706 55.6342V133.039C135.706 139.963 130.076 145.577 123.131 145.577Z" stroke="#9F32B2" stroke-width="6.5" strokeMiterlimit="10"/>
               <path d="M85.423 33.7408C85.423 15.1063 100.574 0 119.264 0C137.954 0 153.105 15.1063 153.105 33.7408C153.105 52.3752 137.954 67.4815 119.264 67.4815C100.574 67.4815 85.423 52.3752 85.423 33.7408Z" fill="#9F32B2"/>
-              <path d="M105.582 37.7499L113.05 45.1958L126.889 31.3975" stroke="white" stroke-width="5" stroke-linecap="round" strokeLinejoin="round"/>
-              <path d="M131.85 25.9819L135.036 22.8057" stroke="white" stroke-width="5" stroke-linecap="round" strokeLinejoin="round"/>
+              <path d="M105.582 37.7499L113.05 45.1958L126.889 31.3975" stroke="white" stroke-width="5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M131.85 25.9819L135.036 22.8057" stroke="white" stroke-width="5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </div>
-          <div className="mb-7 border-2">
+          <div className="border-2 mb-7">
           <div className="mb-5 border-2">
             <h2>Sybil Resistance</h2>
           </div>
@@ -96,7 +96,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="space-x-2 items-center flex border-2">
+        <div className="flex items-center space-x-2 border-2">
           <div className="border-2">
             <svg width="100" height="130" viewBox="0 0 163 168" fill="none" xmlns="http://www.w3.org/2000/svg">
               <mask id="path-1-inside-1_218_917" fill="white">
@@ -109,7 +109,7 @@ export default function Home() {
 
 
           </div>
-          <div className="mb-7 border-2">
+          <div className="border-2 mb-7">
           <div className="mb-5 border-2">
             <h2>Decentralized Key Management</h2>
           </div>
@@ -123,9 +123,9 @@ export default function Home() {
     </div>
 
 
-    <div className="mt-24 border-2 max-w-screen-md mx-auto">
+    <div className="max-w-screen-md mx-auto mt-24 border-2">
       <div className="border-2 mb-7">
-        <div className="mb-7 border-2 text-center">
+        <div className="text-center border-2 mb-7">
           <h1 className="text-[#9F32B2]">Demo</h1>
         </div>
         <div className="text-center">
@@ -134,28 +134,42 @@ export default function Home() {
       </div>
     </div>
 
-    <div className="border-2 mx-auto max-w-screen-xl">
-      123
+    <div className="max-w-screen-xl mx-auto border-2">
+    <div className="flex justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-28 "> 
+          <div className="w-[300px] h-[350px] overflow-hidden align-top border-2 rounded shadow-lg hover:bg-red-400">
+            <div className="grid border-2 place-items-center">
+                <img className="object-center w-2/5"/>
+                <p>Image</p>
+            </div>
+            <div className="border-2">
+              <div className="grid text-center border-2 mb-7">
+                <p>Graduate Token</p>
+              </div>
+              <div className="text-center">
+                <p>123</p>
+              </div>
+            </div>
+          </div>    
+        </div>
+      </div>
     </div>
 
-
-
-
-    <div className="bg-[#313896] pt-24 pb-24 px-24 border-2">
-      <div className="mx-auto bg-white border-2 p-10 max-w-screen-lg">
-        <div className="mb-7 border-2">
+    <div className="bg-[#313896] pt-24 pb-24 px-24 border-2 mx-auto">
+      <div className="max-w-screen-lg p-10 mx-auto bg-white border-2">
+        <div className="border-2 mb-7">
           <h1 className="text-[#9F32B2]">Claim Your Own SBTs</h1>
         </div>
-        <div className="mb-7 border-2">
+        <div className="border-2 mb-7">
           <h2>Install Metamask</h2>
         </div>
-        <div className="mb-7 border-2">
+        <div className="border-2 mb-7">
           <h2>Add Network</h2>
         </div>
-        <div className="mb-7 border-2">
+        <div className="border-2 mb-7">
           <h2>Install Metamask</h2>
         </div>
-        <div className="mb-7 border-2">
+        <div className="border-2 mb-7">
           <h2 className="text-[#9F32B2]"><Link href="wallet"><a>Get Started</a></Link></h2>
         </div>
       </div>
