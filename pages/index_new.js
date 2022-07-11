@@ -20,12 +20,12 @@ const addNetwork = async () => {
 export default function Home() {
   return (
   <>
-  <div>
-    <div className="text-center border-2 mx-80">
+  <div className="border-8 border-red-800">
+    <div className="text-center border-2 mx-auto max-w-screen-md">
       <div className="mb-7">
         <h1 className="text-9xl mb-7">SOULBOUND</h1>
       </div>
-      <div className="border-2 mx-52 mb-16">
+      <div className="border-2 mb-16">
       <h1>Enter the future of decentralized society with Soulbound Wallet</h1>
       </div>
       <div>
@@ -35,8 +35,8 @@ export default function Home() {
       </div>
     </div>
     
-    <div className="mt-24 mx-80 border-2">
-      <div className="text-center border-2 mx-80">
+    <div className="mt-24 mx-auto max-w-screen-md border-2">
+      <div className="text-center border-2">
         
         <div className="mb-7 border-2">
           <h1 className="text-[#9F32B2]">Soulbound Token</h1>
@@ -51,7 +51,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="border-2 mx-80">  
+      <div className="border-2">  
         <div className="space-x-2 items-center flex border-2">
           <div className="border-2">
             <svg className="" width="100" height="130" viewBox="0 0 123 161" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,8 +82,8 @@ export default function Home() {
               <path d="M116.083 73.1391V76.9877C116.083 78.0401 115.239 78.912 114.153 78.912H87.1932C86.1377 78.912 85.2632 78.0401 85.2632 76.9877V73.1391C85.2632 72.0868 86.1377 71.2148 87.1932 71.2148H114.153C115.239 71.2148 116.083 72.0868 116.083 73.1391Z" fill="#9F32B2"/>
               <path d="M123.131 145.577H16.5753C9.63025 145.577 4 139.963 4 133.039V55.6342C4 48.7097 9.63025 43.0962 16.5753 43.0962H123.131C130.076 43.0962 135.706 48.7097 135.706 55.6342V133.039C135.706 139.963 130.076 145.577 123.131 145.577Z" stroke="#9F32B2" stroke-width="6.5" stroke-miterlimit="10"/>
               <path d="M85.423 33.7408C85.423 15.1063 100.574 0 119.264 0C137.954 0 153.105 15.1063 153.105 33.7408C153.105 52.3752 137.954 67.4815 119.264 67.4815C100.574 67.4815 85.423 52.3752 85.423 33.7408Z" fill="#9F32B2"/>
-              <path d="M105.582 37.7499L113.05 45.1958L126.889 31.3975" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M131.85 25.9819L135.036 22.8057" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M105.582 37.7499L113.05 45.1958L126.889 31.3975" stroke="white" stroke-width="5" stroke-linecap="round" strokeLinejoin="round"/>
+              <path d="M131.85 25.9819L135.036 22.8057" stroke="white" stroke-width="5" stroke-linecap="round" strokeLinejoin="round"/>
             </svg>
           </div>
           <div className="mb-7 border-2">
@@ -123,9 +123,9 @@ export default function Home() {
     </div>
 
 
-    <div className="mt-24 border-2 mx-80">
-      <div className="border-2 mb-7 mx-80">
-        <div className="mb-7 border-2 text-center ">
+    <div className="mt-24 border-2 max-w-screen-md mx-auto">
+      <div className="border-2 mb-7">
+        <div className="mb-7 border-2 text-center">
           <h1 className="text-[#9F32B2]">Demo</h1>
         </div>
         <div className="text-center">
@@ -134,7 +134,7 @@ export default function Home() {
       </div>
     </div>
 
-    <div className="border-2 mx-24">
+    <div className="border-2 mx-auto max-w-screen-xl">
       123
     </div>
 
@@ -142,7 +142,7 @@ export default function Home() {
 
 
     <div className="bg-[#313896] pt-24 pb-24 px-24 border-2">
-      <div className="mx-80 bg-white border-2 p-10">
+      <div className="mx-auto bg-white border-2 p-10 max-w-screen-lg">
         <div className="mb-7 border-2">
           <h1 className="text-[#9F32B2]">Claim Your Own SBTs</h1>
         </div>
