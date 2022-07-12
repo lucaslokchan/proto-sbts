@@ -28,7 +28,7 @@ export default function Home() {
           <div className="mb-7">
             <h1 className="text-7xl mb-7">SOULBOUND</h1>
           </div>
-          <div className="mb-7 border-2">
+          <div className="border-2 mb-7">
             <Image src="/image/../logo.png" width="128" height="128" />
           </div>
           <div className="mb-16 border-2">
@@ -247,18 +247,147 @@ export default function Home() {
         <div className="max-w-screen-xl mx-auto border-2">
           <div className="flex justify-center">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-28">
-              <div className="w-[300px] h-[350px] overflow-hidden align-top border-2 rounded shadow-lg hover:opacity-0">
-                <div className="grid border-2 place-items-center">
-                  <img className="object-center w-2/5" />
-                  <p>Image</p>
+              <div className="flex">
+                <div className="w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                  <div className="py-7 bg-[#9F32B2]"></div>
+                  <div className="text-center mt-[5.5rem] mb-1">
+                    <h2>Graduate Token</h2>
+                  </div>
+                  <div className="mx-[2rem] border-t-[0.18rem] border-black">
+                    <div className="mt-2">
+                      <span className="break-words">
+                        an award conferred by lumbburgh university signifying
+                        that the recipent has satisfactorily completed a course
+                        of study
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <div className="border-2">
-                  <div className="grid text-center border-2 mb-7">
-                    <p>Graduate Token</p>
+                <div class="absloute">
+                  <img
+                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/image/property_right_data_cooperatives.png"
+                    class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[130px]"
+                  />
+                </div>
+              </div>
+
+              <div className="flex">
+                <div className="w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                  <div className="py-7 bg-[#9F32B2]"></div>
+                  <div className="text-center mt-[5.5rem] mb-1">
+                    <h2>Graduate Token</h2>
                   </div>
-                  <div className="text-center">
-                    <p>123</p>
+                  <div className="mx-[2rem] border-t-[0.18rem] border-black">
+                    <div className="mt-2">
+                      <span className="break-words">
+                        an award conferred by lumbburgh university signifying
+                        that the recipent has satisfactorily completed a course
+                        of study
+                      </span>
+                    </div>
                   </div>
+                </div>
+                <div class="absloute">
+                  <img
+                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/image/property_right_data_cooperatives.png"
+                    class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[130px]"
+                  />
+                </div>
+              </div>
+
+              <div className="flex">
+                <div className="w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                  <div className="py-7 bg-[#9F32B2]"></div>
+                  <div className="text-center mt-[5.5rem] mb-1">
+                    <h2>Graduate Token</h2>
+                  </div>
+                  <div className="mx-[2rem] border-t-[0.18rem] border-black">
+                    <div className="mt-2">
+                      <span className="break-words">
+                        an award conferred by lumbburgh university signifying
+                        that the recipent has satisfactorily completed a course
+                        of study
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="absloute">
+                  <img
+                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/image/property_right_data_cooperatives.png"
+                    class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[130px]"
+                  />
+                </div>
+              </div>
+
+              <div className="flex">
+                <div className="w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                  <div className="py-7 bg-[#9F32B2]"></div>
+                  <div className="text-center mt-[5.5rem] mb-1">
+                    <h2>Graduate Token</h2>
+                  </div>
+                  <div className="mx-[2rem] border-t-[0.18rem] border-black">
+                    <div className="mt-2">
+                      <span className="break-words">
+                        an award conferred by lumbburgh university signifying
+                        that the recipent has satisfactorily completed a course
+                        of study
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="absloute">
+                  <img
+                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/image/property_right_data_cooperatives.png"
+                    class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[130px]"
+                  />
+                </div>
+              </div>
+
+              <div className="flex">
+                <div className="w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                  <div className="py-7 bg-[#9F32B2]"></div>
+                  <div className="text-center mt-[5.5rem] mb-1">
+                    <h2>Graduate Token</h2>
+                  </div>
+                  <div className="mx-[2rem] border-t-[0.18rem] border-black">
+                    <div className="mt-2">
+                      <span className="break-words">
+                        an award conferred by lumbburgh university signifying
+                        that the recipent has satisfactorily completed a course
+                        of study
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="absloute">
+                  <img
+                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/image/property_right_data_cooperatives.png"
+                    class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[130px]"
+                  />
+                </div>
+              </div>
+
+              <div className="flex">
+                <div className="w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                  <div className="py-7 bg-[#9F32B2]"></div>
+                  <div className="text-center mt-[5.5rem] mb-1">
+                    <h2>Graduate Token</h2>
+                  </div>
+                  <div className="mx-[2rem] border-t-[0.18rem] border-black">
+                    <div className="mt-2">
+                      <span className="break-words">
+                        an award conferred by lumbburgh university signifying
+                        that the recipent has satisfactorily completed a course
+                        of study
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="absloute">
+                  <img
+                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/image/property_right_data_cooperatives.png"
+                    class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[130px]"
+                  />
                 </div>
               </div>
             </div>

@@ -31,15 +31,33 @@ export default function Home() {
       </div>
 
       <div className="flex">
-        <div className="w-[300px] h-[350px] border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
-          <div className="rounded-t-2xl bg-[#9F32B2]">123</div>
+        <div className="w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+          <div className="py-7 bg-[#9F32B2]"></div>
+          <div className="text-center mt-[5.5rem] mb-1">
+            <h2>Graduate Token</h2>
+          </div>
+          <div className="mx-[2rem] border-t-[0.18rem] border-black">
+            <div className="mt-2">
+              <span className="break-words">
+                an award conferred by lumbburgh university signifying that the
+                recipent has satisfactorily completed a course of study
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="absloute">
+          <img
+            src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/image/property_right_data_cooperatives.png"
+            class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[130px]"
+          />
         </div>
       </div>
 
       <div class="flex justify-center">
         <div class="rounded-2xl shadow-lg bg-white max-w-sm border-2">
-          <div className="border-2 rounded-t-2xl bg-[#9F32B2]">123</div>
+          <div className="border-2 rounded-t-2xl bg-[#9F32B2]"></div>
           <div class="p-6">
+            <div className="mx-5 border-black"></div>
             <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
             <p class="text-gray-700 text-base mb-4">
               Some quick example text to build on the card title and make up the
