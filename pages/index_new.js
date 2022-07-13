@@ -29,7 +29,7 @@ export default function Home() {
             <h1 className="text-7xl mb-7">SOULBOUND</h1>
           </div>
           <div className="border-2 mb-7">
-            <Image src="/image/../logo.png" width="128" height="128" />
+            <Image src="/logo.png" width="128" height="128" />
           </div>
           <div className="mb-16 border-2">
             <h1>
@@ -246,9 +246,35 @@ export default function Home() {
 
         <div className="max-w-screen-xl mx-auto border-2">
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-28">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-28 gap-y-12">
               <div className="flex">
-                <div className="w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                <div className="min-w-[300px] max-h-[350px] w-[300px] h-[350px] border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                  <div className="py-7 bg-[#9F32B2]"></div>
+                  <div className="text-center mt-[5.5rem] mb-1">
+                    <h2>Graduate Token</h2>
+                  </div>
+                  <div className="mx-[2rem] border-t-[0.18rem] border-black">
+                    <div className="mt-2 max-h-[150px] overflow-y-scroll">
+                      <span className="">
+                        an award conferred by lumbburgh university signifying
+                        that the recipent has satisfactorily completed a course
+                        of study an award conferred by lumbburgh university
+                        signifying that the recipent has satisfactorily
+                        completed a course of study 33333333333333333
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="absloute">
+                  <img
+                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/image/property_right_data_cooperatives.png"
+                    class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[130px]"
+                  />
+                </div>
+              </div>
+
+              <div className="flex">
+                <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
                   <div className="py-7 bg-[#9F32B2]"></div>
                   <div className="text-center mt-[5.5rem] mb-1">
                     <h2>Graduate Token</h2>
@@ -272,7 +298,7 @@ export default function Home() {
               </div>
 
               <div className="flex">
-                <div className="w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
                   <div className="py-7 bg-[#9F32B2]"></div>
                   <div className="text-center mt-[5.5rem] mb-1">
                     <h2>Graduate Token</h2>
@@ -296,7 +322,7 @@ export default function Home() {
               </div>
 
               <div className="flex">
-                <div className="w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
                   <div className="py-7 bg-[#9F32B2]"></div>
                   <div className="text-center mt-[5.5rem] mb-1">
                     <h2>Graduate Token</h2>
@@ -320,7 +346,7 @@ export default function Home() {
               </div>
 
               <div className="flex">
-                <div className="w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
                   <div className="py-7 bg-[#9F32B2]"></div>
                   <div className="text-center mt-[5.5rem] mb-1">
                     <h2>Graduate Token</h2>
@@ -344,31 +370,7 @@ export default function Home() {
               </div>
 
               <div className="flex">
-                <div className="w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
-                  <div className="py-7 bg-[#9F32B2]"></div>
-                  <div className="text-center mt-[5.5rem] mb-1">
-                    <h2>Graduate Token</h2>
-                  </div>
-                  <div className="mx-[2rem] border-t-[0.18rem] border-black">
-                    <div className="mt-2">
-                      <span className="break-words">
-                        an award conferred by lumbburgh university signifying
-                        that the recipent has satisfactorily completed a course
-                        of study
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div class="absloute">
-                  <img
-                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/image/property_right_data_cooperatives.png"
-                    class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[130px]"
-                  />
-                </div>
-              </div>
-
-              <div className="flex">
-                <div className="w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
                   <div className="py-7 bg-[#9F32B2]"></div>
                   <div className="text-center mt-[5.5rem] mb-1">
                     <h2>Graduate Token</h2>
@@ -394,7 +396,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-[#313896] pt-24 pb-24 px-24 border-2 mx-auto">
+        <div className="bg-[#313896] md:py-24 md:px-24 py-10 px-10 border-2 mx-auto">
           <div className="max-w-screen-lg p-10 mx-auto bg-white border-2">
             <div className="border-2 mb-7">
               <h1 className="text-[#9F32B2]">Claim Your Own SBTs</h1>
