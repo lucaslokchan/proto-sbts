@@ -214,7 +214,7 @@ export default function Home() {
               </div>
               <div className="border-2 mb-7">
                 <div className="mb-5 border-2">
-                  <h2>Decentralized Key Management</h2>
+                  <h2>Community Recovery</h2>
                 </div>
                 <div>
                   <p>
