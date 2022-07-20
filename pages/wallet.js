@@ -4,6 +4,46 @@ import FooterComponent from "./footer/footer";
 export default function Wallet() {
   const [isconnected, setIsConnected] = useState(false);
 
+  useEffect(() => {
+    isConnectedHandler();
+    addressChangeHandler();
+  });
+
+  function isConnectedHandler() {
+    if (ethereum.selectedAddress == null) {
+      setIsConnected(false);
+    } else {
+      setIsConnected(true);
+    }
+  }
+
+  //Reloads when Metamask chain or account is changed
+  function addressChangeHandler() {
+    if (typeof window.ethereum !== "undefined") {
+      if (window.ethereum) {
+        window.ethereum.on("chainChanged", () => {
+          window.location.reload();
+        });
+        window.ethereum.on("accountsChanged", () => {
+          window.location.reload();
+        });
+      }
+    }
+  }
+
+  const connectwalletHandler = async () => {
+    if (typeof window.ethereum !== "undefined") {
+      try {
+        await window.ethereum.request({ method: "eth_requestAccounts" });
+        //Instantiate web3 instance for calling smart contract methods
+        web3 = new Web3(window.ethereum);
+      } catch (err) {}
+    } //else {
+    //metamask not installed
+    //setError("Please install MetaMask");
+    //}
+  };
+
   return (
     <>
       <div className="border-8 border-red-800">
@@ -14,15 +54,21 @@ export default function Wallet() {
                 <div className="pt-7 bg-[#9F32B2] text-center">
                   <h2 className="">Wallet Stats</h2>
                 </div>
-                <div className="grid grid-cols-2 border-2">
-                  <div>
-                    <span>QR Code Here</span>
+                {isconnected ? (
+                  <div className="grid grid-cols-2 border-2">
+                    <div>
+                      <span>QR Code Here</span>
+                    </div>
+                    <div className="">
+                      <p>Address: {ethereum.selectedAddress}</p>
+                      <p>SBTs Owned: </p>
+                    </div>
                   </div>
-                  <div className="">
-                    <p>Address: </p>
-                    <p>SBTs Owned: </p>
-                  </div>
-                </div>
+                ) : (
+                  <button onClick={connectwalletHandler} className="">
+                    <h2>Connect Wallet</h2>
+                  </button>
+                )}
               </div>
             </div>
             <div className="border-2">
