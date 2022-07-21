@@ -9,18 +9,21 @@ export default function Wallet() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    isConnectedHandler();
-    addressChangeHandler();
+    if (typeof window.ethereum !== "undefined") {
+      isConnectedHandler();
+      addressChangeHandler();
+      onLoadHandler();
+    }
     getTotalSupplyHandler().then((response) => setTotalSupply(response));
   });
 
-  useEffect(() => {
-    if (typeof window.ethereum !== "undefined") {
-      if (ethereum.selectedAddress != null) {
-        getTokenOwnedHandler().then((response) => setTokenOwned(response));
-      }
-    }
-  }, []);
+  //useEffect(() => {
+  //  if (typeof window.ethereum !== "undefined") {
+  //    if (ethereum.selectedAddress != null) {
+  //      //getTokenOwnedHandler().then((response) => setTokenOwned(response));
+  //    }
+  //  }
+  //}, []);
 
   function isConnectedHandler() {
     if (ethereum.selectedAddress == null) {
@@ -30,7 +33,7 @@ export default function Wallet() {
     }
   }
 
-  //Reloads when Metamask chain or account is changed
+  //Reloads window when Metamask chain is changed and SBT metadata when accound is changed
   function addressChangeHandler() {
     if (typeof window.ethereum !== "undefined") {
       if (window.ethereum) {
@@ -39,12 +42,23 @@ export default function Wallet() {
         });
         window.ethereum.on("accountsChanged", () => {
           //window.location.reload();
-          getTokenOwnedHandler().then((response) => setTokenOwned(response));
+          if (ethereum.selectedAddress !== "undefined") {
+            getTokenOwnedHandler().then((response) => setTokenOwned(response));
+          }
         });
       }
     }
   }
 
+  //Fetch token URI on IPFS when window is on load
+  function onLoadHandler() {
+    if (ethereum.selectedAddress !== "undefined")
+      window.onload = getTokenOwnedHandler().then((response) =>
+        setTokenOwned(response)
+      );
+  }
+
+  //Connect to metamask wallet
   const connectwalletHandler = async () => {
     if (typeof window.ethereum !== "undefined") {
       try {
@@ -52,17 +66,19 @@ export default function Wallet() {
         //Instantiate web3 instance for calling smart contract methods
         web3 = new Web3(window.ethereum);
       } catch (err) {}
-    } //else {
-    //metamask not installed
-    //setError("Please install MetaMask");
-    //}
+    } else {
+      //metamask not installed
+      console.log("Please install MetaMask");
+    }
   };
 
+  //Fetch total SBT supply from contract
   const getTotalSupplyHandler = async () => {
     const supply = await sbtContract.methods.totalSupply().call();
     return supply;
   };
 
+  //Fetch token owned by address with subsequent URI and metadata
   const getTokenOwnedHandler = async () => {
     var tokenid = new Array();
     var urilist = new Array();
@@ -96,11 +112,11 @@ export default function Wallet() {
   return (
     <>
       <div className="border-8 border-red-800">
-        <div className="max-w-screen-xl mx-auto border-2">
+        <div className="max-w-screen-xl mx-auto border-2 mt-24">
           <div className="grid grid-cols-1 border-2 md:grid-cols-2">
             <div className="mx-auto border-2">
               <div className="min-w-[450px] max-h-[280px] w-[450px] h-[280px] border-2 overflow-hidden border-black group rounded-2xl bg-white max-w-sm shadow-lg">
-                <div className="pt-7 bg-[#9F32B2] text-center">
+                <div className="py-2 bg-[#9F32B2] text-center text-white">
                   <h2 className="">Wallet Stats</h2>
                 </div>
                 {isconnected ? (
@@ -123,7 +139,36 @@ export default function Wallet() {
             <div className="border-2">
               <div className="border-2">
                 <h2 className="text-[#9F32B2]">Request SBTs</h2>
-                <div>Request Token here</div>
+                <div class="p-auto pt-4">
+                  <div class="group relative">
+                    <button class="text-[#9F32B2] px-6 h-10 rounded border-2 border-black">
+                      Select Token
+                    </button>
+                    <nav
+                      tabindex="0"
+                      class="border-2 bg-white invisible border-gray-800 rounded w-60 absolute left-0 top-full transition-all opacity-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-1"
+                    >
+                      <ul class="py-1">
+                        <li>
+                          <a
+                            href="#"
+                            class="block px-4 py-2 hover:bg-gray-100"
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="#" class="block px-4 py-2 hover:bg-gray-100">
+                            Delete
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="block px-4 py-2 hover:bg-gray-100">
+                            Reply
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
               </div>
               <div className="border-2">
                 <h2 className="text-[#9F32B2]">Contract Stats</h2>
@@ -133,14 +178,47 @@ export default function Wallet() {
             </div>
           </div>
         </div>
-        <div className="max-w-screen-xl mx-auto border-2">
+
+        <div className="max-w-screen-xl mx-auto border-2 mt-24">
           <div className="flex justify-center">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-28 gap-y-12">
-              <div className="flex"></div>
+              {tokenowned.map((token) => {
+                return (
+                  <div>
+                    {[token].map((tokeninfo) => {
+                      return (
+                        <>
+                          <div className="flex">
+                            <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                              <div className="py-7 bg-[#9F32B2]"></div>
+                              <div className="text-center mt-[5.5rem] mb-1">
+                                <p>{tokeninfo.title}</p>
+                              </div>
+                              <div className="mx-[2rem] border-t-[0.18rem] border-black">
+                                <div className="mt-2">
+                                  <span className="break-words">
+                                    {tokeninfo.description}
+                                    {tokeninfo.type}
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="absloute">
+                              <img
+                                src={tokeninfo.image}
+                                class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[130px]"
+                              />
+                            </div>
+                          </div>
+                        </>
+                      );
+                    })}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
-        {JSON.stringify(tokenowned)}
         <FooterComponent></FooterComponent>
       </div>
     </>
