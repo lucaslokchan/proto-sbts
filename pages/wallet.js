@@ -1,13 +1,26 @@
 import { useState, useEffect } from "react";
 import FooterComponent from "./footer/footer";
+import sbtContract from "../sbt";
 
 export default function Wallet() {
   const [isconnected, setIsConnected] = useState(false);
+  const [totalsupply, setTotalSupply] = useState("");
+  const [tokenowned, setTokenOwned] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     isConnectedHandler();
     addressChangeHandler();
+    getTotalSupplyHandler().then((response) => setTotalSupply(response));
   });
+
+  useEffect(() => {
+    if (typeof window.ethereum !== "undefined") {
+      if (ethereum.selectedAddress != null) {
+        getTokenOwnedHandler().then((response) => setTokenOwned(response));
+      }
+    }
+  }, []);
 
   function isConnectedHandler() {
     if (ethereum.selectedAddress == null) {
@@ -25,7 +38,8 @@ export default function Wallet() {
           window.location.reload();
         });
         window.ethereum.on("accountsChanged", () => {
-          window.location.reload();
+          //window.location.reload();
+          getTokenOwnedHandler().then((response) => setTokenOwned(response));
         });
       }
     }
@@ -42,6 +56,41 @@ export default function Wallet() {
     //metamask not installed
     //setError("Please install MetaMask");
     //}
+  };
+
+  const getTotalSupplyHandler = async () => {
+    const supply = await sbtContract.methods.totalSupply().call();
+    return supply;
+  };
+
+  const getTokenOwnedHandler = async () => {
+    var tokenid = new Array();
+    var urilist = new Array();
+    var responselist = new Array();
+    const balance = await sbtContract.methods
+      .balanceOf(ethereum.selectedAddress)
+      .call((err, result) => {
+        return result;
+      })
+      .then(setLoading(true));
+    for (let i = 0; i < balance; i++) {
+      let id = await sbtContract.methods
+        .tokenOfOwnerByIndex(ethereum.selectedAddress, i)
+        .call();
+      tokenid[i] = id;
+    }
+    for (let i = 0; i < tokenid.length; i++) {
+      let uri = await sbtContract.methods.tokenURI(tokenid[i]).call();
+      urilist[i] = uri;
+    }
+    for (let i = 0; i < urilist.length; i++) {
+      let response = await fetch("https://ipfs.io/ipfs/" + urilist[i]).then(
+        (data) => data.json()
+      );
+      responselist.push(response);
+    }
+    setLoading(false);
+    return responselist;
   };
 
   return (
@@ -61,7 +110,7 @@ export default function Wallet() {
                     </div>
                     <div className="">
                       <p>Address: {ethereum.selectedAddress}</p>
-                      <p>SBTs Owned: </p>
+                      <p>SBTs Owned: {tokenowned.length}</p>
                     </div>
                   </div>
                 ) : (
@@ -78,12 +127,20 @@ export default function Wallet() {
               </div>
               <div className="border-2">
                 <h2 className="text-[#9F32B2]">Contract Stats</h2>
-                <p>SBTs Issued</p>
+                <p>SBTs Issued: {totalsupply}</p>
                 <p>View on Block Explorer</p>
               </div>
             </div>
           </div>
         </div>
+        <div className="max-w-screen-xl mx-auto border-2">
+          <div className="flex justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-28 gap-y-12">
+              <div className="flex"></div>
+            </div>
+          </div>
+        </div>
+        {JSON.stringify(tokenowned)}
         <FooterComponent></FooterComponent>
       </div>
     </>
