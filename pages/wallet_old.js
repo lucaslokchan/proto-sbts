@@ -105,12 +105,9 @@ const Sbt = () => {
     return responselist;
   };
 
-  function requestSBTHandler() {
+  function requestSBTHandler(uri) {
     sbtContract.methods
-      .requestSBT(
-        ethereum.selectedAddress,
-        "QmUKYnrC1SRdijKpP1hEx4Q3Eon8qF1GQVZ3cktydTM7rW"
-      )
+      .requestSBT(ethereum.selectedAddress, uri)
       .send({ from: ethereum.selectedAddress });
   }
 

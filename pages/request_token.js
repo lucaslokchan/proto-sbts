@@ -1,101 +1,77 @@
-function requestSBTHandler(uri) {
-  sbtContract.methods
-    .requestSBT(ethereum.selectedAddress, { uri })
-    .send({ from: ethereum.selectedAddress });
-}
+import { useState, useEffect } from "react";
+import sbtContract from "../sbt";
+import Web3 from "web3";
+let web3;
+function RequestToken() {
+  const [tokenoption, setTokenOption] = useState("");
 
-function requestToken() {
+  const connectwalletHandler = async () => {
+    if (typeof window.ethereum !== "undefined") {
+      try {
+        await window.ethereum.request({ method: "eth_requestAccounts" });
+        //Instantiate web3 instance for calling smart contract methods
+        web3 = new Web3(window.ethereum);
+      } catch (err) {}
+    } else {
+      //metamask not installed
+    }
+  };
+
+  const requestSBTHandler = async (uri) => {
+    if (uri !== "") {
+      sbtContract.methods
+        .requestSBT(ethereum.selectedAddress, uri)
+        .send({ from: ethereum.selectedAddress });
+    } else {
+      console.log("333");
+    }
+  };
+
+  const requestSBTHandlerTest = async (uri) => {
+    console.log(uri);
+  };
   return (
-    <div className="max-w-screen-xl mx-auto my-12 border-2">
-      <div className="grid grid-cols-1 border-2 md:grid-cols-3">
-        <div className="space-y-2 border-2">
-          <div className="text-[#9F32B2] font-bold">
-            <p>Learn More</p>
-          </div>
-          <div>
-            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4105763">
-              <p>Whitepaper</p>
-            </a>
-          </div>
-          <div>
-            <a href="https://vitalik.ca/general/2022/01/26/soulbound.html">
-              <p>What is Soulbound?</p>
-            </a>
-          </div>
-        </div>
-        <div className="space-y-2 border-2">
-          <div className="text-[#9F32B2] font-bold">
-            <p>Ethereum Improvement Proposals</p>
-          </div>
-          <div>
-            <a href="https://eips.ethereum.org/EIPS/eip-5114">
-              <p>EIP-5114: Soulbound Token</p>
-            </a>
-          </div>
-          <div>
-            <a href="https://eips.ethereum.org/EIPS/eip-4973">
-              <p>EIP-4973: Account-bound Tokens</p>
-            </a>
-          </div>
-        </div>
-        <div className="flex flex-col space-y-3 border-2 md:place-items-end">
-          <div className="flex flex-row mb-auto space-x-3 border-2">
-            <div>
-              <svg
-                width="31"
-                height="30"
-                viewBox="0 0 31 30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>LinkedIn</title>
-                <a xlinkHref="https://www.linkedin.com/in/lucaslokchan/">
-                  <path
-                    d="M30.2455 30H24.0275V20.2566C24.0275 17.9332 23.9803 14.9431 20.7873 14.9431C17.5453 14.9431 17.0502 17.4713 17.0502 20.0851V30H10.8322V9.96384H16.8052V12.6949H16.8857C17.7203 11.1203 19.7498 9.45822 22.7818 9.45822C29.082 9.45822 30.2472 13.6047 30.2472 19.0022V30H30.2455ZM3.80937 7.22226C1.80786 7.22226 0.199997 5.60215 0.199997 3.60938C0.199997 1.61836 1.80961 0 3.80937 0C5.80389 0 7.4205 1.61836 7.4205 3.60938C7.4205 5.60215 5.80214 7.22226 3.80937 7.22226ZM6.92712 30H0.691628V9.96384H6.92712V30Z"
-                    fill="#9F32B2"
-                  />
-                </a>
-              </svg>
-            </div>
-            <div>
-              <svg
-                width="28"
-                height="30"
-                viewBox="0 0 28 30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>GitHub</title>
-                <a xlinkHref="https://www.github.com/lucaslokchan">
-                  <path
-                    d="M9.79821 26.5731C9.8066 28.253 9.80709 28.3202 9.82338 30L14.0155 29.9849H19.747C19.747 29.3297 19.7722 27.1627 19.7722 24.4649C19.7722 22.5767 19.1178 21.3404 18.413 20.7356C22.8932 20.24 27.6 18.535 27.6 10.7909C27.6 8.59026 26.8197 6.79281 25.5361 5.38174C25.7374 4.87274 26.417 2.82332 25.3347 0.0465195C25.3347 0.0465195 23.6483 -0.494394 19.8225 2.11274C18.2116 1.66422 16.5001 1.44248 14.7886 1.4324C13.077 1.44248 11.3655 1.66422 9.75458 2.11274C5.9036 -0.494394 4.21722 0.0465195 4.21722 0.0465195C3.13491 2.82332 3.8145 4.87274 4.04103 5.38174C2.74898 6.79281 1.96871 8.59026 1.96871 10.7909C1.96871 18.5148 6.66876 20.2484 11.1406 20.7524C10.5651 21.2564 10.0466 22.145 9.86533 23.4486C8.71423 23.9643 5.7962 24.8546 4.00076 21.7721C4.00076 21.7721 2.93859 19.8369 0.916611 19.6958C0.916611 19.6958 -1.04832 19.6706 0.77566 20.9204C0.77566 20.9204 2.09959 21.5419 3.01578 23.8685C3.01578 23.8685 4.19708 27.7893 9.79821 26.5731Z"
-                    fill="#9F32B2"
-                  />
-                </a>
-              </svg>
-            </div>
-            <div>
-              <svg
-                width="36"
-                height="30"
-                viewBox="0 0 36 30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>Twitter</title>
-                <a xlinkHref="https://twitter.com/lucaslokchan">
-                  <path
-                    d="M35.7315 3.57343C34.4211 4.18185 33.033 4.58346 31.6117 4.76534C33.1081 3.81681 34.2285 2.3293 34.766 0.577507C33.3792 1.43107 31.8421 2.0524 30.2058 2.39844C29.1263 1.18104 27.6959 0.373608 26.1366 0.101515C24.5773 -0.170579 22.9764 0.107896 21.5826 0.893695C20.1888 1.67949 19.08 2.92865 18.4284 4.44717C17.7768 5.9657 17.6189 7.66863 17.9792 9.29152C12.0146 8.9947 6.73104 5.97263 3.19167 1.408C2.54824 2.56117 2.21264 3.87645 2.22042 5.21442C2.22042 7.84431 3.48917 10.1558 5.41125 11.5139C4.27209 11.4756 3.15809 11.1508 2.16209 10.5665V10.6588C2.16144 12.4065 2.73414 14.1006 3.78303 15.4537C4.83192 16.8068 6.2924 17.7356 7.91667 18.0824C6.86419 18.3798 5.76186 18.4245 4.69084 18.2132C5.15185 19.7173 6.04659 21.0321 7.25023 21.9742C8.45387 22.9163 9.90635 23.4386 11.405 23.4683C8.86681 25.5691 5.73278 26.7093 2.50625 26.7057C1.9375 26.7057 1.37021 26.6703 0.800003 26.6027C4.08958 28.824 7.9145 30.0031 11.8206 30C25.0229 30 32.2344 18.4715 32.2344 8.49179C32.2344 8.16882 32.2344 7.84585 32.2125 7.52288C33.6212 6.4538 34.8364 5.12648 35.8 3.60419L35.7315 3.57343Z"
-                    fill="#9F32B2"
-                  />
-                </a>
-              </svg>
-            </div>
-          </div>
-          <div className="border-2">2022 Lucas Chan</div>
-        </div>
+    <>
+      <button onClick={connectwalletHandler} className="">
+        <h2>Connect Wallet</h2>
+      </button>
+      <div className="border-2">
+        <select
+          onChange={(e) => {
+            setTokenOption(e.target.value);
+          }}
+          className="border-2 border-black rounded max-w-[150px]"
+        >
+          <option value="">Select Token</option>
+          <option value="QmSMiUtwmxMAzHdute17u5CPrB2eUwBYUR4JP5KLpAHTsH">
+            University Degree Token
+          </option>
+          <option value="QmZQEo7zCbRJ3Mv56HsnbudHJq7PvUoPm6g7mKrxz9ABU2">
+            Award Token
+          </option>
+          <option value="QmT6DYFT32Y87gCt9pFfDxrwrav8qDyBmZpyrhwEe64waF">
+            Certificate of Attendance Token
+          </option>
+          <option value="QmTsyBd5b1963UvAoBH1vR15Q5Kdkq43g9VR4wWc2W2bvU">
+            Property Right - Access Token
+          </option>
+          <option value="QmUKYnrC1SRdijKpP1hEx4Q3Eon8qF1GQVZ3cktydTM7rW">
+            Property Right - Data Cooperatives Token
+          </option>
+          <option value="Qmb83Yba9YvGtouAbBSgD7RQyXyuyp1Vv62Rd3dqKyoaHz">
+            Membership Token
+          </option>
+        </select>
+        <button
+          onClick={requestSBTHandler.bind(this, tokenoption)}
+          className="border-2 border-black rounded"
+        >
+          Request
+        </button>
+        <div>{tokenoption}</div>
+        <div></div>
       </div>
-    </div>
+    </>
   );
 }
-export default requestToken;
+export default RequestToken;

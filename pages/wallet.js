@@ -7,6 +7,7 @@ export default function Wallet() {
   const [totalsupply, setTotalSupply] = useState("");
   const [tokenowned, setTokenOwned] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [tokenoption, setTokenOption] = useState("");
 
   useEffect(() => {
     if (typeof window.ethereum !== "undefined") {
@@ -25,6 +26,7 @@ export default function Wallet() {
   //  }
   //}, []);
 
+  //Determins if metamask is connected
   function isConnectedHandler() {
     if (ethereum.selectedAddress == null) {
       setIsConnected(false);
@@ -112,7 +114,7 @@ export default function Wallet() {
   return (
     <>
       <div className="border-8 border-red-800">
-        <div className="max-w-screen-xl mx-auto border-2 mt-24">
+        <div className="max-w-screen-xl mx-auto mt-24 border-2">
           <div className="grid grid-cols-1 border-2 md:grid-cols-2">
             <div className="mx-auto border-2">
               <div className="min-w-[450px] max-h-[280px] w-[450px] h-[280px] border-2 overflow-hidden border-black group rounded-2xl bg-white max-w-sm shadow-lg">
@@ -139,36 +141,7 @@ export default function Wallet() {
             <div className="border-2">
               <div className="border-2">
                 <h2 className="text-[#9F32B2]">Request SBTs</h2>
-                <div class="p-auto pt-4">
-                  <div class="group relative">
-                    <button class="text-[#9F32B2] px-6 h-10 rounded border-2 border-black">
-                      Select Token
-                    </button>
-                    <nav
-                      tabindex="0"
-                      class="border-2 bg-white invisible border-gray-800 rounded w-60 absolute left-0 top-full transition-all opacity-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-1"
-                    >
-                      <ul class="py-1">
-                        <li>
-                          <a
-                            href="#"
-                            class="block px-4 py-2 hover:bg-gray-100"
-                          ></a>
-                        </li>
-                        <li>
-                          <a href="#" class="block px-4 py-2 hover:bg-gray-100">
-                            Delete
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#" class="block px-4 py-2 hover:bg-gray-100">
-                            Reply
-                          </a>
-                        </li>
-                      </ul>
-                    </nav>
-                  </div>
-                </div>
+                <div class="p-auto pt-4">Button Here </div>
               </div>
               <div className="border-2">
                 <h2 className="text-[#9F32B2]">Contract Stats</h2>
@@ -179,7 +152,7 @@ export default function Wallet() {
           </div>
         </div>
 
-        <div className="max-w-screen-xl mx-auto border-2 mt-24">
+        <div className="max-w-screen-xl mx-auto mt-24 border-2">
           <div className="flex justify-center">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-28 gap-y-12">
               {tokenowned.map((token) => {
