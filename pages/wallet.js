@@ -26,6 +26,24 @@ export default function Wallet() {
   //  }
   //}, []);
 
+  function truncateAddress(address) {
+    let first = address.substr(0, 5);
+    let last = address.substr(address.length - 4);
+    let truncated = first + "..." + last;
+    return truncated;
+  }
+
+  //Request SBT
+  const requestSBTHandler = async (uri) => {
+    if (uri !== "") {
+      sbtContract.methods
+        .requestSBT(ethereum.selectedAddress, uri)
+        .send({ from: ethereum.selectedAddress });
+    } else {
+      console.log("333");
+    }
+  };
+
   //Determins if metamask is connected
   function isConnectedHandler() {
     if (ethereum.selectedAddress == null) {
@@ -123,11 +141,13 @@ export default function Wallet() {
                 </div>
                 {isconnected ? (
                   <div className="grid grid-cols-2 border-2">
-                    <div>
+                    <div className="border-2">
                       <span>QR Code Here</span>
                     </div>
                     <div className="">
-                      <p>Address: {ethereum.selectedAddress}</p>
+                      <p>
+                        Address: {truncateAddress(ethereum.selectedAddress)}
+                      </p>
                       <p>SBTs Owned: {tokenowned.length}</p>
                     </div>
                   </div>
@@ -140,13 +160,64 @@ export default function Wallet() {
             </div>
             <div className="border-2">
               <div className="border-2">
-                <h2 className="text-[#9F32B2]">Request SBTs</h2>
-                <div class="p-auto pt-4">Button Here </div>
+                <div>
+                  <h2 className="text-[#9F32B2]">Request SBTs</h2>
+                </div>
+                <div class="pt-4">
+                  <div>
+                    <div className="border-2 flex gap-x-5">
+                      <div>
+                        <select
+                          onChange={(e) => {
+                            setTokenOption(e.target.value);
+                          }}
+                          className="border-2 border-black rounded h-[30px] max-w-[150px] text-[#9F32B2]"
+                        >
+                          <option value="">Select Token</option>
+                          <option value="QmSMiUtwmxMAzHdute17u5CPrB2eUwBYUR4JP5KLpAHTsH">
+                            University Degree Token
+                          </option>
+                          <option value="QmZQEo7zCbRJ3Mv56HsnbudHJq7PvUoPm6g7mKrxz9ABU2">
+                            Award Token
+                          </option>
+                          <option value="QmT6DYFT32Y87gCt9pFfDxrwrav8qDyBmZpyrhwEe64waF">
+                            Certificate of Attendance Token
+                          </option>
+                          <option value="QmTsyBd5b1963UvAoBH1vR15Q5Kdkq43g9VR4wWc2W2bvU">
+                            Property Right - Access Token
+                          </option>
+                          <option value="QmUKYnrC1SRdijKpP1hEx4Q3Eon8qF1GQVZ3cktydTM7rW">
+                            Property Right - Data Cooperatives Token
+                          </option>
+                          <option value="Qmb83Yba9YvGtouAbBSgD7RQyXyuyp1Vv62Rd3dqKyoaHz">
+                            Membership Token
+                          </option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <button
+                          onClick={requestSBTHandler.bind(this, tokenoption)}
+                          className="border-2 w-[80px] h-[30px] border-black rounded text-[#9F32B2]"
+                        >
+                          Request
+                        </button>
+                      </div>
+                    </div>
+                    <div>{tokenoption}</div>
+                  </div>
+                </div>
               </div>
-              <div className="border-2">
-                <h2 className="text-[#9F32B2]">Contract Stats</h2>
-                <p>SBTs Issued: {totalsupply}</p>
-                <p>View on Block Explorer</p>
+              <div className="border-2 pt-4">
+                <div>
+                  <h2 className="text-[#9F32B2]">Contract Stats</h2>
+                </div>
+                <div className="pt-4">
+                  <p>SBTs Issued: {totalsupply}</p>
+                </div>
+                <div className="pt-4">
+                  <p>View on Block Explorer</p>
+                </div>
               </div>
             </div>
           </div>
