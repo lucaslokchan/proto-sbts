@@ -165,7 +165,7 @@ export default function Wallet() {
                 </div>
                 <div class="pt-4">
                   <div>
-                    <div className="border-2 flex gap-x-5">
+                    <div className="flex border-2 gap-x-5">
                       <div>
                         <select
                           onChange={(e) => {
@@ -208,7 +208,7 @@ export default function Wallet() {
                   </div>
                 </div>
               </div>
-              <div className="border-2 pt-4">
+              <div className="pt-4 border-2">
                 <div>
                   <h2 className="text-[#9F32B2]">Contract Stats</h2>
                 </div>
