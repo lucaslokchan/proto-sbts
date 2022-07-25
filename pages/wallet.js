@@ -21,6 +21,9 @@ export default function Wallet() {
     if (typeof window.ethereum !== "undefined") {
       onLoadHandler();
     }
+    if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+      onLoadHandler();
+    }
   }, []);
 
   //useEffect(() => {
@@ -81,9 +84,6 @@ export default function Wallet() {
       window.onload = getTokenOwnedHandler().then((response) =>
         setTokenOwned(response)
       );
-    if (sessionStorage.getItem("is_reloaded")) {
-      getTokenOwnedHandler().then((response) => setTokenOwned(response));
-    }
   }
 
   //Connect to metamask wallet
