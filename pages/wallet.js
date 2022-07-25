@@ -81,7 +81,7 @@ export default function Wallet() {
       window.onload = getTokenOwnedHandler().then((response) =>
         setTokenOwned(response)
       );
-    if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+    if (sessionStorage.getItem("is_reloaded")) {
       getTokenOwnedHandler().then((response) => setTokenOwned(response));
     }
   }
