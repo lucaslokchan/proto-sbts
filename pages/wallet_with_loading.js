@@ -21,9 +21,6 @@ export default function Wallet() {
     if (typeof window.ethereum !== "undefined") {
       onLoadHandler();
     }
-    if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
-      onLoadHandler();
-    }
   }, []);
 
   //useEffect(() => {

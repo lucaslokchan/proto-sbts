@@ -403,13 +403,17 @@ export default function Home() {
               <h1 className="text-[#9F32B2]">Claim Your Own SBTs</h1>
             </div>
             <div className="border-2 mb-7">
-              <h2>Install Metamask</h2>
+              <a href="https://metamask.io/download/">
+                <h2>Install Metamask</h2>
+              </a>
             </div>
             <div className="border-2 mb-7">
               <h2>Add Network</h2>
             </div>
             <div className="border-2 mb-7">
-              <h2>Install Metamask</h2>
+              <a href="https://faucet.egorfine.com/">
+                <h2>Get Testnet Ether</h2>
+              </a>
             </div>
             <div className="border-2 mb-7">
               <h2 className="text-[#9F32B2]">
