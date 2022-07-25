@@ -242,7 +242,6 @@ export default function Wallet() {
                                 <div className="mt-2">
                                   <span className="break-words">
                                     {tokeninfo.description}
-                                    {tokeninfo.type}
                                   </span>
                                 </div>
                               </div>
