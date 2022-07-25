@@ -81,6 +81,9 @@ export default function Wallet() {
       window.onload = getTokenOwnedHandler().then((response) =>
         setTokenOwned(response)
       );
+    if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+      getTokenOwnedHandler().then((response) => setTokenOwned(response));
+    }
   }
 
   //Connect to metamask wallet
