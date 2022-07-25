@@ -13,10 +13,18 @@ export default function Wallet() {
     if (typeof window.ethereum !== "undefined") {
       isConnectedHandler();
       addressChangeHandler();
-      onLoadHandler();
     }
     getTotalSupplyHandler().then((response) => setTotalSupply(response));
   });
+
+  useEffect(() => {
+    if (typeof window.ethereum !== "undefined") {
+      onLoadHandler();
+    }
+    if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+      onLoadHandler();
+    }
+  }, []);
 
   //useEffect(() => {
   //  if (typeof window.ethereum !== "undefined") {
@@ -140,15 +148,17 @@ export default function Wallet() {
                   <h2 className="">Wallet Stats</h2>
                 </div>
                 {isconnected ? (
-                  <div className="grid grid-cols-2 border-2">
-                    <div className="border-2">
-                      <span>QR Code Here</span>
-                    </div>
-                    <div className="">
-                      <p>
-                        Address: {truncateAddress(ethereum.selectedAddress)}
-                      </p>
-                      <p>SBTs Owned: {tokenowned.length}</p>
+                  <div className="">
+                    <div className="grid content-center grid-cols-2 border-2 place-items-center">
+                      <div className="border-2">
+                        <span>QR Code Here</span>
+                      </div>
+                      <div className="border-2">
+                        <p>
+                          Address: {truncateAddress(ethereum.selectedAddress)}
+                        </p>
+                        <p>SBTs Owned: {tokenowned.length}</p>
+                      </div>
                     </div>
                   </div>
                 ) : (
@@ -223,46 +233,55 @@ export default function Wallet() {
           </div>
         </div>
 
-        <div className="max-w-screen-xl mx-auto mt-24 border-2">
-          <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-28 gap-y-12">
-              {tokenowned.map((token) => {
-                return (
-                  <div>
-                    {[token].map((tokeninfo) => {
-                      return (
-                        <>
-                          <div className="flex">
-                            <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
-                              <div className="py-7 bg-[#9F32B2]"></div>
-                              <div className="text-center mt-[5.5rem] mb-1">
-                                <p>{tokeninfo.title}</p>
-                              </div>
-                              <div className="mx-[2rem] border-t-[0.18rem] border-black">
-                                <div className="mt-2">
-                                  <span className="break-words">
-                                    {tokeninfo.description}
-                                    {tokeninfo.type}
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="absloute">
-                              <img
-                                src={tokeninfo.image}
-                                class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[130px]"
-                              />
-                            </div>
-                          </div>
-                        </>
-                      );
-                    })}
-                  </div>
-                );
-              })}
+        {loading ? (
+          <div className="max-w-screen-xl mx-auto mt-24 border-2">
+            <div className="text-center text-[#9F32B2]">
+              <h2>Loading...</h2>
             </div>
           </div>
-        </div>
+        ) : (
+          <div className="max-w-screen-xl mx-auto mt-24 border-2">
+            <div className="flex justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-28 gap-y-12">
+                {tokenowned.map((token) => {
+                  return (
+                    <div>
+                      {[token].map((tokeninfo) => {
+                        return (
+                          <>
+                            <div className="flex">
+                              <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                                <div className="py-7 bg-[#9F32B2]"></div>
+                                <div className="text-center mt-[5.5rem] mb-1">
+                                  <p>{tokeninfo.title}</p>
+                                </div>
+                                <div className="mx-[2rem] border-t-[0.18rem] border-black">
+                                  <div className="mt-2">
+                                    <span className="break-words">
+                                      {tokeninfo.description}
+                                      {tokeninfo.type}
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="absloute">
+                                <img
+                                  src={tokeninfo.image}
+                                  class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[130px]"
+                                />
+                              </div>
+                            </div>
+                          </>
+                        );
+                      })}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        )}
+
         <FooterComponent></FooterComponent>
       </div>
     </>
