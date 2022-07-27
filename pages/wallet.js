@@ -140,7 +140,7 @@ export default function Wallet() {
                   <h2 className="">Wallet Stats</h2>
                 </div>
                 {isconnected ? (
-                  <div className="grid grid-cols-2 border-2">
+                  <div className="grid grid-cols-2 my-10 border-2">
                     <div className="border-2">
                       <span>QR Code Here</span>
                     </div>

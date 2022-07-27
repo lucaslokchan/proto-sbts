@@ -27,7 +27,7 @@ export default function Home() {
       <div className="border-8 border-red-800">
         <div className="max-w-screen-md mx-auto text-center border-2">
           <div className="mb-7">
-            <h1 className="text-7xl mb-7">SOULBOUND</h1>
+            <h0 className="mb-7">SOULBOUND</h0>
           </div>
           <div className="border-2 mb-7">
             <Image src="/logo.png" width="128" height="128" />
@@ -38,7 +38,7 @@ export default function Home() {
             </h1>
           </div>
           <div>
-            <button class="bg-[#9F32B2] hover:bg-[#D40FF6] text-white py-0 px-4">
+            <button className="bg-[#9F32B2] hover:bg-[#D40FF6] text-white py-0 px-4">
               <h2 className="font-medium">Get Started</h2>
             </button>
           </div>
@@ -64,8 +64,8 @@ export default function Home() {
           </div>
 
           <div className="border-2">
-            <div className="flex items-center space-x-2 border-2">
-              <div className="border-2">
+            <div className="items-center space-x-2 border-2 sm:flex">
+              <div className="px-5 border-2 sm:px-20">
                 <svg
                   className=""
                   width="100"
@@ -120,8 +120,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex items-center space-x-2 border-2">
-              <div className="border-2">
+            <div className="items-center space-x-2 border-2 sm:flex">
+              <div className="px-5 border-2 sm:px-20">
                 <svg
                   width="100"
                   height="130"
@@ -191,8 +191,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex items-center space-x-2 border-2">
-              <div className="border-2">
+            <div className="items-center space-x-2 border-2 sm:flex">
+              <div className="px-5 border-2 sm:px-20">
                 <svg
                   width="100"
                   height="130"
@@ -256,13 +256,13 @@ export default function Home() {
                   </div>
                   <div className="mx-[2rem] border-t-[0.18rem] border-black">
                     <div className="mt-2 max-h-[150px] overflow-y-scroll">
-                      <span className="">
+                      <p className="">
                         an award conferred by lumbburgh university signifying
                         that the recipent has satisfactorily completed a course
                         of study an award conferred by lumbburgh university
                         signifying that the recipent has satisfactorily
                         completed a course of study 33333333333333333
-                      </span>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -282,11 +282,11 @@ export default function Home() {
                   </div>
                   <div className="mx-[2rem] border-t-[0.18rem] border-black">
                     <div className="mt-2">
-                      <span className="break-words">
+                      <p className="break-words">
                         an award conferred by lumbburgh university signifying
                         that the recipent has satisfactorily completed a course
                         of study
-                      </span>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -306,11 +306,11 @@ export default function Home() {
                   </div>
                   <div className="mx-[2rem] border-t-[0.18rem] border-black">
                     <div className="mt-2">
-                      <span className="break-words">
+                      <p className="break-words">
                         an award conferred by lumbburgh university signifying
                         that the recipent has satisfactorily completed a course
                         of study
-                      </span>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -330,11 +330,11 @@ export default function Home() {
                   </div>
                   <div className="mx-[2rem] border-t-[0.18rem] border-black">
                     <div className="mt-2">
-                      <span className="break-words">
+                      <p className="break-words">
                         an award conferred by lumbburgh university signifying
                         that the recipent has satisfactorily completed a course
                         of study
-                      </span>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -354,11 +354,11 @@ export default function Home() {
                   </div>
                   <div className="mx-[2rem] border-t-[0.18rem] border-black">
                     <div className="mt-2">
-                      <span className="break-words">
+                      <p className="break-words">
                         an award conferred by lumbburgh university signifying
                         that the recipent has satisfactorily completed a course
                         of study
-                      </span>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -378,11 +378,11 @@ export default function Home() {
                   </div>
                   <div className="mx-[2rem] border-t-[0.18rem] border-black">
                     <div className="mt-2">
-                      <span className="break-words">
+                      <p className="break-words">
                         an award conferred by lumbburgh university signifying
                         that the recipent has satisfactorily completed a course
                         of study
-                      </span>
+                      </p>
                     </div>
                   </div>
                 </div>
