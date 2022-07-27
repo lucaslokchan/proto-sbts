@@ -144,7 +144,6 @@ export default function Wallet() {
                   <div className="grid grid-cols-2 my-10 border-2">
                     <div className="border-2">
                       <span>QR Code Here</span>
-                      <p>{loading.toString()}</p>
                     </div>
                     <div className="">
                       <p>
@@ -228,10 +227,10 @@ export default function Wallet() {
         </div>
 
         {loading ? (
-          <div className="max-w-screen-xl mx-auto mt-24 border-2">
+          <div className="max-w-screen-xl mx-auto mt-10 border-2">
             <div className="mt-10">
               <div className="text-center text-[#9F32B2]">
-                <h2>Loading...</h2>
+                <h2>Loading SBTs</h2>
               </div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
