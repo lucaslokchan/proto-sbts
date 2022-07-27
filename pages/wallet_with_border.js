@@ -136,17 +136,17 @@ export default function Wallet() {
         <title>Soulbound - Wallet</title>
         <meta name="description" content="Soulbound Token Wallet" />
       </Head>
-      <div className="">
-        <div className="max-w-screen-xl mx-auto mt-2 md:mt-36 ">
-          <div className="grid grid-cols-1 md+:grid-cols-2">
-            <div className="mx-auto">
-              <div className="max-w-[450px] max-h-[280px] w-[340px] h-[220px] sm:w-[450px] sm:h-[280px]  overflow-hidden border-black group rounded-2xl bg-white shadow-lg">
+      <div className="border-8 border-red-800">
+        <div className="max-w-screen-xl mx-auto mt-2 md:mt-24 border-2">
+          <div className="grid grid-cols-1 border-2 md+:grid-cols-2">
+            <div className="mx-auto border-2 ">
+              <div className="max-w-[450px] max-h-[280px] w-[340px] h-[220px] sm:w-[450px] sm:h-[280px] border-2 overflow-hidden border-black group rounded-2xl bg-white shadow-lg">
                 <div className="py-2 bg-[#9F32B2] text-center text-white">
                   <h2 className="">Wallet Stats</h2>
                 </div>
                 {isconnected ? (
-                  <div className="grid grid-cols-2 mt-4 md:mt-10 ">
-                    <div className=" mx-auto">
+                  <div className="grid grid-cols-2 mt-4 md:mt-10 border-2">
+                    <div className="border-2 mx-auto">
                       <svg
                         width="110"
                         height="110"
@@ -184,7 +184,7 @@ export default function Wallet() {
                     </div>
                   </div>
                 ) : (
-                  <div className="text-center ">
+                  <div className="text-center border-2">
                     <button onClick={connectwalletHandler} className="">
                       <h2>Connect Wallet</h2>
                     </button>
@@ -192,20 +192,20 @@ export default function Wallet() {
                 )}
               </div>
             </div>
-            <div className="">
-              <div className=" pt-6">
+            <div className="border-2">
+              <div className="border-2 pt-2">
                 <div>
                   <h2 className="text-[#9F32B2]">Request SBTs</h2>
                 </div>
                 <div class="pt-4">
                   <div>
-                    <div className="flex gap-x-5">
+                    <div className="flex border-2 gap-x-5">
                       <div>
                         <select
                           onChange={(e) => {
                             setTokenOption(e.target.value);
                           }}
-                          className=" border-black border-2 rounded h-[30px] max-w-[150px] text-[#9F32B2]"
+                          className="border-2 border-black rounded h-[30px] max-w-[150px] text-[#9F32B2]"
                         >
                           <option value="">Select Token</option>
                           <option value="QmSMiUtwmxMAzHdute17u5CPrB2eUwBYUR4JP5KLpAHTsH">
@@ -241,7 +241,7 @@ export default function Wallet() {
                   </div>
                 </div>
               </div>
-              <div className="pt-4 ">
+              <div className="pt-4 border-2">
                 <div>
                   <h2 className="text-[#9F32B2]">Contract Stats</h2>
                 </div>
@@ -259,7 +259,7 @@ export default function Wallet() {
         </div>
 
         {loading ? (
-          <div className="max-w-screen-xl mx-auto mt-8 mb-10 md:mt-32 md:mb-32">
+          <div className="max-w-screen-xl mx-auto mt-8 md:mt-6 border-2">
             <div className="">
               <div className="text-center text-[#9F32B2]"></div>
               <svg
@@ -384,7 +384,7 @@ export default function Wallet() {
             </div>
           </div>
         ) : (
-          <div className="max-w-screen-xl mx-auto mt-8 mb-10 md:mt-32 md:mb-32">
+          <div className="max-w-screen-xl mx-auto mt-8 md:mt-6 border-2">
             <div className="flex justify-center">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  md:gap-x-28 gap-y-12">
                 {tokenowned.map((token) => {
@@ -394,7 +394,7 @@ export default function Wallet() {
                         return (
                           <>
                             <div className="flex">
-                              <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden  border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                              <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
                                 <div className="py-7 bg-[#9F32B2]"></div>
                                 <div className="text-center mt-[5.5rem] mb-1 mx-[1.3rem]">
                                   <p>{tokeninfo.title}</p>

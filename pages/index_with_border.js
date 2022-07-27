@@ -29,15 +29,15 @@ export default function Home() {
         <title>Soulbound - Index</title>
         <meta name="description" content="Soulbound Token Wallet" />
       </Head>
-      <div className="">
-        <div className="max-w-screen-md mx-auto text-center ">
+      <div className="border-8 border-red-800">
+        <div className="max-w-screen-md mx-auto text-center border-2">
           <div className="mb-7">
             <h0 className="mb-7">SOULBOUND</h0>
           </div>
-          <div className=" mb-7">
+          <div className="border-2 mb-7">
             <Image src="/logo.png" width="128" height="128" />
           </div>
-          <div className="mb-10 ">
+          <div className="mb-10 border-2">
             <h1>
               Enter the future of decentralized society with Soulbound Wallet
             </h1>
@@ -51,17 +51,17 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="max-w-screen-md mx-auto mt-16 ">
-          <div className="text-center ">
-            <div className=" mb-7">
+        <div className="max-w-screen-md mx-auto mt-16 border-2">
+          <div className="text-center border-2">
+            <div className="border-2 mb-7">
               <h1 className="text-[#9F32B2]">Soulbound Token</h1>
             </div>
 
-            <div className="mb-5 ">
+            <div className="mb-5 border-2">
               <h2>Identity for decentralized society</h2>
             </div>
 
-            <div className=" mb-7">
+            <div className="border-2 mb-7">
               <p>
                 A Soulbound Token (SBT) is similar to an NFT but
                 non-transferable. It can represent the commitments, credentials
@@ -70,9 +70,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="">
-            <div className="items-center space-x-2  sm:flex">
-              <div className="px-5  sm:px-20">
+          <div className="border-2">
+            <div className="items-center space-x-2 border-2 sm:flex">
+              <div className="px-5 border-2 sm:px-20">
                 <svg
                   className=""
                   width="100"
@@ -112,8 +112,8 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <div className=" mb-7">
-                <div className="mb-5 ">
+              <div className="border-2 mb-7">
+                <div className="mb-5 border-2">
                   <h2>Provenance</h2>
                 </div>
                 <div>
@@ -127,8 +127,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="items-center space-x-2  sm:flex">
-              <div className="px-5  sm:px-20">
+            <div className="items-center space-x-2 border-2 sm:flex">
+              <div className="px-5 border-2 sm:px-20">
                 <svg
                   width="100"
                   height="130"
@@ -184,8 +184,8 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <div className=" mb-7">
-                <div className="mb-5 ">
+              <div className="border-2 mb-7">
+                <div className="mb-5 border-2">
                   <h2>Sybil Resistance</h2>
                 </div>
                 <div>
@@ -198,8 +198,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="items-center space-x-2  sm:flex">
-              <div className="px-5  sm:px-20">
+            <div className="items-center space-x-2 border-2 sm:flex">
+              <div className="px-5 border-2 sm:px-20">
                 <svg
                   width="100"
                   height="130"
@@ -219,8 +219,8 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <div className=" mb-7">
-                <div className="mb-5 ">
+              <div className="border-2 mb-7">
+                <div className="mb-5 border-2">
                   <h2>Community Recovery</h2>
                 </div>
                 <div>
@@ -235,9 +235,9 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="max-w-screen-md mx-auto mt-16 ">
-          <div className=" mb-7">
-            <div className="text-center  mb-7">
+        <div className="max-w-screen-md mx-auto mt-16 border-2">
+          <div className="border-2 mb-7">
+            <div className="text-center border-2 mb-7">
               <h1 className="text-[#9F32B2]">User Story</h1>
             </div>
             <div className="text-center">
@@ -252,11 +252,11 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="max-w-screen-xl mx-auto ">
+        <div className="max-w-screen-xl mx-auto border-2">
           <div className="flex justify-center">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-28 md:gap-y-16 gap-y-12">
               <div className="flex">
-                <div className="min-w-[300px] max-h-[350px] w-[300px] h-[350px]  overflow-hidden border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                <div className="min-w-[300px] max-h-[350px] w-[300px] h-[350px] border-2 overflow-hidden border-black group rounded-2xl bg-white max-w-sm shadow-lg">
                   <div className="py-7 bg-[#9F32B2]"></div>
                   <div className="text-center mt-[5.5rem] mb-1">
                     <h2>Graduate Token</h2>
@@ -282,7 +282,7 @@ export default function Home() {
               </div>
 
               <div className="flex">
-                <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden  border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
                   <div className="py-7 bg-[#9F32B2]"></div>
                   <div className="text-center mt-[5.5rem] mb-1">
                     <h2>Graduate Token</h2>
@@ -306,7 +306,7 @@ export default function Home() {
               </div>
 
               <div className="flex">
-                <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden  border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
                   <div className="py-7 bg-[#9F32B2]"></div>
                   <div className="text-center mt-[5.5rem] mb-1">
                     <h2>Graduate Token</h2>
@@ -330,7 +330,7 @@ export default function Home() {
               </div>
 
               <div className="flex">
-                <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden  border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
                   <div className="py-7 bg-[#9F32B2]"></div>
                   <div className="text-center mt-[5.5rem] mb-1">
                     <h2>Graduate Token</h2>
@@ -354,7 +354,7 @@ export default function Home() {
               </div>
 
               <div className="flex">
-                <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden  border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
                   <div className="py-7 bg-[#9F32B2]"></div>
                   <div className="text-center mt-[5.5rem] mb-1">
                     <h2>Graduate Token</h2>
@@ -378,7 +378,7 @@ export default function Home() {
               </div>
 
               <div className="flex">
-                <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden  border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
                   <div className="py-7 bg-[#9F32B2]"></div>
                   <div className="text-center mt-[5.5rem] mb-1">
                     <h2>Graduate Token</h2>
@@ -406,26 +406,26 @@ export default function Home() {
 
         <div
           id="start"
-          className="bg-[#313896] md:py-24 md:px-24 py-10 px-10  mx-auto mt-16"
+          className="bg-[#313896] md:py-24 md:px-24 py-10 px-10 border-2 mx-auto mt-16"
         >
-          <div className="max-w-screen-xl p-10 mx-auto bg-white ">
-            <div className=" mb-7">
+          <div className="max-w-screen-xl p-10 mx-auto bg-white border-2">
+            <div className="border-2 mb-7">
               <h1 className="text-[#9F32B2]">Claim Your Own SBTs</h1>
             </div>
-            <div className=" mb-7">
+            <div className="border-2 mb-7">
               <a target="_blank" href="https://metamask.io/download/">
                 <h2>Install Metamask</h2>
               </a>
             </div>
-            <div className=" mb-7">
+            <div className="border-2 mb-7">
               <h2>Add Network</h2>
             </div>
-            <div className=" mb-7">
+            <div className="border-2 mb-7">
               <a target="_blank" href="https://faucet.egorfine.com/">
                 <h2>Get Testnet Ether</h2>
               </a>
             </div>
-            <div className=" mb-7">
+            <div className="border-2 mb-7">
               <h2 className="text-[#9F32B2]">
                 <Link href="wallet">
                   <a>Get Started</a>

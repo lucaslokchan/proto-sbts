@@ -1,8 +1,8 @@
 function FooterComponent() {
   return (
-    <div className="max-w-screen-xl mx-auto my-12 border-2">
-      <div className="grid grid-cols-1 border-2 md:grid-cols-3">
-        <div className="space-y-2 border-2">
+    <div className="max-w-screen-xl mx-auto my-6 ">
+      <div className="grid grid-cols-1  md:grid-cols-3">
+        <div className="space-y-2 ">
           <div className="text-[#9F32B2] font-bold">
             <p>Learn More</p>
           </div>
@@ -17,8 +17,8 @@ function FooterComponent() {
             </a>
           </div>
         </div>
-        <div className="space-y-2 border-2">
-          <div className="text-[#9F32B2] font-bold">
+        <div className="space-y-2 ">
+          <div className="text-[#9F32B2] font-bold mt-4 md:mt-0">
             <p>Ethereum Improvement Proposals</p>
           </div>
           <div>
@@ -32,8 +32,8 @@ function FooterComponent() {
             </a>
           </div>
         </div>
-        <div className="flex flex-col space-y-3 border-2 md:place-items-end">
-          <div className="flex flex-row mb-auto space-x-3 border-2">
+        <div className="flex flex-col space-y-3  md:place-items-end">
+          <div className="flex flex-row mb-auto space-x-3  mt-4 md:mt-0">
             <div>
               <svg
                 width="31"
@@ -86,7 +86,7 @@ function FooterComponent() {
               </svg>
             </div>
           </div>
-          <div className="border-2">2022 Lucas Chan</div>
+          <div className="">2022 Lucas Chan</div>
         </div>
       </div>
     </div>
