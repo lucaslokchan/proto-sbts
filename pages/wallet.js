@@ -238,7 +238,6 @@ export default function Wallet() {
                         </button>
                       </div>
                     </div>
-                    <div>{tokenoption}</div>
                   </div>
                 </div>
               </div>
@@ -260,7 +259,7 @@ export default function Wallet() {
         </div>
 
         {loading ? (
-          <div className="max-w-screen-xl mx-auto mt-2 md:mt-10 border-2">
+          <div className="max-w-screen-xl mx-auto mt-8 md:mt-6 border-2">
             <div className="">
               <div className="text-center text-[#9F32B2]">
                 <h2>Loading SBTs</h2>
@@ -387,9 +386,9 @@ export default function Wallet() {
             </div>
           </div>
         ) : (
-          <div className="max-w-screen-xl mx-auto mt-2 md:mt-24 border-2">
+          <div className="max-w-screen-xl mx-auto mt-8 md:mt-6 border-2">
             <div className="flex justify-center">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-28 gap-y-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  md:gap-x-28 gap-y-12">
                 {tokenowned.map((token) => {
                   return (
                     <div>
