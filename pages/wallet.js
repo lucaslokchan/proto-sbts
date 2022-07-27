@@ -261,9 +261,7 @@ export default function Wallet() {
         {loading ? (
           <div className="max-w-screen-xl mx-auto mt-8 md:mt-6 border-2">
             <div className="">
-              <div className="text-center text-[#9F32B2]">
-                <h2>Loading SBTs</h2>
-              </div>
+              <div className="text-center text-[#9F32B2]"></div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 style={{ margin: "auto" }}
@@ -398,14 +396,13 @@ export default function Wallet() {
                             <div className="flex">
                               <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden border-2 border-black group rounded-2xl bg-white max-w-sm shadow-lg">
                                 <div className="py-7 bg-[#9F32B2]"></div>
-                                <div className="text-center mt-[5.5rem] mb-1">
+                                <div className="text-center mt-[5.5rem] mb-1 mx-[1.3rem]">
                                   <p>{tokeninfo.title}</p>
                                 </div>
                                 <div className="mx-[2rem] border-t-[0.18rem] border-black">
                                   <div className="mt-2">
                                     <span className="break-words">
                                       {tokeninfo.description}
-                                      {tokeninfo.type}
                                     </span>
                                   </div>
                                 </div>
