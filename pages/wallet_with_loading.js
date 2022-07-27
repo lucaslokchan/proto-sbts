@@ -20,7 +20,9 @@ export default function Wallet() {
   });
 
   useEffect(() => {
-    onLoadHandler();
+    if (typeof window.ethereum !== "undefined") {
+      onLoadHandler();
+    }
   }, []);
 
   function truncateAddress(address) {
