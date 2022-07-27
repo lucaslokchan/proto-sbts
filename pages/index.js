@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import FooterComponent from "./footer/footer";
@@ -24,6 +25,10 @@ const addNetwork = async () => {
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Soulbound - Index</title>
+        <meta name="description" content="Soulbound Token Wallet" />
+      </Head>
       <div className="border-8 border-red-800">
         <div className="max-w-screen-md mx-auto text-center border-2">
           <div className="mb-7">
@@ -233,7 +238,7 @@ export default function Home() {
         <div className="max-w-screen-md mx-auto mt-16 border-2">
           <div className="border-2 mb-7">
             <div className="text-center border-2 mb-7">
-              <h1 className="text-[#9F32B2]">Demo</h1>
+              <h1 className="text-[#9F32B2]">User Story</h1>
             </div>
             <div className="text-center">
               <p>
