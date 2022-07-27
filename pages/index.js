@@ -32,19 +32,21 @@ export default function Home() {
           <div className="border-2 mb-7">
             <Image src="/logo.png" width="128" height="128" />
           </div>
-          <div className="mb-16 border-2">
+          <div className="mb-10 border-2">
             <h1>
               Enter the future of decentralized society with Soulbound Wallet
             </h1>
           </div>
           <div>
-            <button className="bg-[#9F32B2] hover:bg-[#D40FF6] text-white py-0 px-4">
-              <h2 className="font-medium">Get Started</h2>
+            <button className="bg-[#9F32B2] hover:bg-[#D40FF6] text-white px-4">
+              <a href="#start">
+                <h2 className="font-medium">Get Started</h2>
+              </a>
             </button>
           </div>
         </div>
 
-        <div className="max-w-screen-md mx-auto mt-24 border-2">
+        <div className="max-w-screen-md mx-auto mt-16 border-2">
           <div className="text-center border-2">
             <div className="border-2 mb-7">
               <h1 className="text-[#9F32B2]">Soulbound Token</h1>
@@ -228,7 +230,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="max-w-screen-md mx-auto mt-24 border-2">
+        <div className="max-w-screen-md mx-auto mt-16 border-2">
           <div className="border-2 mb-7">
             <div className="text-center border-2 mb-7">
               <h1 className="text-[#9F32B2]">Demo</h1>
@@ -247,7 +249,7 @@ export default function Home() {
 
         <div className="max-w-screen-xl mx-auto border-2">
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-28 gap-y-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-28 md:gap-y-16 gap-y-12">
               <div className="flex">
                 <div className="min-w-[300px] max-h-[350px] w-[300px] h-[350px] border-2 overflow-hidden border-black group rounded-2xl bg-white max-w-sm shadow-lg">
                   <div className="py-7 bg-[#9F32B2]"></div>
@@ -397,13 +399,16 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-[#313896] md:py-24 md:px-24 py-10 px-10 border-2 mx-auto">
+        <div
+          id="start"
+          className="bg-[#313896] md:py-24 md:px-24 py-10 px-10 border-2 mx-auto mt-16"
+        >
           <div className="max-w-screen-xl p-10 mx-auto bg-white border-2">
             <div className="border-2 mb-7">
               <h1 className="text-[#9F32B2]">Claim Your Own SBTs</h1>
             </div>
             <div className="border-2 mb-7">
-              <a href="https://metamask.io/download/">
+              <a target="_blank" href="https://metamask.io/download/">
                 <h2>Install Metamask</h2>
               </a>
             </div>
@@ -411,7 +416,7 @@ export default function Home() {
               <h2>Add Network</h2>
             </div>
             <div className="border-2 mb-7">
-              <a href="https://faucet.egorfine.com/">
+              <a target="_blank" href="https://faucet.egorfine.com/">
                 <h2>Get Testnet Ether</h2>
               </a>
             </div>

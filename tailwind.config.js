@@ -7,7 +7,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        "md+": "950px",
+      },
+    },
     fontFamily: {
       sans: ['"Josefin Sans"', ...defaultTheme.fontFamily.sans],
     },

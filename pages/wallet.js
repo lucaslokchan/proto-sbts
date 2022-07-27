@@ -133,9 +133,9 @@ export default function Wallet() {
     <>
       <div className="border-8 border-red-800">
         <div className="max-w-screen-xl mx-auto mt-24 border-2">
-          <div className="grid grid-cols-1 border-2 md:grid-cols-2">
-            <div className="mx-auto border-2">
-              <div className="min-w-[450px] max-h-[280px] w-[450px] h-[280px] border-2 overflow-hidden border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+          <div className="grid grid-cols-1 border-2 md+:grid-cols-2">
+            <div className="mx-auto border-2 ">
+              <div className="max-w-[450px] max-h-[280px] w-[340px] h-[220px] sm:w-[450px] sm:h-[280px] border-2 overflow-hidden border-black group rounded-2xl bg-white shadow-lg">
                 <div className="py-2 bg-[#9F32B2] text-center text-white">
                   <h2 className="">Wallet Stats</h2>
                 </div>
@@ -152,9 +152,11 @@ export default function Wallet() {
                     </div>
                   </div>
                 ) : (
-                  <button onClick={connectwalletHandler} className="">
-                    <h2>Connect Wallet</h2>
-                  </button>
+                  <div className="text-center border-2">
+                    <button onClick={connectwalletHandler} className="">
+                      <h2>Connect Wallet</h2>
+                    </button>
+                  </div>
                 )}
               </div>
             </div>
@@ -225,7 +227,7 @@ export default function Wallet() {
 
         <div className="max-w-screen-xl mx-auto mt-24 border-2">
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-28 gap-y-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-28 md:gap-y-16 gap-y-12 ">
               {tokenowned.map((token) => {
                 return (
                   <div>
