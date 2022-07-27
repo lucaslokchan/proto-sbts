@@ -61,9 +61,9 @@ export default function Wallet() {
         });
         window.ethereum.on("accountsChanged", () => {
           //window.location.reload();
-          if (ethereum.selectedAddress !== "undefined") {
-            getTokenOwnedHandler().then((response) => setTokenOwned(response));
-          }
+          //if (ethereum.selectedAddress !== "undefined") {
+          //  getTokenOwnedHandler().then((response) => setTokenOwned(response));
+          //}
         });
       }
     }
