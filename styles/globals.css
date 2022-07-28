@@ -53,6 +53,10 @@ p {
   font-size: 1.125rem;
 }
 
+div {
+  border-width: 0px;
+}
+
 a {
   color: inherit;
   text-decoration: none;

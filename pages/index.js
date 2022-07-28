@@ -30,7 +30,7 @@ export default function Home() {
         <meta name="description" content="Soulbound Token Wallet" />
       </Head>
       <div className="">
-        <div className="max-w-screen-md mx-auto text-center ">
+        <div className="max-w-screen-md md:mx-auto mx-4 text-center ">
           <div className="mb-7">
             <h0 className="mb-7">SOULBOUND</h0>
           </div>
@@ -51,7 +51,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="max-w-screen-md mx-auto mt-16 ">
+        <div className="max-w-screen-md md:mx-auto mt-16 mx-4">
           <div className="text-center ">
             <div className=" mb-7">
               <h1 className="text-[#9F32B2]">Soulbound Token</h1>
@@ -235,7 +235,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="max-w-screen-md mx-auto mt-16 ">
+        <div className="max-w-screen-md md:mx-auto mt-16 mx-4">
           <div className=" mb-7">
             <div className="text-center  mb-7">
               <h1 className="text-[#9F32B2]">User Story</h1>

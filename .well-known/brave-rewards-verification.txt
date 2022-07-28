@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: soulbound-token.vercel.app
-Token: a502106474a55ad154fe13ce60b0c323f6ae15f5ad2db6ac58e40a11bcbf2d2d

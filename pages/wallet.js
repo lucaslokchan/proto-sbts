@@ -184,7 +184,7 @@ export default function Wallet() {
                     </div>
                   </div>
                 ) : (
-                  <div className="text-center ">
+                  <div className="text-center my-16 md:my-20">
                     <button onClick={connectwalletHandler} className="">
                       <h2>Connect Wallet</h2>
                     </button>
@@ -192,7 +192,7 @@ export default function Wallet() {
                 )}
               </div>
             </div>
-            <div className="">
+            <div className="mx-4">
               <div className=" pt-6">
                 <div>
                   <h2 className="text-[#9F32B2]">Request SBTs</h2>

@@ -1,6 +1,6 @@
 function FooterComponent() {
   return (
-    <div className="max-w-screen-xl mx-auto my-6 ">
+    <div className="max-w-screen-xl md:mx-auto my-6 mx-4">
       <div className="grid grid-cols-1  md:grid-cols-3">
         <div className="space-y-2 ">
           <div className="text-[#9F32B2] font-bold">
