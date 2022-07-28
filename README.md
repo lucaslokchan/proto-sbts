@@ -1,3 +1,5 @@
+ [![Netlify Status](https://api.netlify.com/api/v1/badges/4a5cd70d-5adc-43ec-8d08-9f1f5992a089/deploy-status)](https://soulbound-token.netlify.app)
+ 
 # Soulbound Token
 
 Soulbound Token is proposed in this paper
