@@ -12,6 +12,7 @@ export default function Modal() {
   const web3modal = useRef();
 
   //Get it connected on render
+
   useEffect(() => {
     if (!isConnected) {
       web3modal.current = new Web3modal({
@@ -64,9 +65,19 @@ export default function Modal() {
     }
   }
 
+  //Disconnect function
+  async function Disconnect() {
+    try {
+      await web3modal.clearCachedProvider();
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
   return (
     <>
       <button onClick={Connect}>Connect Wallet</button>
+      <button onClick={Disconnect}>Disconnect</button>
       <div>{address}</div>
     </>
   );
