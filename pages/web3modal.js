@@ -39,8 +39,7 @@ export default function Modal() {
 
     //get access to signer to display the address
     const signer = web3provider.getSigner();
-    const addr = signer.getAddress();
-    setAddress(addr);
+    signer.getAddress().then((response) => setAddress(response));
 
     //Get chainID
     //const { chainId } = await web3provider.getNetwork();
@@ -68,7 +67,7 @@ export default function Modal() {
   return (
     <>
       <button onClick={Connect}>Connect Wallet</button>
-      <div>{ethereum.selectedAddress}</div>
+      <div>{address}</div>
     </>
   );
 }
