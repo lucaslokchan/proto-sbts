@@ -7,7 +7,15 @@ if (typeof window !== "undefined") {
   web3Modal = new Web3Modal({
     network: "mainnet", // optional
     cacheProvider: true,
-    providerOptions: {}, // required
+    providerOptions: {
+      // required
+      walletconnect: {
+        package: WalletConnectProvider, // required
+        options: {
+          infuraId: "INFURA_ID", // required
+        },
+      },
+    },
   });
 }
 export default function Modal() {
