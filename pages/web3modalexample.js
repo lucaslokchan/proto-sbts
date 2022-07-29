@@ -37,7 +37,7 @@ export default function Modal() {
   return (
     <>
       <button onClick={connectWallet}>Connect Wallet</button>
-      <button onClick={disconnect}>Disconnect</button>
+      <button>Disconnect</button>
       <div></div>
     </>
   );
