@@ -17,6 +17,7 @@ export default function Modal() {
     if (!isConnected) {
       web3modal.current = new Web3modal({
         network: "rinkeby",
+        cacheProvider: true,
         providerOptions: {
           walletconnect: {
             package: WalletConnectProvider, // required
@@ -68,7 +69,7 @@ export default function Modal() {
   //Disconnect function
   async function Disconnect() {
     try {
-      await web3modal.clearCachedProvider();
+      await web3modal.current.clearCachedProvider();
     } catch (e) {
       console.error(e);
     }
