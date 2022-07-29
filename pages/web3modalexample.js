@@ -16,6 +16,7 @@ if (typeof window !== "undefined") {
         },
       },
     },
+    disableInjectedProvider: false,
   });
 }
 export default function Modal() {
