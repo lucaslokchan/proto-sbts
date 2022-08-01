@@ -2,24 +2,8 @@ import { ethers, providers } from "ethers";
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
+import { toHex } from "./utils/utils";
 
-//let web3Modal;
-//if (typeof window !== "undefined") {
-//  web3Modal = new Web3Modal({
-//    network: "mainnet", // optional
-//    cacheProvider: true,
-//    providerOptions: {
-//      // required
-//      walletconnect: {
-//        package: WalletConnectProvider, // required
-//        options: {
-//          infuraId: "INFURA_ID", // required
-//        },
-//      },
-//    },
-//    disableInjectedProvider: false,
-//  });
-//}
 if (typeof window !== "undefined") {
   const web3Modal = new Web3Modal({
     cacheProvider: true, // optional
@@ -31,6 +15,13 @@ if (typeof window !== "undefined") {
           infuraId: "INFURA_ID", // required
         },
       },
+    },
+    theme: {
+      background: "rgb(255, 255, 255)",
+      main: "rgb(159, 50, 178)",
+      secondary: "rgb(0, 0, 0)",
+      border: "rgba(0, 0, 0, 0.14)",
+      hover: "rgb(0, 0, 0, 0.1)",
     },
   });
 }
@@ -118,6 +109,33 @@ export default function Modal() {
   };
 
   //Function for switching and adding custom networks
+  const switchNetwork = async () => {
+    try {
+      await library.provider.request({
+        method: "wallet_switchEthereumChain",
+        params: [{ chainId: toHex(137) }],
+      });
+    } catch (switchError) {
+      // This error code indicates that the chain has not been added to MetaMask.
+      if (switchError.code === 4902) {
+        try {
+          await library.provider.request({
+            method: "wallet_addEthereumChain",
+            params: [
+              {
+                chainId: toHex(137),
+                chainName: "Polygon",
+                rpcUrls: ["https://polygon-rpc.com/"],
+                blockExplorerUrls: ["https://polygonscan.com/"],
+              },
+            ],
+          });
+        } catch (addError) {
+          throw addError;
+        }
+      }
+    }
+  };
 
   return (
     <>
@@ -130,10 +148,11 @@ export default function Modal() {
 
         <div>
           Connection Status:
-          {account ? <span>Connected</span> : <span>Disconnected</span>}
+          {account ? <span> Connected</span> : <span> Disconnected</span>}
         </div>
-        <div>Wallet Address: ${account}</div>
+        <div>Wallet Address: {account}</div>
         <div>Chain ID: {chainId}</div>
+        <button onClick={switchNetwork}>Switch Netowrk</button>
       </div>
     </>
   );
