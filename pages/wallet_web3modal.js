@@ -2,7 +2,32 @@ import Head from "next/head";
 import { useState, useEffect } from "react";
 import FooterComponent from "./footer/footer";
 import sbtContract from "../sbt";
-import Router from "next/router";
+import { ethers } from "ethers";
+import Web3Modal from "web3modal";
+import WalletConnectProvider from "@walletconnect/web3-provider";
+import { toHex } from "./../utils/utils";
+
+if (typeof window !== "undefined") {
+  const web3Modal = new Web3Modal({
+    cacheProvider: true, // optional
+    providerOptions: {
+      // required
+      walletconnect: {
+        package: WalletConnectProvider, // required
+        options: {
+          infuraId: "INFURA_ID", // required
+        },
+      },
+    },
+    theme: {
+      background: "rgb(255, 255, 255)",
+      main: "rgb(159, 50, 178)",
+      secondary: "rgb(0, 0, 0)",
+      border: "rgba(0, 0, 0, 0.14)",
+      hover: "rgb(0, 0, 0, 0.1)",
+    },
+  });
+}
 
 export default function Wallet() {
   const [isconnected, setIsConnected] = useState(false);
@@ -10,6 +35,17 @@ export default function Wallet() {
   const [tokenowned, setTokenOwned] = useState([]);
   const [loading, setLoading] = useState(false);
   const [tokenoption, setTokenOption] = useState("");
+  //
+  const [provider, setProvider] = useState();
+  const [library, setLibrary] = useState();
+  const [account, setAccount] = useState();
+  const [signature, setSignature] = useState("");
+  const [error, setError] = useState("");
+  const [chainId, setChainId] = useState();
+  const [network, setNetwork] = useState();
+  const [message, setMessage] = useState("");
+  const [signedMessage, setSignedMessage] = useState("");
+  const [verified, setVerified] = useState();
 
   useEffect(() => {
     if (typeof window.ethereum !== "undefined") {
@@ -28,11 +64,70 @@ export default function Wallet() {
   }, []);
 
   function truncateAddress(address) {
-    let first = address.substr(0, 5);
-    let last = address.substr(address.length - 4);
-    let truncated = first + "..." + last;
-    return truncated;
+    if (account) {
+      let first = address.substr(0, 5);
+      let last = address.substr(address.length - 4);
+      let truncated = first + "..." + last;
+      return truncated;
+    }
   }
+
+  useEffect(() => {
+    if (web3Modal.cachedProvider) {
+      connectWallet();
+    }
+  }, []);
+
+  //Effect hook to handle changes in account or network data
+  useEffect(() => {
+    if (provider?.on) {
+      const handleAccountsChanged = (accounts) => {
+        setAccount(accounts);
+      };
+
+      const handleChainChanged = (chainId) => {
+        setChainId(chainId);
+      };
+
+      const handleDisconnect = () => {
+        disconnect();
+      };
+
+      provider.on("accountsChanged", handleAccountsChanged);
+      provider.on("chainChanged", handleChainChanged);
+      provider.on("disconnect", handleDisconnect);
+
+      return () => {
+        if (provider.removeListener) {
+          provider.removeListener("accountsChanged", handleAccountsChanged);
+          provider.removeListener("chainChanged", handleChainChanged);
+          provider.removeListener("disconnect", handleDisconnect);
+        }
+      };
+    }
+  }, [provider]);
+  //Function for establishing a connection to wallet ->
+  //call the connect function from the Web3Modal instance
+  const connectWallet = async () => {
+    try {
+      const provider = await web3Modal.connect();
+      const library = new ethers.providers.Web3Provider(provider);
+      const accounts = await library.listAccounts();
+      const network = await library.getNetwork();
+      setProvider(provider);
+      setLibrary(library);
+      if (accounts) setAccount(accounts[0]);
+      setNetwork(network);
+      setChainId(network.chainId);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const disconnect = async () => {
+    await web3Modal.clearCachedProvider();
+    refreshState();
+  };
 
   //Request SBT
   const requestSBTHandler = async (uri) => {
@@ -42,6 +137,46 @@ export default function Wallet() {
         .send({ from: ethereum.selectedAddress });
     } else {
       console.log("333");
+    }
+  };
+
+  //Function for refreshing states
+  const refreshState = () => {
+    setAccount();
+    setChainId();
+    setNetwork("");
+    setMessage("");
+    setSignature("");
+    setVerified(undefined);
+    setIsConnected(false);
+  };
+
+  //Function for switching and adding custom networks
+  const switchNetwork = async () => {
+    try {
+      await library.provider.request({
+        method: "wallet_switchEthereumChain",
+        params: [{ chainId: toHex(137) }],
+      });
+    } catch (switchError) {
+      // This error code indicates that the chain has not been added to MetaMask.
+      if (switchError.code === 4902) {
+        try {
+          await library.provider.request({
+            method: "wallet_addEthereumChain",
+            params: [
+              {
+                chainId: toHex(137),
+                chainName: "Polygon",
+                rpcUrls: ["https://polygon-rpc.com/"],
+                blockExplorerUrls: ["https://polygonscan.com/"],
+              },
+            ],
+          });
+        } catch (addError) {
+          throw addError;
+        }
+      }
     }
   };
 
@@ -78,20 +213,6 @@ export default function Wallet() {
         setTokenOwned(response)
       );
   }
-
-  //Connect to metamask wallet
-  const connectwalletHandler = async () => {
-    if (typeof window.ethereum !== "undefined") {
-      try {
-        await window.ethereum.request({ method: "eth_requestAccounts" });
-        //Instantiate web3 instance for calling smart contract methods
-        web3 = new Web3(window.ethereum);
-      } catch (err) {}
-    } else {
-      //metamask not installed
-      console.log("Please install MetaMask");
-    }
-  };
 
   //Fetch total SBT supply from contract
   const getTotalSupplyHandler = async () => {
@@ -174,9 +295,7 @@ export default function Wallet() {
                     </div>
                     <div className="">
                       <div className="pt-2">
-                        <p>
-                          Address: {truncateAddress(ethereum.selectedAddress)}
-                        </p>
+                        <p>Address: {truncateAddress(account)}</p>
                       </div>
                       <div className="pt-2">
                         <p>SBTs Owned: {tokenowned.length}</p>
@@ -185,7 +304,7 @@ export default function Wallet() {
                   </div>
                 ) : (
                   <div className="text-center my-16 md:my-20">
-                    <button onClick={connectwalletHandler} className="">
+                    <button onClick={connectWallet} className="">
                       <h2>Connect Wallet</h2>
                     </button>
                   </div>
@@ -197,7 +316,7 @@ export default function Wallet() {
                 <div>
                   <h2 className="text-[#9F32B2]">Request SBTs</h2>
                 </div>
-                <div class="pt-4">
+                <div className="pt-4">
                   <div>
                     <div className="flex gap-x-5">
                       <div>

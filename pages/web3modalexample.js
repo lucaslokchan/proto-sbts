@@ -1,5 +1,5 @@
-import { ethers, providers } from "ethers";
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import { ethers } from "ethers";
+import React, { useState, useEffect } from "react";
 import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import { toHex } from "./../utils/utils";
