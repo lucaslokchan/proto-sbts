@@ -2,7 +2,7 @@ import { ethers, providers } from "ethers";
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
-import { toHex } from "./utils/utils";
+import { toHex } from "./../utils/utils";
 
 if (typeof window !== "undefined") {
   const web3Modal = new Web3Modal({
