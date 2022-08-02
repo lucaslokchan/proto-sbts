@@ -11,6 +11,7 @@ if (typeof window !== "undefined") {
   const web3Modal = new Web3Modal({
     cacheProvider: true, // optional
     providerOptions: {
+      // required
       walletconnect: {
         package: WalletConnectProvider, // required
         options: {
@@ -34,48 +35,26 @@ export default function Wallet() {
   const [tokenowned, setTokenOwned] = useState([]);
   const [loading, setLoading] = useState(false);
   const [tokenoption, setTokenOption] = useState("");
-  //
+
   const [provider, setProvider] = useState();
   const [library, setLibrary] = useState();
   const [account, setAccount] = useState();
-  const [signature, setSignature] = useState("");
-  const [error, setError] = useState("");
   const [chainId, setChainId] = useState();
   const [network, setNetwork] = useState();
-  const [message, setMessage] = useState("");
-  const [signedMessage, setSignedMessage] = useState("");
-  const [verified, setVerified] = useState();
 
-  useEffect(() => {
-    if (typeof window.ethereum !== "undefined") {
-      isConnectedHandler();
-      addressChangeHandler();
-      getTotalSupplyHandler().then((response) => setTotalSupply(response));
-    }
-  });
+  //Test function
+  const printAddress = () => {
+    console.log("Account" + account);
+    console.log("Ethereum.selectedaddress" + ethereum.selectedAddress);
+  };
 
+  //Persist wallet connection upon refreshing the browser ->
+  //hook to connect to the cached provider automatically
   useEffect(() => {
-    if (typeof window.ethereum !== "undefined") {
-      if (typeof ethereum.selectedAddress !== "undefined") {
-        onLoadHandler();
-      }
+    if (web3Modal.cachedProvider) {
+      connectWallet();
     }
   }, []);
-
-  function truncateAddress(address) {
-    if (account) {
-      let first = address.substr(0, 5);
-      let last = address.substr(address.length - 4);
-      let truncated = first + "..." + last;
-      return truncated;
-    }
-  }
-
-  //useEffect(() => {
-  //  if (web3Modal.cachedProvider) {
-  //    connectWallet();
-  //  }
-  //}, []);
 
   //Effect hook to handle changes in account or network data
   useEffect(() => {
@@ -105,6 +84,7 @@ export default function Wallet() {
       };
     }
   }, [provider]);
+
   //Function for establishing a connection to wallet ->
   //call the connect function from the Web3Modal instance
   const connectWallet = async () => {
@@ -123,10 +103,27 @@ export default function Wallet() {
     }
   };
 
-  const disconnect = async () => {
-    await web3Modal.clearCachedProvider();
-    refreshState();
-  };
+  useEffect(() => {
+    if (account !== "undefined") {
+      onLoadHandler();
+    }
+  }, []);
+
+  //Original Wallet.js
+  useEffect(() => {
+    if (typeof window.ethereum !== "undefined") {
+      isConnectedHandler();
+      addressChangeHandler();
+      getTotalSupplyHandler().then((response) => setTotalSupply(response));
+    }
+  });
+
+  function truncateAddress(address) {
+    let first = address.substr(0, 5);
+    let last = address.substr(address.length - 4);
+    let truncated = first + "..." + last;
+    return truncated;
+  }
 
   //Request SBT
   const requestSBTHandler = async (uri) => {
@@ -136,46 +133,6 @@ export default function Wallet() {
         .send({ from: ethereum.selectedAddress });
     } else {
       console.log("333");
-    }
-  };
-
-  //Function for refreshing states
-  const refreshState = () => {
-    setAccount();
-    setChainId();
-    setNetwork("");
-    setMessage("");
-    setSignature("");
-    setVerified(undefined);
-    setIsConnected(false);
-  };
-
-  //Function for switching and adding custom networks
-  const switchNetwork = async () => {
-    try {
-      await library.provider.request({
-        method: "wallet_switchEthereumChain",
-        params: [{ chainId: toHex(137) }],
-      });
-    } catch (switchError) {
-      // This error code indicates that the chain has not been added to MetaMask.
-      if (switchError.code === 4902) {
-        try {
-          await library.provider.request({
-            method: "wallet_addEthereumChain",
-            params: [
-              {
-                chainId: toHex(137),
-                chainName: "Polygon",
-                rpcUrls: ["https://polygon-rpc.com/"],
-                blockExplorerUrls: ["https://polygonscan.com/"],
-              },
-            ],
-          });
-        } catch (addError) {
-          throw addError;
-        }
-      }
     }
   };
 
@@ -294,7 +251,9 @@ export default function Wallet() {
                     </div>
                     <div className="">
                       <div className="pt-2">
-                        <p>Address: {truncateAddress(account)}</p>
+                        <p>
+                          Address: {truncateAddress(ethereum.selectedAddress)}
+                        </p>
                       </div>
                       <div className="pt-2">
                         <p>SBTs Owned: {tokenowned.length}</p>
@@ -370,6 +329,7 @@ export default function Wallet() {
                   <a href="https://ropsten.etherscan.io/address/0xAab2d8b6F6D3eE17510c87111e1563a4611FfFb2">
                     <p>View on Block Explorer</p>
                   </a>
+                  <button onClick={printAddress}>Console.log(address)</button>
                 </div>
               </div>
             </div>
