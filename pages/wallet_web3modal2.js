@@ -221,7 +221,7 @@ export default function Wallet() {
                 <div className="py-2 bg-[#9F32B2] text-center text-white">
                   <h2 className="">Wallet Stats</h2>
                 </div>
-                {isconnected ? (
+                {account ? (
                   <div className="grid grid-cols-2 mt-4 md:mt-10 ">
                     <div className="mx-auto ">
                       <svg
