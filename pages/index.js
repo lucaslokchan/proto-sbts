@@ -414,15 +414,15 @@ export default function Home() {
             </div>
             <div className=" mb-7">
               <a target="_blank" href="https://metamask.io/download/">
-                <h2>Install Metamask</h2>
+                <h2>1. Install Metamask</h2>
               </a>
             </div>
             <div className=" mb-7">
-              <h2>Add Network</h2>
+              <h2>2. Switch to Goerli</h2>
             </div>
             <div className=" mb-7">
               <a target="_blank" href="https://faucet.egorfine.com/">
-                <h2>Get Testnet Ether</h2>
+                <h2>3. Get Testnet Ether</h2>
               </a>
             </div>
             <div className=" mb-7">
