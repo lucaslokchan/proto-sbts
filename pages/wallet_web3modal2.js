@@ -46,9 +46,15 @@ export default function Modal() {
     getTotalSupplyHandler().then((response) => setTotalSupply(response));
     if (web3Modal.cachedProvider) {
       connectWallet();
-      getTokenOwnedHandler().then((response) => setTokenOwned(response));
     }
   }, []);
+
+  //Fetch tokens after state "account" is updated and when account is not undefined
+  useEffect(() => {
+    if (typeof account !== "undefined") {
+      getTokenOwnedHandler().then((response) => setTokenOwned(response));
+    }
+  }, [account]);
 
   //Effect hook to handle changes in account or network data
   useEffect(() => {
@@ -170,13 +176,8 @@ export default function Modal() {
 
   //Test function
   const printAddress = () => {
-    console.log("Account: " + account + " " + typeof account);
-    console.log(
-      "Ethereum.selectedaddress: " +
-        ethereum.selectedAddress +
-        " " +
-        typeof ethereum.selectedAddress
-    );
+    console.log(account);
+    console.log(ethereum.selectedAddress);
   };
   return (
     <>
