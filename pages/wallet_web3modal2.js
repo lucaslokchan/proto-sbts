@@ -46,6 +46,7 @@ export default function Modal() {
     getTotalSupplyHandler().then((response) => setTotalSupply(response));
     if (web3Modal.cachedProvider) {
       connectWallet();
+      getTokenOwnedHandler().then((response) => setTokenOwned(response));
     }
   }, []);
 
@@ -108,7 +109,6 @@ export default function Modal() {
       if (accounts) setAccount(accounts[0]);
       setNetwork(network);
       setChainId(network.chainId);
-      getTokenOwnedHandler().then((response) => setTokenOwned(response));
     } catch (error) {
       console.log(error);
     }
@@ -144,7 +144,6 @@ export default function Modal() {
     var tokenid = new Array();
     var urilist = new Array();
     var responselist = new Array();
-
     setLoading(true);
     const balance = await sbtContract.methods
       .balanceOf(account)
@@ -169,6 +168,16 @@ export default function Modal() {
     return responselist;
   };
 
+  //Test function
+  const printAddress = () => {
+    console.log("Account: " + account + " " + typeof account);
+    console.log(
+      "Ethereum.selectedaddress: " +
+        ethereum.selectedAddress +
+        " " +
+        typeof ethereum.selectedAddress
+    );
+  };
   return (
     <>
       <Head>
@@ -289,6 +298,7 @@ export default function Modal() {
                   <a href="https://ropsten.etherscan.io/address/0xAab2d8b6F6D3eE17510c87111e1563a4611FfFb2">
                     <p>View on Block Explorer</p>
                   </a>
+                  <button onClick={printAddress}>Console.log(address)</button>
                 </div>
               </div>
             </div>
