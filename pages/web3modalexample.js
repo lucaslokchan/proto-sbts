@@ -3,10 +3,12 @@ import React, { useState, useEffect } from "react";
 import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import { toHex } from "./../utils/utils";
+import Head from "next/head";
 
 if (typeof window !== "undefined") {
   const web3Modal = new Web3Modal({
     cacheProvider: true, // optional
+    network: "ropsten",
     providerOptions: {
       // required
       walletconnect: {
@@ -139,6 +141,10 @@ export default function Modal() {
 
   return (
     <>
+      <Head>
+        <title>Soulbound - Web3modalexample</title>
+        <meta name="description" content="Soulbound Token Wallet" />
+      </Head>
       <div>
         {!account ? (
           <button onClick={connectWallet}>Connect Wallet</button>

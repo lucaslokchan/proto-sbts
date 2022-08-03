@@ -1,15 +1,16 @@
-import Head from "next/head";
-import { useState, useEffect } from "react";
-import FooterComponent from "./footer/footer";
-import sbtContract from "../sbt";
 import { ethers } from "ethers";
+import React, { useState, useEffect } from "react";
 import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import { toHex } from "./../utils/utils";
+import Head from "next/head";
+import FooterComponent from "./footer/footer";
+import sbtContract from "../sbt";
 
 if (typeof window !== "undefined") {
   const web3Modal = new Web3Modal({
     cacheProvider: true, // optional
+    network: "ropsten",
     providerOptions: {
       // required
       walletconnect: {
@@ -28,29 +29,21 @@ if (typeof window !== "undefined") {
     },
   });
 }
-
-export default function Wallet() {
-  const [isconnected, setIsConnected] = useState(false);
-  const [totalsupply, setTotalSupply] = useState("");
-  const [tokenowned, setTokenOwned] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [tokenoption, setTokenOption] = useState("");
-
+export default function Modal() {
   const [provider, setProvider] = useState();
   const [library, setLibrary] = useState();
   const [account, setAccount] = useState();
   const [chainId, setChainId] = useState();
   const [network, setNetwork] = useState();
-
-  //Test function
-  const printAddress = () => {
-    console.log("Account" + account);
-    console.log("Ethereum.selectedaddress" + ethereum.selectedAddress);
-  };
+  const [tokenoption, setTokenOption] = useState("");
+  const [totalsupply, setTotalSupply] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [tokenowned, setTokenOwned] = useState([]);
 
   //Persist wallet connection upon refreshing the browser ->
   //hook to connect to the cached provider automatically
   useEffect(() => {
+    getTotalSupplyHandler().then((response) => setTotalSupply(response));
     if (web3Modal.cachedProvider) {
       connectWallet();
     }
@@ -85,6 +78,23 @@ export default function Wallet() {
     }
   }, [provider]);
 
+  function truncateAddress(address) {
+    try {
+      let first = address.substr(0, 5);
+      let last = address.substr(address.length - 4);
+      let truncated = first + "..." + last;
+      return truncated;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  //Fetch total SBT supply from contract
+  const getTotalSupplyHandler = async () => {
+    const supply = await sbtContract.methods.totalSupply().call();
+    return supply;
+  };
+
   //Function for establishing a connection to wallet ->
   //call the connect function from the Web3Modal instance
   const connectWallet = async () => {
@@ -98,82 +108,35 @@ export default function Wallet() {
       if (accounts) setAccount(accounts[0]);
       setNetwork(network);
       setChainId(network.chainId);
+      getTokenOwnedHandler().then((response) => setTokenOwned(response));
     } catch (error) {
       console.log(error);
     }
   };
 
-  useEffect(() => {
-    if (account !== "undefined") {
-      onLoadHandler();
-    }
-  }, []);
+  //Function for disconnecting from dapp by clearing cached provider and refreshing states
+  const disconnect = async () => {
+    await web3Modal.clearCachedProvider();
+    refreshState();
+  };
 
-  //Original Wallet.js
-  useEffect(() => {
-    if (typeof window.ethereum !== "undefined") {
-      isConnectedHandler();
-      addressChangeHandler();
-      getTotalSupplyHandler().then((response) => setTotalSupply(response));
-    }
-  });
-
-  function truncateAddress(address) {
-    let first = address.substr(0, 5);
-    let last = address.substr(address.length - 4);
-    let truncated = first + "..." + last;
-    return truncated;
-  }
+  //Function for refreshing states
+  const refreshState = () => {
+    setAccount();
+    setChainId();
+    setNetwork("");
+    setMessage("");
+    setSignature("");
+    setVerified(undefined);
+  };
 
   //Request SBT
   const requestSBTHandler = async (uri) => {
     if (uri !== "") {
-      sbtContract.methods
-        .requestSBT(ethereum.selectedAddress, uri)
-        .send({ from: ethereum.selectedAddress });
+      sbtContract.methods.requestSBT(account, uri).send({ from: account });
     } else {
       console.log("333");
     }
-  };
-
-  //Determins if metamask is connected
-  function isConnectedHandler() {
-    if (ethereum.selectedAddress == null) {
-      setIsConnected(false);
-    } else {
-      setIsConnected(true);
-    }
-  }
-
-  //Reloads window when Metamask chain is changed and SBT metadata when accound is changed
-  function addressChangeHandler() {
-    if (typeof window.ethereum !== "undefined") {
-      if (window.ethereum) {
-        window.ethereum.on("chainChanged", () => {
-          window.location.reload();
-        });
-        window.ethereum.on("accountsChanged", () => {
-          //window.location.reload();
-          if (ethereum.selectedAddress !== "undefined") {
-            getTokenOwnedHandler().then((response) => setTokenOwned(response));
-          }
-        });
-      }
-    }
-  }
-
-  //Fetch token URI on IPFS when window is on load
-  function onLoadHandler() {
-    if (ethereum.selectedAddress !== "undefined")
-      window.onload = getTokenOwnedHandler().then((response) =>
-        setTokenOwned(response)
-      );
-  }
-
-  //Fetch total SBT supply from contract
-  const getTotalSupplyHandler = async () => {
-    const supply = await sbtContract.methods.totalSupply().call();
-    return supply;
   };
 
   //Fetch token owned by address with subsequent URI and metadata
@@ -181,16 +144,15 @@ export default function Wallet() {
     var tokenid = new Array();
     var urilist = new Array();
     var responselist = new Array();
+
     setLoading(true);
     const balance = await sbtContract.methods
-      .balanceOf(ethereum.selectedAddress)
+      .balanceOf(account)
       .call((err, result) => {
         return result;
       });
     for (let i = 0; i < balance; i++) {
-      let id = await sbtContract.methods
-        .tokenOfOwnerByIndex(ethereum.selectedAddress, i)
-        .call();
+      let id = await sbtContract.methods.tokenOfOwnerByIndex(account, i).call();
       tokenid[i] = id;
     }
     for (let i = 0; i < tokenid.length; i++) {
@@ -251,9 +213,7 @@ export default function Wallet() {
                     </div>
                     <div className="">
                       <div className="pt-2">
-                        <p>
-                          Address: {truncateAddress(ethereum.selectedAddress)}
-                        </p>
+                        <p>Address: {truncateAddress(account)}</p>
                       </div>
                       <div className="pt-2">
                         <p>SBTs Owned: {tokenowned.length}</p>
@@ -329,7 +289,6 @@ export default function Wallet() {
                   <a href="https://ropsten.etherscan.io/address/0xAab2d8b6F6D3eE17510c87111e1563a4611FfFb2">
                     <p>View on Block Explorer</p>
                   </a>
-                  <button onClick={printAddress}>Console.log(address)</button>
                 </div>
               </div>
             </div>
@@ -485,10 +444,10 @@ export default function Wallet() {
                                   </div>
                                 </div>
                               </div>
-                              <div class="absloute">
+                              <div className="absloute">
                                 <img
                                   src={tokeninfo.image}
-                                  class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[130px]"
+                                  className="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[130px]"
                                 />
                               </div>
                             </div>
