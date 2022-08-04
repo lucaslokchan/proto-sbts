@@ -30,7 +30,7 @@ export default function Home() {
         <meta name="description" content="Soulbound Token Wallet" />
       </Head>
       <div className="">
-        <div className="max-w-screen-md md:mx-auto mx-4 text-center ">
+        <div className="max-w-screen-md mx-4 text-center md:mx-auto ">
           <div className="mb-7">
             <h0 className="mb-7">SOULBOUND</h0>
           </div>
@@ -51,7 +51,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="max-w-screen-md md:mx-auto mt-16 mx-4">
+        <div className="max-w-screen-md mx-4 mt-16 md:mx-auto">
           <div className="text-center ">
             <div className=" mb-7">
               <h1 className="text-[#9F32B2]">Soulbound Token</h1>
@@ -71,8 +71,8 @@ export default function Home() {
           </div>
 
           <div className="">
-            <div className="items-center space-x-2  sm:flex">
-              <div className="px-5  sm:px-20">
+            <div className="items-center space-x-2 sm:flex">
+              <div className="px-5 sm:px-20">
                 <svg
                   className=""
                   width="100"
@@ -127,8 +127,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="items-center space-x-2  sm:flex">
-              <div className="px-5  sm:px-20">
+            <div className="items-center space-x-2 sm:flex">
+              <div className="px-5 sm:px-20">
                 <svg
                   width="100"
                   height="130"
@@ -198,8 +198,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="items-center space-x-2  sm:flex">
-              <div className="px-5  sm:px-20">
+            <div className="items-center space-x-2 sm:flex">
+              <div className="px-5 sm:px-20">
                 <svg
                   width="100"
                   height="130"
@@ -235,9 +235,9 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="max-w-screen-md md:mx-auto mt-16 mx-4">
+        <div className="max-w-screen-md mx-4 mt-16 md:mx-auto">
           <div className=" mb-7">
-            <div className="text-center  mb-7">
+            <div className="text-center mb-7">
               <h1 className="text-[#9F32B2]">User Story</h1>
             </div>
             <div className="text-center">
@@ -414,15 +414,17 @@ export default function Home() {
             </div>
             <div className=" mb-7">
               <a target="_blank" href="https://metamask.io/download/">
-                <h2>1. Install Metamask</h2>
+                <h2>Install Metamask</h2>
               </a>
             </div>
             <div className=" mb-7">
-              <h2>2. Switch to Goerli</h2>
+              <button onClick={addNetwork}>
+                <h2>Switch to Goerli</h2>
+              </button>
             </div>
             <div className=" mb-7">
               <a target="_blank" href="https://faucet.egorfine.com/">
-                <h2>3. Get Testnet Ether</h2>
+                <h2>Get Testnet Ether</h2>
               </a>
             </div>
             <div className=" mb-7">
