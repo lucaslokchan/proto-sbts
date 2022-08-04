@@ -285,7 +285,7 @@ const getTotalSupplyHandler = async () => {
 };
 
 getTotalSupplyHandler().then((response) => {
-  console.log(response._hex);
+  console.log(parseInt(response._hex));
 });
 
 //const getTotalSupplyHandler = async () => {
