@@ -60,7 +60,7 @@ export default function Modal() {
   useEffect(() => {
     if (provider?.on) {
       const handleAccountsChanged = (accounts) => {
-        setAccount(accounts);
+        setAccount(accounts[0]);
       };
 
       const handleChainChanged = (chainId) => {
