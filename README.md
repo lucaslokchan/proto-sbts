@@ -20,8 +20,6 @@ cd soulbound-token
 
 npm install
 
-npm i web3
-
 npm run dev
 
 http://localhost:3000
