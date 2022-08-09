@@ -105,7 +105,7 @@ export default function Modal() {
       const supply = await sbtContract.methods.totalSupply().call();
       return supply;
     } catch (error) {
-      toast("Please switch to Ropsten Testnet!");
+      toast("Please switch to Ropsten Testnet");
     }
   };
 
@@ -189,7 +189,7 @@ export default function Modal() {
         <title>Soulbound - Wallet</title>
         <meta name="description" content="Soulbound Token Wallet" />
       </Head>
-      <ToastContainer />
+      <ToastContainer style={{ fontFamily: "Josefin Sans" }} />
       <div className="">
         <div className="max-w-screen-xl mx-auto mt-2 md:mt-36 ">
           <div className="grid grid-cols-1 md+:grid-cols-2">

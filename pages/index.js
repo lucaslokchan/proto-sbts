@@ -290,7 +290,7 @@ export default function Home() {
                 </div>
                 <div class="absloute">
                   <img
-                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/image/index/peplink.png"
+                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/index/peplink.png"
                     class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[125px]"
                   />
                 </div>
@@ -315,7 +315,7 @@ export default function Home() {
                 </div>
                 <div class="absloute">
                   <img
-                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/image/index/loughborough_university.png"
+                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/index/loughborough_university.png"
                     class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[125px]"
                   />
                 </div>
@@ -330,16 +330,15 @@ export default function Home() {
                   <div className="mx-[2rem] border-t-[0.18rem] border-black">
                     <div className="mt-2 text-center">
                       <p className="break-words">GCE Advanced Level</p>
-                      &nbsp
                     </div>
-                    <div className="mt-2 text-center">
+                    <div className="mt-9 text-center">
                       <p className="">Oct 2017 - Jun 2020</p>
                     </div>
                   </div>
                 </div>
                 <div class="absloute">
                   <img
-                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/image/index/brockenhurst_college.png"
+                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/index/brockenhurst_college.png"
                     class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[125px]"
                   />
                 </div>
