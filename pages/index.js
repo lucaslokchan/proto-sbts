@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import FooterComponent from "./footer/footer";
+import HeaderComponent from "./header/header";
 
 //const addNetwork = async () => {
 //  window.ethereum.request({
@@ -48,15 +49,16 @@ export default function Home() {
         <title>Soulbound - Index</title>
         <meta name="description" content="Soulbound Token Wallet" />
       </Head>
+      <div>
+        <div className="text-center">
+          <h0 className="sm:text-[90px] lg:text-[150px] xl:text-[190px]">
+            SOULBOUND
+          </h0>
+        </div>
+      </div>
       <div className="">
-        <div className="max-w-screen-md mx-4 text-center md:mx-auto ">
-          <div className="mb-7">
-            <h0 className="mb-7">SOULBOUND</h0>
-          </div>
-          <div className=" mb-7">
-            <Image src="/logo.png" width="128" height="128" />
-          </div>
-          <div className="mb-10 ">
+        <div className="max-w-screen-md mx-4 text-center md:mx-auto">
+          <div className="mb-10">
             <h1>
               Enter the future of decentralized society with Soulbound Wallet
             </h1>
@@ -64,7 +66,7 @@ export default function Home() {
           <div>
             <button className="bg-[#9F32B2] hover:bg-[#D40FF6] text-white px-4">
               <a href="#start">
-                <h2 className="font-medium">Get Started</h2>
+                <h2 className="font-medium">Launch App</h2>
               </a>
             </button>
           </div>
