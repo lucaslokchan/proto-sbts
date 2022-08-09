@@ -6,6 +6,8 @@ import { toHex } from "./../utils/utils";
 import Head from "next/head";
 import FooterComponent from "./footer/footer";
 import sbtContract from "../sbt";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 if (typeof window !== "undefined") {
   const web3Modal = new Web3Modal({
@@ -103,7 +105,7 @@ export default function Modal() {
       const supply = await sbtContract.methods.totalSupply().call();
       return supply;
     } catch (error) {
-      alert("Please switch to Ropsten Testnet!");
+      toast("Please switch to Ropsten Testnet!");
     }
   };
 
@@ -187,6 +189,7 @@ export default function Modal() {
         <title>Soulbound - Wallet</title>
         <meta name="description" content="Soulbound Token Wallet" />
       </Head>
+      <ToastContainer />
       <div className="">
         <div className="max-w-screen-xl mx-auto mt-2 md:mt-36 ">
           <div className="grid grid-cols-1 md+:grid-cols-2">
