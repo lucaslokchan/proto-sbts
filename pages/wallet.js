@@ -44,6 +44,7 @@ export default function Modal() {
   //hook to connect to the cached provider automatically
   useEffect(() => {
     getTotalSupplyHandler().then((response) => setTotalSupply(response));
+
     if (web3Modal.cachedProvider) {
       connectWallet();
     }
@@ -98,8 +99,12 @@ export default function Modal() {
 
   //Fetch total SBT supply from contract
   const getTotalSupplyHandler = async () => {
-    const supply = await sbtContract.methods.totalSupply().call();
-    return supply;
+    try {
+      const supply = await sbtContract.methods.totalSupply().call();
+      return supply;
+    } catch (error) {
+      alert("Please switch to Ropsten Testnet!");
+    }
   };
 
   //Function for establishing a connection to wallet ->
@@ -188,7 +193,9 @@ export default function Modal() {
             <div className="mx-auto">
               <div className="max-w-[450px] max-h-[280px] w-[340px] h-[220px] sm:w-[450px] sm:h-[280px]  overflow-hidden border-black group rounded-2xl bg-white shadow-lg">
                 <div className="py-2 bg-[#9F32B2] text-center text-white">
-                  <h2 className="">Wallet Stats</h2>
+                  <h2 className="tracking-[0.3rem] md:tracking-[0.5rem]">
+                    SOULBOUND
+                  </h2>
                 </div>
                 {account ? (
                   <div className="grid grid-cols-2 mt-4 md:mt-10 ">

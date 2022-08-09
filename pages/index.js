@@ -3,20 +3,39 @@ import Link from "next/link";
 import Image from "next/image";
 import FooterComponent from "./footer/footer";
 
+//const addNetwork = async () => {
+//  window.ethereum.request({
+//    method: "wallet_addEthereumChain",
+//    params: [
+//      {
+//        chainId: "0x13881",
+//        chainName: "Polygon Testnet",
+//        nativeCurrency: {
+//          name: "MATIC",
+//          symbol: "MATIC",
+//          decimals: 18,
+//        },
+//        rpcUrls: ["https://matic-mumbai.chainstacklabs.com"],
+//        blockExplorerUrls: ["https://mumbai.polygonscan.com/"],
+//      },
+//    ],
+//  });
+//};
+
 const addNetwork = async () => {
   window.ethereum.request({
     method: "wallet_addEthereumChain",
     params: [
       {
-        chainId: "0x13881",
-        chainName: "Polygon Testnet",
+        chainId: "0x3",
+        chainName: "Ropsten Test Network",
         nativeCurrency: {
-          name: "MATIC",
-          symbol: "MATIC",
+          name: "ETH",
+          symbol: "ETH",
           decimals: 18,
         },
-        rpcUrls: ["https://matic-mumbai.chainstacklabs.com"],
-        blockExplorerUrls: ["https://mumbai.polygonscan.com/"],
+        rpcUrls: ["https://ropsten.infura.io/v3/"],
+        blockExplorerUrls: ["https://ropsten.etherscan.io/"],
       },
     ],
   });
@@ -238,15 +257,13 @@ export default function Home() {
         <div className="max-w-screen-md mx-4 mt-16 md:mx-auto">
           <div className=" mb-7">
             <div className="text-center mb-7">
-              <h1 className="text-[#9F32B2]">User Story</h1>
+              <h1 className="text-[#9F32B2]">Lucas' Wallet</h1>
             </div>
             <div className="text-center">
               <p>
-                Lucas graduated from Lumbburgh University with an Electrical and
-                Electronics Degree. He works as a data scientist and part time
-                research assistant at Lumbburgh University electronic lab. He
-                recently attended blockchain workshop. On the personal side, he
-                is a gold member at {} club
+                Lucas graduated from Loughborough University with an Electrical
+                and Electronics Degree. He works as a Assistant Hardware
+                Engineer
               </p>
             </div>
           </div>
@@ -419,7 +436,7 @@ export default function Home() {
             </div>
             <div className=" mb-7">
               <button onClick={addNetwork}>
-                <h2>Switch to Goerli</h2>
+                <h2>Switch to Ropsten Testnet</h2>
               </button>
             </div>
             <div className=" mb-7">
