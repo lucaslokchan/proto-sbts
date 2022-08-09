@@ -1,8 +1,9 @@
  [![Netlify Status](https://api.netlify.com/api/v1/badges/4a5cd70d-5adc-43ec-8d08-9f1f5992a089/deploy-status)](https://soulbound-token.netlify.app)
- 
+This is a minimum viable product (MVP) of Soulbound Token Wallet
+
 # Soulbound Token
 
-Soulbound Token is proposed in this paper
+The concept of Soulbound Token is proposed in this paper
 
 Decentralized Society: Finding Web3's Soul
 
@@ -14,11 +15,9 @@ npx create-next-app soulbound-token
 
 git clone https://github.com/lucaslokchan/proto-sbts
 
-Copy files from proto-sbts into soulbound-token folder
-
 cd soulbound-token
 
-npm install -D tailwindcss postcss autoprefixer
+npm install
 
 npm i web3
 
@@ -26,22 +25,37 @@ npm run dev
 
 http://localhost:3000
 
-# Diagram
+# How it works
+
+Institutions deploy smart contracts to issue SBTs to each individuals (Souls). 
+
+The underlying mechanism is similar to NFTs which token metadata is stored on IPFS.
+
+The diagram below illustrates the workflows of issuing an SBT. 
+
 
 ![Diagram](image/diagram.png)
 
 # Tech Stack
 
+### Smart Contract Development / Deployment
+
 Solidity
 
 Remix IDE
 
+Hardhat
+
+### Frontend + Backend
 web3.js
+
+ethers.js
 
 next.js
 
 MetaMask
 
+### UX/UI Design
 Figma
 
 # SBT Examples
