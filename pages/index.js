@@ -435,9 +435,7 @@ export default function Home() {
               </a>
             </div>
             <div className=" mb-7">
-              <button onClick={addNetwork}>
-                <h2>Switch to Ropsten Testnet</h2>
-              </button>
+              <h2>Switch to Ropsten Testnet</h2>
             </div>
             <div className=" mb-7">
               <a target="_blank" href="https://faucet.egorfine.com/">
