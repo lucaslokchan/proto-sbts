@@ -49,6 +49,14 @@ h2 {
   font-weight: bold;
 }
 
+h3 {
+  /* text-3xl */
+  /* font-size: 1.875rem; */
+  font-size: 1.2rem;
+  line-height: 2.25rem;
+  font-weight: bold;
+}
+
 p {
   font-size: 1.125rem;
 }

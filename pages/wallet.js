@@ -2226,7 +2226,7 @@ export default function Modal() {
                               <div className="absloute">
                                 <img
                                   src={tokeninfo.image}
-                                  className="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[130px]"
+                                  className="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[125px]"
                                 />
                               </div>
                             </div>

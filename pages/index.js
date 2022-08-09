@@ -261,9 +261,10 @@ export default function Home() {
             </div>
             <div className="text-center">
               <p>
-                Lucas graduated from Loughborough University with an Electrical
-                and Electronics Degree. He works as a Assistant Hardware
-                Engineer
+                Lucas has worked at Peplink as an Assistant Hardware Engineer
+                responsible for 1.5 years. He studied in the UK for 5 years and
+                graduated with an Electrical and Electronics Degree from
+                Loughborough University in June 2020.
               </p>
             </div>
           </div>
@@ -276,24 +277,46 @@ export default function Home() {
                 <div className="min-w-[300px] max-h-[350px] w-[300px] h-[350px]  overflow-hidden border-black group rounded-2xl bg-white max-w-sm shadow-lg">
                   <div className="py-7 bg-[#9F32B2]"></div>
                   <div className="text-center mt-[5.5rem] mb-1">
-                    <h2>Graduate Token</h2>
+                    <h3>Peplink</h3>
                   </div>
                   <div className="mx-[2rem] border-t-[0.18rem] border-black">
-                    <div className="mt-2 max-h-[150px] overflow-y-scroll">
-                      <p className="">
-                        an award conferred by lumbburgh university signifying
-                        that the recipent has satisfactorily completed a course
-                        of study an award conferred by lumbburgh university
-                        signifying that the recipent has satisfactorily
-                        completed a course of study 33333333333333333
-                      </p>
+                    <div className="mt-2 text-center">
+                      <p className="">Assistant Hardware Engineer</p>
+                    </div>
+                    <div className="mt-2 text-center">
+                      <p className="">Mar 2021 - Aug 2022</p>
                     </div>
                   </div>
                 </div>
                 <div class="absloute">
                   <img
-                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/image/property_right_data_cooperatives.png"
-                    class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[130px]"
+                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/image/index/peplink.png"
+                    class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[125px]"
+                  />
+                </div>
+              </div>
+
+              <div className="flex">
+                <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden  border-black group rounded-2xl bg-white max-w-sm shadow-lg">
+                  <div className="py-7 bg-[#9F32B2]"></div>
+                  <div className="text-center mt-[5.5rem] mb-1 mx-3">
+                    <h3 className="">Loughborough University</h3>
+                  </div>
+                  <div className="mx-[2rem] border-t-[0.18rem] border-black">
+                    <div className="mt-2 text-center">
+                      <p className="break-words">
+                        Bachelor of Electronic and Electrical Engineering
+                      </p>
+                      <div className="mt-2 text-center">
+                        <p className="">Oct 2017 - Jun 2020</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="absloute">
+                  <img
+                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/image/index/loughborough_university.png"
+                    class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[125px]"
                   />
                 </div>
               </div>
@@ -302,118 +325,22 @@ export default function Home() {
                 <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden  border-black group rounded-2xl bg-white max-w-sm shadow-lg">
                   <div className="py-7 bg-[#9F32B2]"></div>
                   <div className="text-center mt-[5.5rem] mb-1">
-                    <h2>Graduate Token</h2>
+                    <h3>Brockenhurst College</h3>
                   </div>
                   <div className="mx-[2rem] border-t-[0.18rem] border-black">
-                    <div className="mt-2">
-                      <p className="break-words">
-                        an award conferred by lumbburgh university signifying
-                        that the recipent has satisfactorily completed a course
-                        of study
-                      </p>
+                    <div className="mt-2 text-center">
+                      <p className="break-words">GCE Advanced Level</p>
+                      &nbsp
+                    </div>
+                    <div className="mt-2 text-center">
+                      <p className="">Oct 2017 - Jun 2020</p>
                     </div>
                   </div>
                 </div>
                 <div class="absloute">
                   <img
-                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/image/property_right_data_cooperatives.png"
-                    class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[130px]"
-                  />
-                </div>
-              </div>
-
-              <div className="flex">
-                <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden  border-black group rounded-2xl bg-white max-w-sm shadow-lg">
-                  <div className="py-7 bg-[#9F32B2]"></div>
-                  <div className="text-center mt-[5.5rem] mb-1">
-                    <h2>Graduate Token</h2>
-                  </div>
-                  <div className="mx-[2rem] border-t-[0.18rem] border-black">
-                    <div className="mt-2">
-                      <p className="break-words">
-                        an award conferred by lumbburgh university signifying
-                        that the recipent has satisfactorily completed a course
-                        of study
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="absloute">
-                  <img
-                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/image/property_right_data_cooperatives.png"
-                    class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[130px]"
-                  />
-                </div>
-              </div>
-
-              <div className="flex">
-                <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden  border-black group rounded-2xl bg-white max-w-sm shadow-lg">
-                  <div className="py-7 bg-[#9F32B2]"></div>
-                  <div className="text-center mt-[5.5rem] mb-1">
-                    <h2>Graduate Token</h2>
-                  </div>
-                  <div className="mx-[2rem] border-t-[0.18rem] border-black">
-                    <div className="mt-2">
-                      <p className="break-words">
-                        an award conferred by lumbburgh university signifying
-                        that the recipent has satisfactorily completed a course
-                        of study
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="absloute">
-                  <img
-                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/image/property_right_data_cooperatives.png"
-                    class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[130px]"
-                  />
-                </div>
-              </div>
-
-              <div className="flex">
-                <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden  border-black group rounded-2xl bg-white max-w-sm shadow-lg">
-                  <div className="py-7 bg-[#9F32B2]"></div>
-                  <div className="text-center mt-[5.5rem] mb-1">
-                    <h2>Graduate Token</h2>
-                  </div>
-                  <div className="mx-[2rem] border-t-[0.18rem] border-black">
-                    <div className="mt-2">
-                      <p className="break-words">
-                        an award conferred by lumbburgh university signifying
-                        that the recipent has satisfactorily completed a course
-                        of study
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="absloute">
-                  <img
-                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/image/property_right_data_cooperatives.png"
-                    class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[130px]"
-                  />
-                </div>
-              </div>
-
-              <div className="flex">
-                <div className="min-w-[300px] w-[300px] h-[350px] overflow-hidden  border-black group rounded-2xl bg-white max-w-sm shadow-lg">
-                  <div className="py-7 bg-[#9F32B2]"></div>
-                  <div className="text-center mt-[5.5rem] mb-1">
-                    <h2>Graduate Token</h2>
-                  </div>
-                  <div className="mx-[2rem] border-t-[0.18rem] border-black">
-                    <div className="mt-2">
-                      <p className="break-words">
-                        an award conferred by lumbburgh university signifying
-                        that the recipent has satisfactorily completed a course
-                        of study
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="absloute">
-                  <img
-                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/image/property_right_data_cooperatives.png"
-                    class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[130px]"
+                    src="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/sbt_metadata/image/index/brockenhurst_college.png"
+                    class="shadow-xl rounded-full align-middle border-none border-black absolute -m-[-1rem] -ml-[13.5rem] max-w-[125px]"
                   />
                 </div>
               </div>
@@ -439,7 +366,7 @@ export default function Home() {
             </div>
             <div className=" mb-7">
               <a target="_blank" href="https://faucet.egorfine.com/">
-                <h2>Get Testnet Ether</h2>
+                <h2>Get Ropsten Testnet Ether</h2>
               </a>
             </div>
             <div className=" mb-7">

@@ -1,8 +1,8 @@
- [![Netlify Status](https://api.netlify.com/api/v1/badges/4a5cd70d-5adc-43ec-8d08-9f1f5992a089/deploy-status)](https://soulbound-token.netlify.app)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4a5cd70d-5adc-43ec-8d08-9f1f5992a089/deploy-status)](https://soulbound-token.netlify.app)
 
 ### This is a minimum viable product (MVP) of Soulbound Token Wallet
 
-# Soulbound Token
+# What is a Soulbound Token?
 
 The concept of Soulbound Token is proposed in this paper
 
@@ -26,12 +26,11 @@ http://localhost:3000
 
 # How it works
 
-Institutions deploy smart contracts to issue SBTs to each individuals (Souls). 
+Institutions deploy smart contracts to issue SBTs to each individuals (Souls).
 
 The underlying mechanism is similar to NFTs which token metadata is stored on IPFS.
 
-The diagram below illustrates the workflows of issuing an SBT. 
-
+The diagram below illustrates the workflows of issuing an SBT.
 
 ![Diagram](image/diagram.png)
 
@@ -46,6 +45,7 @@ Remix IDE
 Hardhat
 
 ### Frontend + Backend
+
 web3.js
 
 ethers.js
@@ -55,9 +55,11 @@ next.js
 MetaMask
 
 ### UX/UI Design
+
 Figma
 
 # SBT Examples
+
 <p float="left">
   <img src="sbt_metadata/image/university_degree.png" width="200"/>
   <img src="sbt_metadata/image/award.png" width="200"/>
