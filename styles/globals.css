@@ -73,3 +73,8 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/* react-toastify */
+.toastProgress {
+  background: #9f32b2 !important;
+}

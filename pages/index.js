@@ -213,7 +213,7 @@ export default function Home() {
                   <p>
                     Differenitate between unique souls and probable bots by
                     computing over a soul’s constellation of SBTs, denying
-                    voting power to a Soul that appears to by a Sybil in a DAO
+                    voting power to a Soul that appears to by a Sybil in a DAO.
                   </p>
                 </div>
               </div>
@@ -333,7 +333,7 @@ export default function Home() {
                     <div className="mt-2 text-center">
                       <p className="break-words">GCE Advanced Level</p>
                     </div>
-                    <div className="mt-9 text-center">
+                    <div className="text-center mt-9">
                       <p className="">Oct 2017 - Jun 2020</p>
                     </div>
                   </div>
@@ -353,29 +353,43 @@ export default function Home() {
           id="start"
           className="bg-[#313896] md:py-24 md:px-24 py-10 px-10  mx-auto mt-16"
         >
-          <div className="max-w-screen-xl p-10 mx-auto bg-white ">
-            <div className=" mb-7">
-              <h1 className="text-[#9F32B2]">Claim Your Own SBTs</h1>
+          <div className="grid max-w-screen-xl p-10 mx-auto bg-white md:grid-cols-2">
+            <div>
+              <div className=" mb-7">
+                <h1 className="text-[#9F32B2]">Setup</h1>
+              </div>
+              <div className=" mb-7">
+                <a target="_blank" href="https://metamask.io/download/">
+                  <h2>Install Metamask</h2>
+                </a>
+              </div>
+              <div className=" mb-7">
+                <h2>Switch to Ropsten Testnet</h2>
+              </div>
+              <div className=" mb-7">
+                <a target="_blank" href="https://faucet.egorfine.com/">
+                  <h2>Get Ropsten Testnet Ether</h2>
+                </a>
+              </div>
             </div>
-            <div className=" mb-7">
-              <a target="_blank" href="https://metamask.io/download/">
-                <h2>Install Metamask</h2>
-              </a>
-            </div>
-            <div className=" mb-7">
-              <h2>Switch to Ropsten Testnet</h2>
-            </div>
-            <div className=" mb-7">
-              <a target="_blank" href="https://faucet.egorfine.com/">
-                <h2>Get Ropsten Testnet Ether</h2>
-              </a>
-            </div>
-            <div className=" mb-7">
-              <h2 className="text-[#9F32B2]">
-                <Link href="wallet">
-                  <a>Get Started</a>
-                </Link>
-              </h2>
+            <div>
+              <div className=" mb-7">
+                <h1 className="">Launch App</h1>
+              </div>
+              <div className=" mb-7">
+                <h2 className="text-[#9F32B2]">
+                  <Link href="wallet">
+                    <a>Desktop</a>
+                  </Link>
+                </h2>
+              </div>
+              <div className=" mb-7">
+                <h2 className="text-[#9F32B2]">
+                  <Link href="dapp://soulbound-token.netlify.app/wallet">
+                    <a>Mobile</a>
+                  </Link>
+                </h2>
+              </div>
             </div>
           </div>
         </div>
