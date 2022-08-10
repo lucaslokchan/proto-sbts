@@ -374,8 +374,8 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <div className=" mb-7">
-                <h1 className="">Launch App</h1>
+              <div className="mb-7">
+                <h1 className="text-[#9F32B2]">Launch App</h1>
               </div>
               <div className=" mb-7">
                 <h2 className="text-[#9F32B2]">
