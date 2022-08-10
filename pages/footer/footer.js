@@ -1,8 +1,8 @@
 function FooterComponent() {
   return (
-    <div className="max-w-screen-xl md:mx-auto my-6 mx-4">
-      <div className="grid grid-cols-1  md:grid-cols-3">
-        <div className="space-y-2 ">
+    <div className="max-w-screen-xl mx-4 my-6 md:mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-4">
+        <div className="space-y-2 md:space-y-3 ">
           <div className="text-[#9F32B2] font-bold">
             <p>Learn More</p>
           </div>
@@ -17,7 +17,7 @@ function FooterComponent() {
             </a>
           </div>
         </div>
-        <div className="space-y-2 ">
+        <div className="space-y-2 sm:space-y-3 ">
           <div className="text-[#9F32B2] font-bold mt-4 md:mt-0">
             <p>Ethereum Improvement Proposals</p>
           </div>
@@ -32,8 +32,21 @@ function FooterComponent() {
             </a>
           </div>
         </div>
-        <div className="flex flex-col space-y-3  md:place-items-end">
-          <div className="flex flex-row mb-auto space-x-3  mt-4 md:mt-0">
+        <div>
+          <div className="text-[#9F32B2] font-bold mt-4 md:mt-0 flex md:place-items-end flex-col">
+            <div>
+              <p>Buy me a coffee :)</p>
+            </div>
+            <div>
+              <img
+                className="w-[80px] mr-[4.2rem] pt-4 sm:pt-1"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6AQMAAACyIsh+AAAABlBMVEX///8AAABVwtN+AAAACXBIWXMAAA7EAAAOxAGVKw4bAAACIUlEQVRogeWZQW7FMAhEkbLwMkfIUe2j5ghZ/oUlygzgVu0Fgmspcr7zusDgAVyRLcahGLccz6XHY78/0qdIz/UigC3KeXebuz74cMuUaxgo0jYCLp2nvQj3odODTQ2w9WqAmXgNgo1u1D0B8yAC+O6TgHm3GOAxOU8d9kZgwrO/g/bdgIZZ7iyYN8y8PwpTHMiBH7YyMAOQ3+PVAMwxTzIuISCIQ3iSpn52AoZr5OXCYZ7VALQMwHwFU4UpmTJItaeY3FUAM1GZdc3UMBMQCg06axPg9ByFooKCYXugJiKaal8HMBOpFZgbvUhP6jKzPiBeWDCpMYCzGox9KQEgV2WJBLWHN7N0l1YI0DQPYo7TxPeMyV0APp1CEvuAggN+9nRQARBmXVP3x7tEiAfg6eAuAIKWXgy1R6Ci6MWRXFH9fiDyFI8g7bY/UCq+rqK3PhDN8Hen0rjYsQep9jUAHDUeO0EVyDqKMXmkme8H8nLCGxCPyebVOWNyF4AxKev5ZAepuhTm9YCfKkjghdqWDcmMmIw2aguA130mGIB4m3RH4Pq+lAEwfjQgOlan2AoB3e/EIOYuIvaRgsLucQ8gRverv9gDCAlScxlg3YkpGxCJFMALzCNT8waAp2R+QKci7fZbjPz3QBEg7sxD7ZVdoo8I2kIAZ/S/NJEVusp+AI+fz0vt+RQBGJOp9sOvWNT73Y2AEBDlTYanaf/I9SLA/xhfuio944KmFLAAAAAASUVORK5CYII="
+              ></img>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col space-y-3 md:place-items-end">
+          <div className="flex flex-row mt-4 mb-auto space-x-3 md:mt-0">
             <div>
               <svg
                 width="31"
