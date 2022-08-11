@@ -275,7 +275,7 @@ export default function Home() {
 
         <div className="max-w-screen-xl mx-auto ">
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-28 md:gap-y-16 gap-y-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-28 md:gap-y-14 gap-y-12">
               <div className="flex">
                 <div className="min-w-[300px] max-h-[350px] w-[300px] h-[350px]  overflow-hidden border-black group rounded-2xl bg-white max-w-sm shadow-lg">
                   <div className="py-7 bg-[#9F32B2]"></div>
@@ -283,11 +283,12 @@ export default function Home() {
                     <h3>Peplink</h3>
                   </div>
                   <div className="mx-[2rem] border-t-[0.18rem] border-black">
-                    <div className="mt-2 text-center">
-                      <p className="">Assistant Hardware Engineer</p>
-                    </div>
-                    <div className="mt-2 text-center">
-                      <p className="">Mar 2021 - Aug 2022</p>
+                    <div className="mt-2 text-left">
+                      <p className="">
+                        This is to verify that the holder of this token is
+                        employed as an Assistant Hardware Engineer since Mar
+                        2020.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -306,13 +307,13 @@ export default function Home() {
                     <h3 className="">Loughborough University</h3>
                   </div>
                   <div className="mx-[2rem] border-t-[0.18rem] border-black">
-                    <div className="mt-2 text-center">
+                    <div className="mt-2 text-left max-h-[150px] overflow-y-scroll">
                       <p className="break-words">
-                        Bachelor of Electronic and Electrical Engineering
+                        This is to certify that on 21 July 2020 the holder of
+                        this token was admitted to the degree of Bachelor of
+                        Engineering with Second Class Honors, Upper Division in
+                        Electronic and Electrical Engineering.
                       </p>
-                      <div className="mt-2 text-center">
-                        <p className="">Oct 2017 - Jun 2020</p>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -331,11 +332,11 @@ export default function Home() {
                     <h3>Brockenhurst College</h3>
                   </div>
                   <div className="mx-[2rem] border-t-[0.18rem] border-black">
-                    <div className="mt-2 text-center">
-                      <p className="break-words">GCE Advanced Level</p>
-                    </div>
-                    <div className="text-center mt-9">
-                      <p className="">Oct 2017 - Jun 2020</p>
+                    <div className="mt-2 text-left">
+                      <p className="break-words">
+                        This is to attest that on June 2017 the holder of this
+                        token has achieved GCE Advance Level.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -347,6 +348,13 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="mt-2 text-center">
+            <p className="pt-12">
+              *All tokens are purely symbolic for demonstration purposes solely,
+              and thereby have no links, affiliations with the institutions
+              listed.
+            </p>
           </div>
         </div>
 
