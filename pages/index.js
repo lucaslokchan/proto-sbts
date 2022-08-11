@@ -83,7 +83,7 @@ export default function Home() {
             </div>
 
             <div className=" mb-7">
-              <p>
+              <p className="">
                 A Soulbound Token (SBT) is similar to an NFT but
                 non-transferable. It can represent the commitments, credentials
                 and affilations of each individuals - Souls
@@ -264,10 +264,10 @@ export default function Home() {
             <div className="text-center">
               <p>
                 Lucas has worked at Peplink as an Assistant Hardware Engineer
-                responsible for 1.5 years. He studied in the UK for 5 years and
-                graduated with an Electrical and Electronics Degree from
-                Loughborough University in June 2020. His credentials can be
-                represented with SBTs.
+                for 1.5 years. He studied in the UK for 5 years and graduated
+                with an Electrical and Electronics Degree from Loughborough
+                University in June 2020. His credentials can be represented with
+                SBTs.
               </p>
             </div>
           </div>
@@ -350,7 +350,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-2 text-center">
-            <p className="pt-12">
+            <p className="pt-12 text-xs">
               *All tokens are purely symbolic for demonstration purposes solely,
               and thereby have no links, affiliations with the institutions
               listed.
