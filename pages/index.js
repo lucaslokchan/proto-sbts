@@ -266,7 +266,7 @@ export default function Home() {
                 Lucas has worked at Peplink as an Assistant Hardware Engineer
                 for 1.5 years. He studied in the UK for 5 years and graduated
                 with an Electrical and Electronics Degree from Loughborough
-                University in June 2020. His credentials can be represented with
+                University in June 2020. His credentials can be represented by
                 SBTs.
               </p>
             </div>
