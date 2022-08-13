@@ -146,7 +146,24 @@ export default function Modal() {
   //Request SBT
   const requestSBTHandler = async (uri) => {
     if (uri !== "") {
-      sbtContract.methods.requestSBT(account, uri).send({ from: account });
+      sbtContract.methods
+        .requestSBT(account, uri)
+        .send({ from: account })
+        .on("transactionHash", (hash) => {
+          toast.info("Confirming Transaction...");
+          console.log("Please wait until transaction is confirmed");
+        })
+        .on("receipt", (receipt) => {
+          toast.info("Transaction Confirmed!");
+          toast.info(
+            "Please refresh if the token hasn't appeared in your wallet"
+          );
+        })
+
+        //Refresh page when transaction is confirmed
+        .on("confirmation", (reciept) => {
+          window.location.reload();
+        });
     } else {
       console.log("333");
     }
