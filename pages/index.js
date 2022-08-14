@@ -47,7 +47,15 @@ export default function Home() {
     <>
       <Head>
         <title>Soulbound - Index</title>
-        <meta name="description" content="Soulbound Token Wallet" />
+        <meta name="description" content="Soulbound Wallet" />
+        <meta property="og:title" content="Soulbound Wallet" />
+        <meta property="og:url" content="https://soulbound-token.netlify.app" />
+        <meta
+          property="og:image"
+          content="https://raw.githubusercontent.com/lucaslokchan/proto-sbts/main/image/soulbound.png"
+        />
+        <meta property="og:image:width" content="550" />
+        <meta property="og:image:height" content="66" />
       </Head>
       <div>
         <div className="text-center">
