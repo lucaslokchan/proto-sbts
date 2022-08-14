@@ -273,11 +273,10 @@ export default function Home() {
             </div>
             <div className="text-center">
               <p>
-                Lucas has worked at Peplink as an Assistant Hardware Engineer
-                for 1.5 years. He studied in the UK for 5 years and graduated
-                with an Electrical and Electronics Degree from Loughborough
-                University in June 2020. His credentials can be represented by
-                SBTs.
+                Lucas has worked at Peplink as an Assistant Engineer for 1.5
+                years. He studied in the UK for 5 years and graduated with an
+                Electrical and Electronics Degree from Loughborough University
+                in June 2020. His credentials can be represented by SBTs.
               </p>
             </div>
           </div>
@@ -296,8 +295,7 @@ export default function Home() {
                     <div className="mt-2 text-left">
                       <p className="">
                         This is to verify that the holder of this token is
-                        employed as an Assistant Hardware Engineer since Mar
-                        2020.
+                        employed as an Assistant Engineer since Mar 2020.
                       </p>
                     </div>
                   </div>
