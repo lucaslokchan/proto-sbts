@@ -1,0 +1,13 @@
+{
+  "type": "Membership",
+  "issuer": "IEEE Computer Society",
+  "title": "IEEE Computer Society",
+  "image": "https://ipfs.io/ipfs/QmYCAD8aVSJNGw7TxzDJfmtTKTq7ME7DRDjr6MFmQzBa7j/QmWar4TRAHv3CXG8rxScpjUZLKWRNPd8myHxuKkP3tqgm7",
+  "description": "This is to certify that holder of this token has been granted full membership in the IEEE Computer Society since October 2018.",
+  "attributes": [
+    {
+      "trait_type": "Date",
+      "value": "2018-10-01"
+    }
+  ]
+}

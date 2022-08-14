@@ -1,0 +1,17 @@
+{
+  "type": "Access permission",
+  "issuer": "Europcar",
+  "title": "Car Rental",
+  "image": "https://ipfs.io/ipfs/QmYCAD8aVSJNGw7TxzDJfmtTKTq7ME7DRDjr6MFmQzBa7j/Qmeimpfp84P8LT7fnA5P8q5tKPsCb1AyzeHdgnLigKEpxh",
+  "description": "This token grants 72-hour access to a Volvo XC60 within the United Kingdom and Eurozone. This ownership right cannot be sublicensed.",
+  "attributes": [
+    {
+      "trait_type": "Duration",
+      "value": "72 Hours"
+    },
+    {
+      "trait_type": "Locations",
+      "value": "The United Kingdom and Eurozone"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "type": "Access Right",
+  "issuer": "National Center for Biotechnology Information",
+  "title": "Human Genome Database",
+  "image": "https://ipfs.io/ipfs/QmYCAD8aVSJNGw7TxzDJfmtTKTq7ME7DRDjr6MFmQzBa7j/QmP5jh9H57RRRj5qubSwnnTNRr1BaeUKrVFKmR1XqS7fqH",
+  "description": "Exclusively permits the use of the Human Genome Resources database for research-related machine learning model training using the supervised learning and reinforcement learning techniques.",
+  "attributes": [
+    {
+      "trait_type": "Level",
+      "value": "Category A",
+      "computations": "Supervised learning and reinforcement learning techniques"
+    }
+  ]
+}

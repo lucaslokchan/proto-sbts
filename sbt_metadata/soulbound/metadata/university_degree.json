@@ -1,0 +1,29 @@
+{
+  "type": "University Degree",
+  "issuer": "Loughborough University",
+  "title": "Bachelor of Engineering (BEng)",
+  "image": "https://ipfs.io/ipfs/QmYCAD8aVSJNGw7TxzDJfmtTKTq7ME7DRDjr6MFmQzBa7j/QmXe4fcUwkFkUXm8B1cAXtRK1FLti7LsQo4h14BwHU2Ei3",
+  "description": "This is to certify that on 21 July 2020 the holder of this token was admitted to the degree of Bachelor of Engineering with Second Class Honors, Upper Division in Electronic and Electrical Engineering.",
+  "attributes": [
+    {
+      "trait_type": "Percentage",
+      "value": 68.8,
+      "max_value": 100,
+      "classification": "Second Class Honors, Upper Division"
+    },
+    {
+      "trait_type": "Programme",
+      "value": "Electronic and Electrical Engineering",
+      "method_study": "Full Time"
+    },
+    {
+      "trait_type": "Level",
+      "value": "Undergraduate Bachelors"
+    },
+    {
+      "trait_type": "Date",
+      "start_date": "02/10/2017",
+      "date_awarded": "15/07/2020"
+    }
+  ]
+}

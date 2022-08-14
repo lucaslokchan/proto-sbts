@@ -1,0 +1,17 @@
+{
+  "type": "Award",
+  "issuer": "The Royal Swedish Academy of Sciences",
+  "title": "Nobel Prize in Chemistry 2020",
+  "image": "https://ipfs.io/ipfs/QmYCAD8aVSJNGw7TxzDJfmtTKTq7ME7DRDjr6MFmQzBa7j/QmamBEx7iPfbwgXSH5boAh4sWy5KuXvEJcPq86Ry79iHCG",
+  "description": "The owner of this token was awarded a Nobel Prize in Chemistry in 2020 for the creation of a CRISPR-based approach for genome editing.",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Chemistry"
+    },
+    {
+      "trait_type": "Year",
+      "value": "2020"
+    }
+  ]
+}

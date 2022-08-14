@@ -1,0 +1,17 @@
+{
+  "type": "Certificate of Attendance",
+  "issuer": "The Ethereum Foundation",
+  "title": "Devcon Two",
+  "image": "https://ipfs.io/ipfs/QmYCAD8aVSJNGw7TxzDJfmtTKTq7ME7DRDjr6MFmQzBa7j/Qmb2w6d86tsNTvhqNp5SdA13vU8bMUAon5oj81AYByHy5U",
+  "description": "The owner of this token attended Devcon Two on September 21, 2016, in Shanghai.",
+  "attributes": [
+    {
+      "trait_type": "Date",
+      "value": "2016-09-21"
+    },
+    {
+      "trait_type": "Location",
+      "value": "Shanghai"
+    }
+  ]
+}

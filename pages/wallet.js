@@ -2745,22 +2745,22 @@ export default function Modal() {
                           className=" border-black border-2 rounded h-[30px] max-w-[150px] text-[#9F32B2]"
                         >
                           <option value="">Select Token</option>
-                          <option value="QmSMiUtwmxMAzHdute17u5CPrB2eUwBYUR4JP5KLpAHTsH">
-                            University Degree Token
+                          <option value="QmShvnwg9v3JsAqUkbzjELRko9XFkbYAXgzMScype5hSMd/QmRhJd2joDyRGHuFHGW3B9ETR2mRD4bjz7MX73vcfkp1HY">
+                            University Degree
                           </option>
-                          <option value="QmZQEo7zCbRJ3Mv56HsnbudHJq7PvUoPm6g7mKrxz9ABU2">
-                            Award Token
+                          <option value="QmShvnwg9v3JsAqUkbzjELRko9XFkbYAXgzMScype5hSMd/QmVQ3C6ohkSmosRym1siDcGJsZaJwzsFSquppn6ZotrmbB">
+                            Nobel Prize
                           </option>
-                          <option value="QmT6DYFT32Y87gCt9pFfDxrwrav8qDyBmZpyrhwEe64waF">
-                            Certificate of Attendance Token
+                          <option value="QmShvnwg9v3JsAqUkbzjELRko9XFkbYAXgzMScype5hSMd/QmdWKStWx7pXvJVBNraHF781DLuQFUyizFza755CfhgxSY">
+                            Certificate of Attendance
                           </option>
-                          <option value="QmTsyBd5b1963UvAoBH1vR15Q5Kdkq43g9VR4wWc2W2bvU">
-                            Property Right - Access Token
+                          <option value="QmShvnwg9v3JsAqUkbzjELRko9XFkbYAXgzMScype5hSMd/QmV8hDgDBE9Y5K5gBnEnM3KzbjZzm9LBPxfuugcmz3nCZA">
+                            Data Access
                           </option>
-                          <option value="QmUKYnrC1SRdijKpP1hEx4Q3Eon8qF1GQVZ3cktydTM7rW">
-                            Property Right - Data Cooperatives Token
+                          <option value="QmShvnwg9v3JsAqUkbzjELRko9XFkbYAXgzMScype5hSMd/QmRG5Q8vMseLb1zF4eqfN48ek7474sR8JFPm9RPuf6GMW3">
+                            Car Rental
                           </option>
-                          <option value="Qmb83Yba9YvGtouAbBSgD7RQyXyuyp1Vv62Rd3dqKyoaHz">
+                          <option value="QmShvnwg9v3JsAqUkbzjELRko9XFkbYAXgzMScype5hSMd/QmecxY63Pshr4L9f3vg5yJ63YAseHUXXcqk3ns2kdpKM9N">
                             Membership Token
                           </option>
                         </select>
@@ -2924,7 +2924,7 @@ export default function Modal() {
             </div>
           </div>
         ) : (
-          <div className="max-w-screen-xl mx-auto mt-8 mb-10 md:mt-32 md:mb-32">
+          <div className="max-w-screen-xl mx-auto mt-8 mb-10 md:mt-32 md:mb-16">
             <div className="flex justify-center">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-28 gap-y-12">
                 {tokenowned.map((token) => {
@@ -2964,6 +2964,13 @@ export default function Modal() {
             </div>
           </div>
         )}
+        <div className="mb-8 pb-6 text-center">
+          <p className="text-xs">
+            *All tokens in this project are purely symbolic for demonstration
+            purposes solely, and thereby have no links, affiliations with the
+            institutions listed.
+          </p>
+        </div>
         <FooterComponent></FooterComponent>
       </div>
     </>
