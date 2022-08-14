@@ -2729,7 +2729,7 @@ export default function Modal() {
                 )}
               </div>
             </div>
-            <div className="mx-4">
+            <div className="mx-4 md:mx-48 lg:mx-4">
               <div className="pt-6 ">
                 <div>
                   <h2 className="text-[#9F32B2]">Request SBTs</h2>

@@ -351,9 +351,9 @@ export default function Home() {
           </div>
           <div className="mt-2 text-center">
             <p className="pt-12 text-xs">
-              *All tokens are purely symbolic for demonstration purposes solely,
-              and thereby have no links, affiliations with the institutions
-              listed.
+              *All tokens in this project are purely symbolic for demonstration
+              purposes solely, and thereby have no links, affiliations with the
+              institutions listed.
             </p>
           </div>
         </div>
