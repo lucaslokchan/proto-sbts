@@ -96,7 +96,7 @@ export default function Home() {
               <p className="">
                 A Soulbound Token (SBT) is similar to an NFT but
                 non-transferable. It can represent the commitments, credentials
-                and affilations of each individuals - Souls
+                and affiliations of each individual - Soul
               </p>
             </div>
           </div>
@@ -150,9 +150,9 @@ export default function Home() {
                 <div>
                   <p>
                     Build reputations and establish provenance for data
-                    creators. For example, an artist could issue an NFT from
-                    their soul for buyers to identify the artist, and thereby
-                    confirm the NFT’s legitimacy.
+                    creators. For example, an artist may issue an NFT from their
+                    soul in order for consumers to identify the artist and so
+                    attest the legitimacy of the NFT.
                   </p>
                 </div>
               </div>
@@ -221,9 +221,9 @@ export default function Home() {
                 </div>
                 <div>
                   <p>
-                    Differenitate between unique souls and probable bots by
+                    Differentiate between unique souls and probable bots by
                     computing over a soul’s constellation of SBTs, denying
-                    voting power to a Soul that appears to by a Sybil in a DAO.
+                    voting power to a Soul that appears to be a Sybil in a DAO.
                   </p>
                 </div>
               </div>
@@ -256,9 +256,9 @@ export default function Home() {
                 </div>
                 <div>
                   <p>
-                    Regenerage keys through community recovery model which
-                    requires a member from a qualified majority of a Soul’s
-                    communities to reocver private keys.{" "}
+                    Regenerate keys using the community recovery model, which
+                    requires a member from a qualified majority of a (random
+                    subset of) Soul's communities to consent.
                   </p>
                 </div>
               </div>
