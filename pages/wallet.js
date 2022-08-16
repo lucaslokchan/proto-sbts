@@ -2732,7 +2732,7 @@ export default function Modal() {
             <div className="mx-4 md:mx-48 lg:mx-4">
               <div className="pt-6 ">
                 <div>
-                  <h2 className="text-[#9F32B2]">Request SBTs</h2>
+                  <h2 className="text-[#9F32B2]">Mint SBTs</h2>
                 </div>
                 <div className="pt-4">
                   <div>
@@ -2771,7 +2771,7 @@ export default function Modal() {
                           onClick={requestSBTHandler.bind(this, tokenoption)}
                           className="border-2 w-[80px] h-[30px] border-black rounded text-[#9F32B2]"
                         >
-                          Request
+                          Mint
                         </button>
                       </div>
                     </div>
@@ -2964,7 +2964,7 @@ export default function Modal() {
             </div>
           </div>
         )}
-        <div className="mb-8 pb-6 text-center">
+        <div className="pb-6 mb-8 text-center">
           <p className="text-xs">
             *All tokens in this project are purely symbolic for demonstration
             purposes solely, and thereby have no links, affiliations with the
